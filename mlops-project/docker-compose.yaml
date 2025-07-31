@@ -19,14 +19,13 @@ x-airflow-common:
     # Airflow 웹서버 포트
     AIRFLOW__WEBSERVER__WEB_SERVER_PORT: 8080
   volumes:
-    # DAGs 폴더 마운트
-    - ${DAGS_DIR}:/opt/airflow/dags
-    # 로그 폴더 마운트
-    - ${LOGS_AIRFLOW_DIR}:/opt/airflow/logs
-    # Data 폴더 마운트 (외부 데이터 접근용)
-    - ${DATA_AIRFLOW_DIR}:/opt/airflow/data
-    # 플러그인 폴더 마운트 (필요시 사용)
-    - ${PLUGINS_AIRFLOW_DIR}:/opt/airflow/plugins
+    - ${DAGS_DIR}:/opt/airflow/dags                             # DAGs 폴더
+    - ${LOGS_AIRFLOW_DIR}:/opt/airflow/logs                     # Airflow 로그 폴더
+    - ${DATA_AIRFLOW_DIR}:/opt/airflow/data                     # Airflow 데이터 폴더
+    - ${DATA_AIRFLOW_RAW_DIR}:/opt/airflow/data/raw             # 원본 데이터 폴더
+    - ${DATA_AIRFLOW_PROCESSED_DIR}:/opt/airflow/data/processed # 처리된 데이터 폴더
+    - ${PLUGINS_AIRFLOW_DIR}:/opt/airflow/plugins               # 플러그인 폴더 마운트 (필요시 사용)
+    - ${DATA_AIRFLOW_TEMP_DIR}:/opt/airflow/data/temp           # 임시 데이터 폴더
   networks:
     - airflow_network
   # 컨테이너 재시작 정책

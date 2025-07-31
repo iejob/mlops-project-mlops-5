@@ -16,6 +16,7 @@ x-airflow-common: &airflow-common
     AIRFLOW__CELERY__RESULT_BACKEND: ${AIRFLOW__CELERY__RESULT_BACKEND} # Celery 결과 저장 Backend
     AIRFLOW__CORE__LOGGING_LEVEL: INFO                                  # 로그 레벨(INFO 고정)
     AIRFLOW__WEBSERVER__WEB_SERVER_PORT: 8080                           # Webserver 포트(8080)
+    AIRFLOW__WEBSERVER__WEB_SERVER_HOST: 0.0.0.0                        # Webserver 호스트(모든 IP에서 접근 가능)
   env_file:
     - .env                                                              # 민감정보, 환경변수 파일(.env)
     - ./.paths/paths.env                                                # 프로젝트별 경로 관리 환경변수 파일
@@ -79,7 +80,8 @@ services:
   # --------------------------------
   webserver:
     <<: *airflow-common                       # 공통 설정 상속(anchor)
-    command: webserver                        # webserver 실행(메인 UI)
+    command: >                                # webserver 실행(메인 UI)
+      webserver --port 8080 --host 0.0.0.0
     ports:
       - "8080:8080"                           # 호스트:컨테이너 포트(8080)
     healthcheck:

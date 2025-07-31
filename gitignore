@@ -153,3 +153,6 @@ __pycache__/  # Python cache files
 nosetests.xml # Test results
 *.log         # Log files
 
+
+# Add User
+.github

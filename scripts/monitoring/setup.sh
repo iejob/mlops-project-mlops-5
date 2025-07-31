@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# bash ./setup.sh 
+
+# 현재 스크립트 위치 기준으로 .paths/paths.env 경로 계산
+CURRENT_DIR=$(dirname "$0")
+PROJECT_ROOT=$(realpath "$CURRENT_DIR/../..")
+
+# env 파일 로드
+source "$PROJECT_ROOT/.paths/paths.env"
+
+
+SERVICE_MONITORING_PATH=$(realpath "$PROJECT_ROOT/$SERVICE_MONITORING")
+PROMETHEUS_CONFIG_PATH=$(realpath "$SERVICE_MONITORING_PATH/$PROMETHEUS_CONFIG_PATH")
+GRAFANA_DATA_PATH=$(realpath "$PROJECT_ROOT/../$GRAFANA_DATA_PATH")
+
+
+# 환경변수 확인 (테스트용)
+# echo "PROJECT_ROOT=$PROJECT_ROOT"
+# echo "env=$PROJECT_ROOT/.paths/paths.env"
+# echo "SERVICE_MONITORING=$SERVICE_MONITORING"
+# echo "SERVICE_MONITORING_PATH=$SERVICE_MONITORING_PATH"
+# echo "PROMETHEUS_CONFIG_PATH=$PROMETHEUS_CONFIG_PATH"
+# echo "GRAFANA_DATA_PATH=$GRAFANA_DATA_PATH"
+
+mkdir -p "$GRAFANA_DATA_PATH"
+sudo chown -R 472:472 "$GRAFANA_DATA_PATH"
+sudo chmod -R 775 "$GRAFANA_DATA_PATH"
+

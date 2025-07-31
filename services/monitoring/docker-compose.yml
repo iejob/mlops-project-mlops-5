@@ -1,0 +1,36 @@
+services:
+  monitoring-app:
+    image: monitoring-app:v0.1.0
+    container_name: monitoring-app
+    ports:
+      - "8000:8000"
+    networks:
+      - monitoring-network
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    env_file:
+      - ../../.paths/paths.env
+    volumes:
+      - ${PROMETHEUS_CONFIG_PATH}:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - monitoring-network
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    env_file:
+      - ../../.paths/paths.env
+    volumes:
+      - ../../../${GRAFANA_DATA_PATH}:/var/lib/grafana
+    networks:
+      - monitoring-network
+
+networks:
+  monitoring-network:
+    driver: bridge

@@ -1,0 +1,18 @@
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    env_file:
+      - ../../../.paths/paths.env
+    volumes:
+      - ${HOME_DIR}/${GRAFANA_DATA_DIR}:/var/lib/grafana

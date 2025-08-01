@@ -26,6 +26,11 @@ async def read_root():
     return {"message": "Hello!"}
 
 
+@app.get("/health")
+async def read_health():
+    return {"status": "ok"}
+
+
 @app.get("/metrics")
 async def metrics():
     # Prometheus 가 수집해갈 메트릭

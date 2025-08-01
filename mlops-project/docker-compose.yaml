@@ -4,10 +4,14 @@ version: '3.8' # 도커 컴포즈 파일 버전(3.8 권장)
 # Airflow 서비스 공통 anchor(템플릿)
 # ==============================
 x-airflow-common: &airflow-common
+  # build: . # 기존의 'build: .' 명령어는 Dockerfile이 있는 디렉토리를 빌드 컨텍스트로 사용하므로 경로 오류가 발생합니다.
+  build:
+    context: .                                                          # 빌드 컨텍스트를 프로젝트 루트 디렉토리(.)로 설정
+    dockerfile: ${DOCKER_AIRFLOW}                                       # Dockerfile의 경로를 명시
   image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.8.2}                    # Airflow 공식 이미지, 환경변수로 버전 지정 가능
   environment:
-    AIRFLOW_UID: ${AIRFLOW_UID:-50000}                                  # 컨테이너 내 실행 사용자 UID(기본값 50000)
-    AIRFLOW_GID: ${AIRFLOW_GID:-0}                                      # 컨테이너 내 실행 사용자 GID(기본값 0)
+    AIRFLOW_UID: 1000                                                   # 컨테이너 내 실행 사용자 UID(기본값 50000)
+    AIRFLOW_GID: 1000                                                   # 컨테이너 내 실행 사용자 GID(기본값 0)
     AIRFLOW_HOME: /opt/airflow                                          # Airflow 홈 디렉토리(모든 실행 기준 경로)
     AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${AIRFLOW__CORE__SQL_ALCHEMY_CONN} # 내부 DB 연결(필수)
     AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY}             # Fernet 암호화 키(필수)
@@ -24,8 +28,8 @@ x-airflow-common: &airflow-common
     - ${DAGS_DIR}:/opt/airflow/dags                                     # DAG 파이썬 코드 저장 경로
     - ${LOGS_AIRFLOW_DIR}:/opt/airflow/logs                             # Airflow 각종 로그 저장 경로
     - ${DATA_AIRFLOW_DIR}:/opt/airflow/data                             # Airflow 데이터(공용)
-    - ${DATA_AIRFLOW_RAW_DIR}:/opt/airflow/data/raw                     # 원본(raw) 데이터 경로
-    - ${DATA_AIRFLOW_PROCESSED_DIR}:/opt/airflow/data/processed         # 전처리(피처) 데이터 경로
+    - ${DATA_RAW_DIR}:/opt/airflow/data/raw                             # 원본(raw) 데이터 경로
+    - ${DATA_PROCESSED_DIR}:/opt/airflow/data/processed                 # 전처리(피처) 데이터 경로
     - ${PLUGINS_AIRFLOW_DIR}:/opt/airflow/plugins                       # Airflow 플러그인(추가 코드 등)
     - ${DATA_AIRFLOW_TEMP_DIR}:/opt/airflow/data/temp                   # 임시 데이터 경로
   networks:

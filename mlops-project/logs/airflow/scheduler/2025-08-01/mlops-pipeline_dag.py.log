@@ -1,0 +1,549 @@
+[2025-08-01T03:18:35.231+0000] {processor.py:161} INFO - Started process (PID=34) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:18:35.242+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:18:35.251+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:18:35.250+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:18:39.200+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:18:39.199+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:18:39.201+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:18:39.200+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:18:39.234+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:18:39.709+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:18:39.709+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:18:39.755+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:18:39.755+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-07-31 00:00:00+00:00, run_after=2025-08-01 00:00:00+00:00
+[2025-08-01T03:18:39.994+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 4.786 seconds
+[2025-08-01T03:19:10.231+0000] {processor.py:161} INFO - Started process (PID=45) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:19:10.233+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:19:10.236+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:10.236+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:19:10.740+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:10.738+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:19:10.741+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:10.740+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:19:10.746+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:19:10.783+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:10.783+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:19:10.817+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:10.816+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-07-31 00:00:00+00:00, run_after=2025-08-01 00:00:00+00:00
+[2025-08-01T03:19:10.840+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.614 seconds
+[2025-08-01T03:19:41.011+0000] {processor.py:161} INFO - Started process (PID=56) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:19:41.013+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:19:41.015+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:41.014+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:19:41.303+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:41.302+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:19:41.303+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:41.303+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:19:41.307+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:19:41.332+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:41.331+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:19:41.353+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:19:41.353+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-07-31 00:00:00+00:00, run_after=2025-08-01 00:00:00+00:00
+[2025-08-01T03:19:41.373+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.366 seconds
+[2025-08-01T03:20:11.505+0000] {processor.py:161} INFO - Started process (PID=66) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:20:11.507+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:20:11.509+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:11.509+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:20:11.795+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:11.794+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:20:11.796+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:11.796+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:20:11.799+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:20:11.824+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:11.823+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:20:11.847+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:11.846+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:20:11.863+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.362 seconds
+[2025-08-01T03:20:42.015+0000] {processor.py:161} INFO - Started process (PID=76) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:20:42.016+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:20:42.018+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:42.018+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:20:42.307+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:42.306+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:20:42.308+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:42.307+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:20:42.311+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:20:42.337+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:42.336+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:20:42.362+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:20:42.361+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:20:42.379+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.368 seconds
+[2025-08-01T03:21:12.504+0000] {processor.py:161} INFO - Started process (PID=86) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:21:12.505+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:21:12.506+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:12.506+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:21:12.820+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:12.818+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:21:12.821+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:12.820+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:21:12.826+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:21:12.854+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:12.854+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:21:12.877+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:12.876+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:21:12.894+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.394 seconds
+[2025-08-01T03:21:43.038+0000] {processor.py:161} INFO - Started process (PID=96) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:21:43.040+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:21:43.041+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:43.041+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:21:43.351+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:43.350+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:21:43.351+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:43.351+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:21:43.356+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:21:43.381+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:43.381+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:21:43.404+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:21:43.404+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:21:43.421+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.387 seconds
+[2025-08-01T03:22:13.644+0000] {processor.py:161} INFO - Started process (PID=98) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:22:13.648+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:22:13.661+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:22:13.660+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:24:44.372+0000] {processor.py:161} INFO - Started process (PID=34) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:24:44.375+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:24:44.383+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:24:44.383+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:24:48.003+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:24:47.999+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:24:48.006+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:24:48.006+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:24:48.039+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:24:48.777+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:24:48.777+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:24:48.869+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:24:48.867+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-07-31 00:00:00+00:00, run_after=2025-08-01 00:00:00+00:00
+[2025-08-01T03:24:49.373+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 5.027 seconds
+[2025-08-01T03:25:19.654+0000] {processor.py:161} INFO - Started process (PID=44) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:25:19.657+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:25:19.659+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:19.659+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:25:19.955+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:19.955+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:25:19.956+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:19.956+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:25:19.960+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:25:19.987+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:19.987+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:25:20.012+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:20.011+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-07-31 00:00:00+00:00, run_after=2025-08-01 00:00:00+00:00
+[2025-08-01T03:25:20.042+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.394 seconds
+[2025-08-01T03:25:50.255+0000] {processor.py:161} INFO - Started process (PID=54) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:25:50.257+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:25:50.258+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:50.258+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:25:50.554+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:50.553+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:25:50.555+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:50.555+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:25:50.558+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:25:50.583+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:50.583+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:25:50.605+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:25:50.605+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-07-31 00:00:00+00:00, run_after=2025-08-01 00:00:00+00:00
+[2025-08-01T03:25:50.623+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.372 seconds
+[2025-08-01T03:26:20.749+0000] {processor.py:161} INFO - Started process (PID=64) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:26:20.750+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:26:20.752+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:20.752+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:26:21.031+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:21.030+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:26:21.031+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:21.031+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:26:21.035+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:26:21.059+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:21.058+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:26:21.081+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:21.081+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:26:21.097+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.352 seconds
+[2025-08-01T03:26:51.225+0000] {processor.py:161} INFO - Started process (PID=74) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:26:51.227+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:26:51.229+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:51.229+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:26:51.518+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:51.517+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:26:51.518+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:51.518+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:26:51.522+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:26:51.547+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:51.547+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:26:51.570+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:26:51.570+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:26:51.588+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.367 seconds
+[2025-08-01T03:27:21.718+0000] {processor.py:161} INFO - Started process (PID=84) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:27:21.721+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:27:21.723+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:21.723+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:27:22.298+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:22.297+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:27:22.300+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:22.299+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:27:22.304+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:27:22.341+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:22.340+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:27:22.373+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:22.372+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:27:22.398+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.685 seconds
+[2025-08-01T03:27:52.497+0000] {processor.py:161} INFO - Started process (PID=93) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:27:52.499+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:27:52.502+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:52.501+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:27:52.959+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:52.958+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:27:52.960+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:52.960+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:27:52.967+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:27:53.003+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:53.003+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:27:53.037+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:27:53.036+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:27:53.060+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.568 seconds
+[2025-08-01T03:28:23.208+0000] {processor.py:161} INFO - Started process (PID=96) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:28:23.210+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:28:23.212+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:23.211+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:28:23.494+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:23.493+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:28:23.495+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:23.495+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:28:23.498+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:28:23.524+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:23.523+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:28:23.546+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:23.546+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:28:23.564+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.359 seconds
+[2025-08-01T03:28:53.702+0000] {processor.py:161} INFO - Started process (PID=106) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:28:53.704+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:28:53.707+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:53.707+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:28:53.996+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:53.995+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:28:53.996+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:53.996+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:28:54.000+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:28:54.027+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:54.027+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:28:54.060+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:28:54.060+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:28:54.083+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.386 seconds
+[2025-08-01T03:29:24.217+0000] {processor.py:161} INFO - Started process (PID=116) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:29:24.218+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:29:24.220+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:24.220+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:29:24.511+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:24.510+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:29:24.511+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:24.511+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:29:24.515+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:29:24.540+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:24.539+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:29:24.563+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:24.563+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:29:24.581+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.368 seconds
+[2025-08-01T03:29:54.726+0000] {processor.py:161} INFO - Started process (PID=126) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:29:54.728+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:29:54.729+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:54.729+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:29:55.010+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:55.009+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:29:55.010+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:55.010+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:29:55.014+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:29:55.040+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:55.039+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:29:55.064+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:29:55.063+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:29:55.082+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.360 seconds
+[2025-08-01T03:30:25.210+0000] {processor.py:161} INFO - Started process (PID=136) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:30:25.211+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:30:25.213+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:25.213+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:30:25.503+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:25.502+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:30:25.503+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:25.503+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:30:25.507+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:30:25.533+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:25.533+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:30:25.555+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:25.555+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:30:25.572+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.366 seconds
+[2025-08-01T03:30:55.701+0000] {processor.py:161} INFO - Started process (PID=146) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:30:55.703+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:30:55.705+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:55.705+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:30:55.985+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:55.984+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:30:55.985+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:55.985+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:30:55.989+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:30:56.014+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:56.014+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:30:56.037+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:30:56.036+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:30:56.053+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.356 seconds
+[2025-08-01T03:31:26.176+0000] {processor.py:161} INFO - Started process (PID=156) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:31:26.178+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:31:26.180+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:26.179+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:31:26.461+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:26.460+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:31:26.461+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:26.461+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:31:26.465+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:31:26.489+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:26.489+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:31:26.510+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:26.510+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:31:26.527+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.355 seconds
+[2025-08-01T03:31:56.661+0000] {processor.py:161} INFO - Started process (PID=166) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:31:56.662+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:31:56.664+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:56.664+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:31:56.946+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:56.945+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:31:56.946+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:56.946+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:31:56.950+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:31:56.975+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:56.975+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:31:56.999+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:31:56.999+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:31:57.017+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.360 seconds
+[2025-08-01T03:32:27.146+0000] {processor.py:161} INFO - Started process (PID=176) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:32:27.148+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:32:27.149+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:27.149+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:32:27.438+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:27.438+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:32:27.439+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:27.439+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:32:27.443+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:32:27.468+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:27.467+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:32:27.491+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:27.491+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:32:27.509+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.367 seconds
+[2025-08-01T03:32:57.652+0000] {processor.py:161} INFO - Started process (PID=186) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:32:57.655+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:32:57.661+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:57.660+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:32:57.953+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:57.952+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:32:57.953+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:57.953+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:32:57.957+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:32:57.982+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:57.982+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:32:58.004+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:32:58.003+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:32:58.020+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.375 seconds
+[2025-08-01T03:33:28.144+0000] {processor.py:161} INFO - Started process (PID=196) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:33:28.146+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:33:28.148+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:28.148+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:33:28.439+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:28.438+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:33:28.440+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:28.440+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:33:28.443+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:33:28.471+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:28.470+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:33:28.494+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:28.493+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:33:28.513+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.373 seconds
+[2025-08-01T03:33:58.663+0000] {processor.py:161} INFO - Started process (PID=206) to work on /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:33:58.665+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mlops-pipeline_dag.py for tasks to queue
+[2025-08-01T03:33:58.668+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:58.667+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:33:59.166+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:59.164+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing data extraction script from API..." && bash $AIRFLOW_HOME/scripts/dataset/data_collect_script.sh
+[2025-08-01T03:33:59.167+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:59.166+0000] {templater.py:95} ERROR - Failed to resolve template field 'bash_command'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: echo "Executing feature engineering script..." && bash $AIRFLOW_HOME/scripts/feature/feature_engineering_script.sh
+[2025-08-01T03:33:59.174+0000] {processor.py:840} INFO - DAG(s) 'mlops_movie_rating_pipeline' retrieved from /opt/airflow/dags/mlops-pipeline_dag.py
+[2025-08-01T03:33:59.211+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:59.211+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-08-01T03:33:59.245+0000] {logging_mixin.py:188} INFO - [2025-08-01T03:33:59.244+0000] {dag.py:3834} INFO - Setting next_dagrun for mlops_movie_rating_pipeline to 2025-08-01 00:00:00+00:00, run_after=2025-08-02 00:00:00+00:00
+[2025-08-01T03:33:59.286+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mlops-pipeline_dag.py took 0.629 seconds

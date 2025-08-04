@@ -19,4 +19,5 @@ export SERVICES_MONITORING_CLIENT=$SERVICES_MONITORING_CLIENT
 # echo "PROJECT_ROOT=$PROJECT_ROOT"
 # echo "COMPOSE_FILE_PATH=$COMPOSE_FILE_PATH"
 
-docker compose -f $COMPOSE_FILE_PATH up -d
+# docker compose 실행 --build 옵션이 없으면 원격 저장소 docker를 먼저 pull 받게 된다
+docker compose -f $COMPOSE_FILE_PATH up --build -d

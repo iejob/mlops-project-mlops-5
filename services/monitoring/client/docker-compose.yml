@@ -2,16 +2,19 @@ services:
   monitoring-client:
     env_file:
       - ../../../.paths/paths.env
-    # image: monitoring-client:v0.1.0
+    image: monitoring-client:v0.1.0
     build:
       context: ${PROJECT_ROOT}/${SERVICES_MONITORING_CLIENT}/monitoring-client
       dockerfile: Dockerfile
     container_name: monitoring-client
     ports:
       - "8000:8000"
+    # 로컬 테스트
+    networks:
+      - monitoring-network
 
   node-exporter:
-    image: prom/node-exporter:latest
+    image: prom/node-exporter:v1.8.1
     container_name: node-exporter
     restart: always
     ports:
@@ -25,3 +28,22 @@ services:
       - '--path.sysfs=/host/sys'
       - '--path.rootfs=/rootfs'
       - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($|/)'
+    # 로컬 테스트
+    networks:
+      - monitoring-network
+
+  promtail:
+    image: grafana/promtail:2.9.1
+    container_name: promtail
+    volumes:
+      - ${PROJECT_ROOT}/logs:/app/logs:ro # 실제 로그 파일 위치 (읽기 전용)
+      - ./promtail/promtail-config.yml:/etc/promtail/config.yml:ro # 설정 파일
+    command: -config.file=/etc/promtail/config.yml
+    restart: unless-stopped
+    # 로컬 테스트
+    networks:
+      - monitoring-network
+# 로컬 테스트
+networks:
+  monitoring-network:
+    external: true

@@ -22,8 +22,8 @@ scrape_configs:                     # [필수] 스크랩 대상(Target) 목록
 # server3
   - job_name: 'server3-node-exporter'
     static_configs:
-      - targets: ['server2_ip:9100'] # 추후 실제 서버로 변경 예정
+      - targets: ['node-exporter:9100'] # 추후 실제 서버로 변경 예정
 
   - job_name: 'server3-metrics'
     static_configs:
-      - targets: ['server2_ip:8000'] # 추후 실제 서버로 변경 예정
+      - targets: ['monitoring-client:8000'] # 추후 실제 서버로 변경 예정

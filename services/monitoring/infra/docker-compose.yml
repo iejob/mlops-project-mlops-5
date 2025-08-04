@@ -1,14 +1,16 @@
 services:
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:v2.52.0
     container_name: prometheus
     ports:
       - "9090:9090"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - monitoring-network
 
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:10.4.2
     container_name: grafana
     ports:
       - "3000:3000"
@@ -16,3 +18,22 @@ services:
       - ../../../.paths/paths.env
     volumes:
       - ${HOME_DIR}/${GRAFANA_DATA_DIR}:/var/lib/grafana
+    networks:
+      - monitoring-network
+
+  loki:
+    image: grafana/loki:2.9.1
+    container_name: loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki/loki-config.yml:/etc/loki/local-config.yml
+      - ${HOME_DIR}/${LOKI_DATA_DIR}:/loki
+    command: -config.file=/etc/loki/local-config.yml -target=all
+    restart: unless-stopped
+    networks:
+      - monitoring-network
+
+networks:
+  monitoring-network:
+    external: true

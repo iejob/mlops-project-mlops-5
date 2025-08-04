@@ -9,6 +9,7 @@ x-airflow-common: &airflow-common
     context: .                                                                  # 빌드 컨텍스트를 프로젝트 루트 디렉토리(.)로 설정
     dockerfile: ${DOCKER_AIRFLOW}                                               # Dockerfile의 경로를 명시
   image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.8.2}                            # Airflow 공식 이미지, 환경변수로 버전 지정 가능
+  user: "1000:0"
   environment:
     AIRFLOW_UID: ${AIRFLOW_UID}                                                 # 컨테이너 내 실행 사용자 UID(기본값 50000)
     AIRFLOW_GID: ${AIRFLOW_GID}                                                 # 컨테이너 내 실행 사용자 GID(기본값 0)
@@ -87,6 +88,7 @@ services:
     <<: *airflow-common                       # 공통 설정 상속(anchor)
     command: >                                # webserver 실행(메인 UI)
       webserver --port 8080 --host 0.0.0.0
+    user: "1000:0"
     ports:
       - "8080:8080"                           # 호스트:컨테이너 포트(8080)
     healthcheck:
@@ -102,6 +104,7 @@ services:
   airflow-init:
     <<: *airflow-common
     command: bash -c "airflow db init && airflow users create --username admin --password admin --firstname admin --lastname admin --role Admin --email admin@example.com"
+    user: "1000:0"
     depends_on:
       postgres:
         condition: service_healthy
@@ -115,6 +118,7 @@ services:
   scheduler:
     <<: *airflow-common                       # 공통 설정 상속(anchor)
     command: scheduler                        # 스케줄러 프로세스(DAG 자동 실행)
+    user: "1000:0"
     healthcheck:
        test: ["CMD-SHELL", "airflow jobs check --job-type SchedulerJob --hostname airflow-scheduler"]
     restart: on-failure                       # 장애 시 재시작
@@ -125,6 +129,7 @@ services:
   worker:
     <<: *airflow-common                       # 공통 설정 상속(anchor)
     command: celery worker                    # 워커 프로세스(태스크 분산 실행)
+    user: "1000:0"
     restart: on-failure                       # 장애 시 재시작
 
   # --------------------------------
@@ -132,6 +137,7 @@ services:
   # --------------------------------
   flower:
     image: mher/flower:1.2.0                  # Flower 공식 이미지(버전 1.2.0)
+    user: "1000:0"
     environment:
       CELERY_BROKER_URL: ${AIRFLOW__CELERY__BROKER_URL}    # 브로커 주소
       CELERY_RESULT_BACKEND: ${AIRFLOW__CELERY__RESULT_BACKEND} # 결과 저장소 주소

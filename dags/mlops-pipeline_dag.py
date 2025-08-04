@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 from scripts.data_prepare.pipeline_tasks import extract_data_task
 from scripts.train.pipeline_tasks import train_task
-from scripts.train.pipeline_tasks import run_train
+from scripts.train.pipeline_tasks import all_pipeline_task
 
 # DAG 기본 설정
 with DAG(
@@ -33,4 +33,4 @@ with DAG(
     )
 
     # Task 간의 의존성(Dependency) 정의
-    extract_data_task >> preprocestrain_task
+    extract_data_task >> train_task

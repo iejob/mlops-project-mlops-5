@@ -6,7 +6,9 @@ from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 
 # 파이프라인에서 사용할 개별 작업 함수 임포트
-from scripts.airflow.pipeline_tasks import extract_data_task, train_task, all_pipeline_task
+from scripts.airflow.pipeline_tasks import popular_movie_data_engineering_task
+from scripts.airflow.pipeline_tasks import model_train_task
+from scripts.airflow.pipeline_tasks import model_inference_task
 
 # ================ DAG 스케줄 예시 ==================
 # schedule_interval 주요 예시
@@ -47,23 +49,32 @@ with DAG(
     # 1. 데이터 추출/전처리/저장
     # ---------------------------
     # extract_data_task: 외부 데이터 수집, 전처리, 저장을 담당하는 함수
-    data_extraction_preprocessing_task = PythonOperator(
-        task_id='extract_data',              # 태스크 ID(유니크)
-        python_callable=extract_data_task,   # 실행 함수
+    popular_movie_data_engineering_task = PythonOperator(
+        task_id='extract_data',                                 # 태스크 ID(유니크)
+        python_callable=popular_movie_data_engineering_task,    # 실행 함수
     )
 
     # ---------------------------
     # 2. 모델 학습 (or 파이프라인 학습)
     # ---------------------------
     # train_task: 머신러닝/딥러닝 모델을 학습하는 함수
-    data_analysis_train_task = PythonOperator(
-        task_id='train_model',               # 태스크 ID
-        python_callable=train_task,          # 실행 함수
+    model_train_task = PythonOperator(
+        task_id='train_model',                  # 태스크 ID
+        python_callable=model_train_task,       # 실행 함수
+    )
+    
+    # ---------------------------
+    # 3. 모델 추론 결과
+    # ---------------------------
+    # inference_task: 머신러닝/딥러닝 모델을 추론하는 함수
+    model_inference_task = PythonOperator(
+        task_id='inference_model',               # 태스크 ID
+        python_callable=model_inference_task,    # 실행 함수
     )
 
     # --------------------------------
     # Task 간의 의존성(Dependency) 정의
     # --------------------------------
-    # data_extraction_preprocessing_task 완료 후 data_analysis_train_task 실행
-    data_extraction_preprocessing_task >> data_analysis_train_task
+    # 순서대로 실행되도록 의존성 설정
+    popular_movie_data_engineering_task >> model_train_task >> model_inference_task
 

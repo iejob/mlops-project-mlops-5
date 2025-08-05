@@ -16,9 +16,7 @@ x-airflow-common: &airflow-common
     AIRFLOW_HOME: ${AIRFLOW_HOME}                                               # Airflow 홈 디렉토리(모든 실행 기준 경로)
     AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${AIRFLOW__CORE__SQL_ALCHEMY_CONN}         # 내부 DB 연결(필수)
     AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY}                     # Fernet 암호화 키(필수)
-    AIRFLOW__CORE__EXECUTOR: ${AIRFLOW__CORE__EXECUTOR}                         # Executor 타입(Celery, Local 등)
-    AIRFLOW__CELERY__BROKER_URL: ${AIRFLOW__CELERY__BROKER_URL}                 # Celery 브로커 URL(예: redis)
-    AIRFLOW__CELERY__RESULT_BACKEND: ${AIRFLOW__CELERY__RESULT_BACKEND}         # Celery 결과 저장 Backend
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor                                      # 실행기(Executor) 설정(LocalExecutor)
     AIRFLOW__CORE__LOGGING_LEVEL: INFO                                          # 로그 레벨(INFO 고정)
     AIRFLOW__WEBSERVER__WEB_SERVER_PORT: ${AIRFLOW__WEBSERVER__WEB_SERVER_PORT} # Webserver 포트(8080)
     AIRFLOW__WEBSERVER__WEB_SERVER_HOST: ${AIRFLOW__WEBSERVER__WEB_SERVER_HOST} # Webserver 호스트(모든 IP에서 접근 가능)
@@ -131,9 +129,6 @@ services:
   flower:
     image: mher/flower:1.2.0                  # Flower 공식 이미지(버전 1.2.0)
     user: "1000:0"
-    environment:
-      CELERY_BROKER_URL: ${AIRFLOW__CELERY__BROKER_URL}    # 브로커 주소
-      CELERY_RESULT_BACKEND: ${AIRFLOW__CELERY__RESULT_BACKEND} # 결과 저장소 주소
     ports:
       - "${FLOWER_PORT:-5555}:5555"           # 호스트:컨테이너 포트(5555 기본값)
     networks:

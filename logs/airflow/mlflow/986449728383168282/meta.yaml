@@ -1,6 +1,0 @@
-artifact_location: file:///opt/airflow/scripts/utils/../../logs/mlflow/986449728383168282
-creation_time: 1754383737369
-experiment_id: '986449728383168282'
-last_update_time: 1754383737369
-lifecycle_stage: active
-name: movie-predictor

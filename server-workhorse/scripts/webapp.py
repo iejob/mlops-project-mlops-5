@@ -169,4 +169,3 @@ async def get_info():
 # 서버 직접 실행 시
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
-

@@ -1,0 +1,19 @@
+# -- 필수 패키지 --
+apache-airflow==2.8.2
+psycopg2-binary==2.9.9
+apache-airflow-providers-amazon==8.12.0
+
+# -- FastAPI 및 Uvicorn (API 서빙, 필요 시) --
+fastapi
+uvicorn
+
+# -- 기타 (실제 DAG에서 필요할 경우만 추가, PRD에는 직접적 요구 없음) --
+# nginx는 시스템 패키지(apt 설치)라서 python 패키지에 불필요
+
+# 필요시 dotenv 사용
+#python-dotenv==1.0.1
+
+# (DAG에서 boto3 직접 호출한다면 아래만 추가, 대부분 airflow provider가 알아서 포함)
+# boto3
+
+# --- ML/EDA(예: pandas, scikit-learn 등)는 절대 포함X ---

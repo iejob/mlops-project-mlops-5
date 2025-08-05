@@ -10,4 +10,5 @@ COPY requirements_server2.txt .
 
 # pip install은 airflow 사용자로 실행
 USER airflow
-RUN pip install --no-cache-dir -r requirements_server2.txt
+RUN pip install --no-cache-dir -r requirements_server2.txt \
+ && pip check

@@ -90,6 +90,11 @@ services:
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       AWS_REGION: ${AWS_REGION}
+    healthcheck:
+      test: ["CMD-SHELL", "echo", "healthcheck"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
     networks:
       - airflow_network
     depends_on:

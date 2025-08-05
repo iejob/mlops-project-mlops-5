@@ -18,6 +18,7 @@ from scripts.inference.inference import (
     load_checkpoint, init_model, inference, recommend_to_df
 )
 from scripts.postprocess.inference_to_db import read_db
+from scripts.main import run_popular_movie_pipeline, run_train, run_inference
 
 # FastAPI 앱 정의 및 CORS 설정
 app = FastAPI()
@@ -46,6 +47,36 @@ class InferenceInput(BaseModel):
 
 class InferenceBatchInput(BaseModel):
     batch: List[InferenceInput]
+
+
+# 데이터 수집/전처리 엔드 포인트
+@app.post("/run/prepare-data")
+def run_prepare_data():
+    try:
+        run_popular_movie_pipeline()
+        return {"result": "prepare-data finished"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# 모델 학습 엔드 포인트
+@app.post("/run/train")
+def run_training(model_name: str = "movie_predictor"):
+    try:
+        run_train(model_name)
+        return {"result": "train finished"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# 모델 추론 엔드 포인트
+@app.post("/run/model-inference")
+def run_batch_inference():
+    try:
+        run_inference()
+        return {"result": "model-inference finished"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # POST /predict
@@ -130,6 +161,10 @@ async def available_ids():
 async def health_check():
     return {"status": "ok"}
 
+
+@app.get("/info")
+async def get_info():
+    return {"service": "mlops-api", "version": "1.0.2"}
 
 # 서버 직접 실행 시
 if __name__ == "__main__":

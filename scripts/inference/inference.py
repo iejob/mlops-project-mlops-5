@@ -65,10 +65,12 @@ def model_validation(model_path):
 
 def make_inference_df(data):
     columns = "user_id content_id watch_seconds rating popularity".split()
-    return pd.DataFrame(
-        data=[data],
-        columns=columns
-    )
+    if data.ndim == 1:
+        return pd.DataFrame(data=[data], columns=columns)
+    elif data.ndim == 2:
+        return pd.DataFrame(data=data, columns=columns)
+    else:
+        raise ValueError(f"Invalid data shape for inference: {data.shape}")
 
 
 def inference(model, scaler, label_encoder, data, batch_size=1):

@@ -111,33 +111,6 @@ services:
       postgres:
         condition: service_healthy              # postgres 서비스 health check 통과 후 시작
 
-  # --------------------------------
-  # Airflow Worker(Celery)
-  # --------------------------------
-  worker:
-    <<: *airflow-common                       # 공통 설정 상속(anchor)
-    command: celery worker                    # 워커 프로세스(태스크 분산 실행)
-    user: "1000:0"
-    restart: on-failure                       # 장애 시 재시작
-    depends_on:
-      postgres:
-        condition: service_healthy              # postgres 서비스 health check 통과 후 시작
-
-  # --------------------------------
-  # Flower(Celery 작업 모니터링 UI)
-  # --------------------------------
-  flower:
-    image: mher/flower:1.2.0                  # Flower 공식 이미지(버전 1.2.0)
-    user: "1000:0"
-    ports:
-      - "${FLOWER_PORT:-5555}:5555"           # 호스트:컨테이너 포트(5555 기본값)
-    networks:
-      - mlops_network                       # 동일 네트워크(통신)
-    depends_on:
-      postgres:
-        condition: service_healthy              # postgres 서비스 health check 통과 후 시작
-    restart: on-failure                       # 장애 시 재시작
-
 # ==============================
 # Docker 볼륨 및 네트워크 정의
 # ==============================

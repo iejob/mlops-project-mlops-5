@@ -2,7 +2,9 @@
 apache-airflow==2.8.2
 psycopg2-binary==2.9.9
 apache-airflow-providers-amazon==8.12.0
-mlflow
+mlflow==2.17.2
+icecream==2.1.5
+tqdm==4.67.1
 
 # -- FastAPI 및 Uvicorn (API 서빙, 필요 시) --
 # fastapi==0.111.0

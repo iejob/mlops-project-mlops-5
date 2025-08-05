@@ -3,7 +3,7 @@
 # ==============================
 services:
   # --------------------------------
-  # PostgreSQL(Airflow 내부 DB)
+  # 데이터 수집/전처리 후 PostgreSQL 저장
   # --------------------------------
   mlops-extract-data:
     image: postgres:13                          # PostgreSQL 공식 이미지(버전 13)
@@ -67,6 +67,7 @@ services:
       dockerfile: ${DOCKER_API}
     image: jkim1209/mlops-api:1.0.2
     container_name: mlops-api
+    command: uvicorn scripts.webapp:app --host 0.0.0.0 --port 8000
     ports:
       - "8000:8000"
     env_file:

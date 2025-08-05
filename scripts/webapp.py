@@ -141,7 +141,7 @@ async def predict_batch(input_batch: InferenceBatchInput):
 @app.get("/latest-recommendations")
 async def latest_recommendations(k: int = 5):
     try:
-        result = read_db("mlops_project_db", "recommend", k=k)
+        result = read_db("postgres", "recommend", k=k)
         return {"recent_recommend_content_id": result}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

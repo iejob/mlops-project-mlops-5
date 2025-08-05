@@ -7,7 +7,7 @@ from airflow.utils.dates import days_ago
 from datetime import datetime, timedelta
 
 # pipeline_tasks.py에서 메서드 import
-from pipeline_tasks import (
+from scripts.airflow.pipeline_tasks import (
     call_run_prepare_data_api,
     call_run_train_api,
     call_run_model_inference_api,

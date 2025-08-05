@@ -1,0 +1,15 @@
+artifact_uri: file:///opt/airflow/scripts/utils/../../logs/mlflow/986449728383168282/760423b2e45f440995904e04e933d5f2/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '986449728383168282'
+lifecycle_stage: active
+run_id: 760423b2e45f440995904e04e933d5f2
+run_name: movie-predictor-004
+run_uuid: 760423b2e45f440995904e04e933d5f2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754384086427
+status: 1
+tags: []
+user_id: default

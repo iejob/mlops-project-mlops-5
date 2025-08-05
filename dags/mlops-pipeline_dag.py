@@ -3,9 +3,8 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
-from scripts.airflow.pipeline_tasks import extract_data_task
-from scripts.airflow.pipeline_tasks import train_task
-from scripts.airflow.pipeline_tasks import all_pipeline_task
+from scripts.airflow.pipeline_tasks import extract_data_task, train_task, all_pipeline_task
+
 
 # DAG 기본 설정
 with DAG(

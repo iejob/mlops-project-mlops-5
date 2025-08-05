@@ -22,7 +22,7 @@ x-airflow-common: &airflow-common
     AIRFLOW__CORE__LOGGING_LEVEL: INFO                                          # 로그 레벨(INFO 고정)
     AIRFLOW__WEBSERVER__WEB_SERVER_PORT: ${AIRFLOW__WEBSERVER__WEB_SERVER_PORT} # Webserver 포트(8080)
     AIRFLOW__WEBSERVER__WEB_SERVER_HOST: ${AIRFLOW__WEBSERVER__WEB_SERVER_HOST} # Webserver 호스트(모든 IP에서 접근 가능)
-    PYTHONPATH: ${SCRIPTS_DIR}
+    PYTHONPATH: /opt/airflow:/opt/airflow/scripts                               # Airflow 스크립트 경로 추가 
   env_file:
     - .env                                                                      # 민감정보, 환경변수 파일(.env)
     - ./.paths/paths.env                                                        # 프로젝트별 경로 관리 환경변수 파일
@@ -34,6 +34,7 @@ x-airflow-common: &airflow-common
     - ${DATA_PROCESSED_DIR}:/opt/airflow/data/processed                         # 전처리(피처) 데이터 경로
     - ${PLUGINS_AIRFLOW_DIR}:/opt/airflow/plugins                               # Airflow 플러그인(추가 코드 등)
     - ${DATA_AIRFLOW_TEMP_DIR}:/opt/airflow/data/temp                           # 임시 데이터 경로
+    - ./scripts:/opt/airflow/scripts                                            # Airflow 스크립트 경로(파이썬 코드)
   networks:
     - airflow_network             # Airflow 전용 도커 네트워크(브리지)
   restart: on-failure             # 컨테이너 장애 시 재시작

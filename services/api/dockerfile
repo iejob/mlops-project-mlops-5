@@ -10,10 +10,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # requirements 설치
-COPY ../../requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ../../ ./
+COPY . .
 
 # FastAPI 실행
 CMD ["uvicorn", "scripts.webapp:app", "--host", "0.0.0.0", "--port", "8000"]

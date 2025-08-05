@@ -155,3 +155,6 @@ nosetests.xml # Test results
 
 # Other folders
 projects/
+
+./logs/*
+./.paths/*

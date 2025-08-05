@@ -26,3 +26,25 @@ scrape_configs:
       - source_labels: [__path__]
         regex: '.*/([^/]+)\.log'
         target_label: filename
+
+    # 로그를 파싱하여 메트릭을 생성하는 파이프라인
+    pipeline_stages:
+      - regex:
+          expression: '(?i).*\[(?P<level>ERROR|WARN)\].*' # 'level' 변수명에 [ERROR] 또는 [WARN] 값을 캡쳐
+      - labels:
+          level:
+      - metrics:
+          log_errors:
+            source: level
+            type: Counter
+            description: "Total count of ERROR level logs"
+            config:
+              value: "ERROR"
+              action: inc
+          log_warnings:
+            source: level
+            type: Counter
+            description: "Total count of WARN level logs"
+            config:
+              value: "WARN"
+              action: inc

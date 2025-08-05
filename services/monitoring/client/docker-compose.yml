@@ -35,6 +35,8 @@ services:
   promtail:
     image: grafana/promtail:2.9.1
     container_name: promtail
+    ports:
+      - "9080:9080"
     volumes:
       - ${PROJECT_ROOT}/logs:/app/logs:ro # 실제 로그 파일 위치 (읽기 전용)
       - ./promtail/promtail-config.yml:/etc/promtail/config.yml:ro # 설정 파일

@@ -57,7 +57,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # DB 비밀번호
       POSTGRES_DB: ${POSTGRES_DB}             # DB 이름
     volumes:
-      - postgres_data:/var/lib/postgresql/data # 데이터 파일을 로컬 볼륨에 영구 저장
+      - db_data:/var/lib/postgresql/data      # 데이터 파일을 로컬 볼륨에 영구 저장
     networks:
       - airflow_network                       # 동일 네트워크(통신)
     healthcheck:
@@ -66,6 +66,34 @@ services:
       timeout: 5s                             # 타임아웃
       retries: 5                              # 최대 재시도
     restart: on-failure                       # 장애 시 재시작
+
+  # --------------------------------
+  # 모델 학습 및 추론 서비스
+  # --------------------------------
+  model_inference:
+    build:
+      context: ../../                                     # 빌드 컨텍스트를 상위 디렉토리로 설정
+      dockerfile: ${DOCKER_MODEL_INFERENCE}               # Dockerfile 경로
+    image: jkim1209/mlops-project:1.2.0                   # 이미지 이름 및 태그
+    container_name: model_inference                       # 컨테이너 이름
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_PORT: ${DB_PORT}
+
+      TMDB_API_KEY: ${TMDB_API_KEY}
+      TMDB_BASE_URL: ${TMDB_BASE_URL}
+
+      S3_BUCKET_NAME: ${S3_BUCKET_NAME}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
+    networks:
+      - airflow_network
+    depends_on:
+      - postgres                                        # PostgreSQL 준비 완료 후 시작   
 
   # --------------------------------
   # Redis(Celery 브로커)
@@ -80,6 +108,8 @@ services:
       timeout: 5s                             # 타임아웃
       retries: 5                              # 최대 재시도
     restart: on-failure                       # 장애 시 재시작
+    depends_on:
+      - model_inference
 
   # --------------------------------
   # Airflow Webserver(관리 UI)
@@ -97,6 +127,8 @@ services:
       timeout: 10s                            # 타임아웃
       retries: 5                              # 최대 재시도
     restart: on-failure                       # 장애 시 재시작
+    depends_on:
+      - model_inference
 
   # --------------------------------
   # Airflow DB/권한 초기화(1회)
@@ -106,9 +138,11 @@ services:
     command: bash -c "airflow db init && airflow users create --username admin --password admin --firstname admin --lastname admin --role Admin --email admin@example.com"
     user: "1000:0"
     depends_on:
-      postgres:
+      postgres:                     # PostgreSQL 준비 완료 후 실행
         condition: service_healthy
-      redis:
+      model_inference:              # 모델 학습 서비스 준비 완료 후 실행
+        condition: service_healthy
+      redis:                        # Redis 준비 완료 후 실행
         condition: service_healthy
 
 
@@ -122,6 +156,8 @@ services:
     healthcheck:
        test: ["CMD-SHELL", "airflow jobs check --job-type SchedulerJob --hostname airflow-scheduler"]
     restart: on-failure                       # 장애 시 재시작
+    depends_on:
+      - model_inference
 
   # --------------------------------
   # Airflow Worker(Celery)
@@ -131,6 +167,8 @@ services:
     command: celery worker                    # 워커 프로세스(태스크 분산 실행)
     user: "1000:0"
     restart: on-failure                       # 장애 시 재시작
+    depends_on:
+      - model_inference
 
   # --------------------------------
   # Flower(Celery 작업 모니터링 UI)

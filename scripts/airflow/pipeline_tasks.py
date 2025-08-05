@@ -147,7 +147,7 @@ def extract_data_task(**context):
 # 데이터 분석 및 모델 학습 작업
 def train_task(**context):
     # 필요시 context에서 파라미터 전달
-    run_train(model_name, batch_size, dim, num_epochs)
+    run_train(model_name="movie_predictor", batch_size=16, dim=256, num_epochs=100)
 
 # 전체 파이프라인 실행 작업
 def all_pipeline_task(**context):

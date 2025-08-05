@@ -72,7 +72,7 @@ services:
   # --------------------------------
   model_inference:
     build:
-      context: ../../                                     # 빌드 컨텍스트를 상위 디렉토리로 설정
+      context: .                                          # 빌드 컨텍스트를 상위 디렉토리로 설정
       dockerfile: ${DOCKER_MODEL_INFERENCE}               # Dockerfile 경로
     image: jkim1209/mlops-project:1.2.0                   # 이미지 이름 및 태그
     container_name: model_inference                       # 컨테이너 이름

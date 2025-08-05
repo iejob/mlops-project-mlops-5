@@ -38,11 +38,6 @@ x-airflow-common: &airflow-common
   networks:
     - mlops_network             # Airflow 전용 도커 네트워크(브리지)
   restart: on-failure             # 컨테이너 장애 시 재시작
-  depends_on:                     # 의존 서비스 준비될 때까지 대기
-    postgres:
-      condition: service_healthy  # postgres 서비스 health check 통과 후 시작
-    redis:
-      condition: service_healthy  # redis 서비스 health check 통과 후 시작
 
 # ==============================
 # 서비스(컨테이너) 정의
@@ -64,8 +59,6 @@ services:
       timeout: 10s                            # 타임아웃
       retries: 5                              # 최대 재시도
     restart: on-failure                       # 장애 시 재시작
-    depends_on:
-      - model_inference
 
   # --------------------------------
   # Airflow DB/권한 초기화(1회)
@@ -74,14 +67,6 @@ services:
     <<: *airflow-common
     command: bash -c "airflow db init && airflow users create --username admin --password admin --firstname admin --lastname admin --role Admin --email admin@example.com"
     user: "1000:0"
-    depends_on:
-      postgres:                     # PostgreSQL 준비 완료 후 실행
-        condition: service_healthy
-      model_inference:              # 모델 학습 서비스 준비 완료 후 실행
-        condition: service_healthy
-      redis:                        # Redis 준비 완료 후 실행
-        condition: service_healthy
-
 
   # --------------------------------
   # Airflow Scheduler(DAG 실행 트리거)
@@ -93,8 +78,6 @@ services:
     healthcheck:
        test: ["CMD-SHELL", "airflow jobs check --job-type SchedulerJob --hostname airflow-scheduler"]
     restart: on-failure                       # 장애 시 재시작
-    depends_on:
-      - model_inference
 
   # --------------------------------
   # Airflow Worker(Celery)
@@ -104,8 +87,6 @@ services:
     command: celery worker                    # 워커 프로세스(태스크 분산 실행)
     user: "1000:0"
     restart: on-failure                       # 장애 시 재시작
-    depends_on:
-      - model_inference
 
   # --------------------------------
   # Flower(Celery 작업 모니터링 UI)
@@ -114,15 +95,12 @@ services:
     image: mher/flower:1.2.0                  # Flower 공식 이미지(버전 1.2.0)
     user: "1000:0"
     environment:
-      CELERY_BROKER_URL: ${AIRFLOW__CELERY__BROKER_URL}    # 브로커 주소
+      CELERY_BROKER_URL: ${AIRFLOW__CELERY__BROKER_URL}         # 브로커 주소
       CELERY_RESULT_BACKEND: ${AIRFLOW__CELERY__RESULT_BACKEND} # 결과 저장소 주소
     ports:
       - "${FLOWER_PORT:-5555}:5555"           # 호스트:컨테이너 포트(5555 기본값)
     networks:
-      - mlops_network                       # 동일 네트워크(통신)
-    depends_on:
-      - redis                                 # Redis 준비 완료 후 시작
-      - worker                                # 워커 준비 완료 후 시작
+      - mlops_network                         # 동일 네트워크(통신)
     restart: on-failure                       # 장애 시 재시작
 
 # ==============================
@@ -132,5 +110,5 @@ volumes:
   postgres_data:      # PostgreSQL 데이터 파일 영구 저장용 도커 볼륨
 
 networks:
-  mlops_network:    # Airflow, DB, Redis, Flower 등 모든 서비스가 연결되는 네트워크
+  mlops_network:      # Airflow, DB, Redis, Flower 등 모든 서비스가 연결되는 네트워크
     driver: bridge    # 브리지 네트워크(컨테이너 통신 전용)

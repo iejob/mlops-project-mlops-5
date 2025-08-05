@@ -1,7 +1,9 @@
 import requests
 import logging
+import os
 
 # server1 API 베이스 URL 설정
+SERVER_WORKHORSE = os.getenv('SERVER_WORKHORSE')
 SERVER1_API_BASE = f"http://{SERVER_WORKHORSE}:8000"
 
 # -----------------------------

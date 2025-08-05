@@ -57,7 +57,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # DB 비밀번호
       POSTGRES_DB: ${POSTGRES_DB}             # DB 이름
     volumes:
-      - db_data:/var/lib/postgresql/data      # 데이터 파일을 로컬 볼륨에 영구 저장
+      - postgres_data:/var/lib/postgresql/data      # 데이터 파일을 로컬 볼륨에 영구 저장
     networks:
       - airflow_network                       # 동일 네트워크(통신)
     healthcheck:

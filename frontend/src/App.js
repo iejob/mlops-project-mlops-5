@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import API_BASE_URL from './config';
 
 function App() {
   const [latestRecommendations, setLatestRecommendations] = useState([]);
-  const [expanded, setExpanded] = useState({}); // 줄거리 토글 상태
+  const [expanded, setExpanded] = useState({});
 
-  // 줄거리 토글
   const toggleOverview = (contentId) => {
     setExpanded((prev) => ({
       ...prev,
@@ -13,18 +13,16 @@ function App() {
     }));
   };
 
-  // 최신 추천 영화 불러오기
   useEffect(() => {
-    console.log("API ENDPOINT:", process.env.REACT_APP_API_ENDPOINT);
+    console.log("API ENDPOINT:", API_BASE_URL);
 
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/latest-recommendations`)
+    fetch(`${API_BASE_URL}/latest-recommendations`)
       .then(res => res.json())
       .then(data => {
         setLatestRecommendations(data.recent_recommendations || []);
       });
   }, []);
 
-  // 추천 카드 렌더링
   const renderCards = (recommendations) => (
     <div className="recommendation-grid">
       {recommendations.map((item) => (

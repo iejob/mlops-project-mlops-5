@@ -152,3 +152,20 @@ __pycache__/  # Python cache files
 *.cover       # Coverage reports
 nosetests.xml # Test results
 *.log         # Log files
+
+### react ###
+.DS_*
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+env.js

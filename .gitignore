@@ -156,7 +156,6 @@ nosetests.xml # Test results
 
 ### react ###
 .DS_*
-*.log
 logs
 **/*.backup.*
 **/*.back.*
@@ -170,7 +169,4 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/react
-
-# Other folders
-projects/
+env.js

@@ -10,6 +10,7 @@ from scripts.utils.utils import project_path
 class WatchLogDataset:
     def __init__(self, df, scaler=None, label_encoder=None):
         self.df = df
+        self.df['user_id'] = df['user_id'].astype(int)
         self.features = None
         self.labels = None
         self.scaler = scaler

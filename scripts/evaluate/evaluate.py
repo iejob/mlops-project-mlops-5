@@ -23,4 +23,8 @@ def evaluate(model, val_loader):
         total += len(true)
 
     accuracy = correct / total if total > 0 else 0
-    return total_loss / len(val_loader), all_predictions, accuracy
+    
+    # 전체 Loss 합계를 전체 데이터 수로 나누어 정확한 평균 Loss를 계산합니다.
+    avg_loss = total_loss / total if total > 0 else 0
+    
+    return avg_loss, all_predictions, accuracy

@@ -58,12 +58,18 @@ class InferenceInput(BaseModel):
     watch_seconds: int
     rating: float
     popularity: float
+    
+    
+@app.get("/")
+async def read_root():
+    """API 상태 확인을 위한 루트 엔드포인트입니다."""
+    return {"message": "MLOps API is running!"}    
 
 # 데이터 수집 및 전처리 파이프라인 실행 엔드포인트
 @app.post("/run/prepare-data")
 def run_prepare_data():
     try:
-        run_popular_movie_pipeline()  # main.py의 함수 호출
+        run_popular_movie_pipeline()
         return {"result": "prepare-data finished"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -72,7 +78,7 @@ def run_prepare_data():
 @app.post("/run/train")
 def run_training(model_name: str = "movie_predictor"):
     try:
-        run_train(model_name)  # main.py의 함수 호출
+        run_train(model_name)
         return {"result": "train finished"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -81,7 +87,7 @@ def run_training(model_name: str = "movie_predictor"):
 @app.post("/run/model-inference")
 def run_batch_inference():
     try:
-        run_inference()  # main.py의 함수 호출
+        run_inference()
         return {"result": "model-inference finished"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

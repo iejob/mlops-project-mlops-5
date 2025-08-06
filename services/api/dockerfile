@@ -6,7 +6,7 @@ WORKDIR /mlops-project
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
-    gcc \
+    gcc curl \
     && rm -rf /var/lib/apt/lists/*
 
 # requirements 설치

@@ -161,5 +161,6 @@ projects/
 .paths/*
 
 # User Add
-# !./mlops-project/logs/*
+!logs/*
+!./mlops-project/logs/*
 !./mlops-project/services/*

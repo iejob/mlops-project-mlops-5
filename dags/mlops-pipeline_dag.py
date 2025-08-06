@@ -75,11 +75,11 @@ with DAG(
     def do_predict_fn():
         # payload 예시 (테스트용/실제값으로 교체)
         payload = {
-            "user_id": 1,
-            "content_id": 12345,
-            "watch_seconds": 7200,
-            "rating": 4.5,
-            "popularity": 9.9
+            "user_id" : 1,
+            "content_id" : 238,
+            "watch_seconds" : 600,
+            "rating" : 8.5,
+            "popularity" : 100.0
         }
         return call_predict_api(payload)
     

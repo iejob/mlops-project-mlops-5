@@ -20,6 +20,7 @@ x-airflow-common: &airflow-common
     AIRFLOW__CORE__LOGGING_LEVEL: INFO                                          # 로그 레벨(INFO 고정)
     AIRFLOW__WEBSERVER__WEB_SERVER_PORT: ${AIRFLOW__WEBSERVER__WEB_SERVER_PORT} # Webserver 포트(8080)
     AIRFLOW__WEBSERVER__WEB_SERVER_HOST: ${AIRFLOW__WEBSERVER__WEB_SERVER_HOST} # Webserver 호스트(모든 IP에서 접근 가능)
+    SERVER_1_IP_ADDRESS: ${SERVER_1_IP_ADDRESS}                                 # 서버 1 IP 주소
     PYTHONPATH: /opt/airflow:/opt/airflow/scripts                               # Airflow 스크립트 경로 추가 
   env_file:
     - ${ENV_PATH}                                                                      # 민감정보, 환경변수 파일(${ENV_PATH})

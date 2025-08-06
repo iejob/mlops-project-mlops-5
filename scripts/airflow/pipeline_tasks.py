@@ -4,7 +4,7 @@ import os
 
 # server1 API 베이스 URL 설정
 SERVER_WORKHORSE = os.getenv('SERVER_WORKHORSE')
-SERVER1_API_BASE = f"http://{SERVER_WORKHORSE}:8000"
+SERVER1_API_BASE = f"http://13.220.161.211:8000"
 
 # -----------------------------
 # 파이프라인 단계별 POST 엔드포인트 추가

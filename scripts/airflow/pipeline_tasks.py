@@ -4,6 +4,8 @@ import os
 
 # server1 API 베이스 URL 설정
 SERVER_WORKHORSE = os.getenv('SERVER_WORKHORSE')
+if not SERVER_WORKHORSE:
+    raise RuntimeError("SERVER_WORKHORSE 환경변수가 설정되지 않았습니다.")
 SERVER1_API_BASE = f"http://{SERVER_WORKHORSE}:8000"
 
 # -----------------------------

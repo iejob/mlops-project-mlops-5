@@ -10,6 +10,11 @@ from scripts.utils.utils import project_path
 class WatchLogDataset:
     def __init__(self, df, scaler=None, label_encoder=None):
         self.df = df
+    
+        # airflow 자동화 파이프라인에서 실행시 user_id가 float로 되어있을 수 있음
+        # int 형태로 변환 되도록 설정
+        df['user_id'] = df['user_id'].astype(int)
+        
         self.features = None
         self.labels = None
         self.scaler = scaler
@@ -65,6 +70,7 @@ class WatchLogDataset:
 def read_dataset(top_k_labels=100):
     path = os.path.join(project_path(), "data", "raw", "watch_log.csv")
     df = pd.read_csv(path)
+    
     top_labels = df["content_id"].value_counts().nlargest(top_k_labels).index
     df = df[df["content_id"].isin(top_labels)].copy()
     return df

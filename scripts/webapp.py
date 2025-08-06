@@ -34,8 +34,15 @@ app.add_middleware(
 load_dotenv()
 
 # 모델 불러오기 (서버 시작 시 1회)
-checkpoint = load_checkpoint()
-model, scaler, label_encoder = init_model(checkpoint)
+try:
+    checkpoint = load_checkpoint()
+    model, scaler, label_encoder = init_model(checkpoint)
+except Exception as e:
+    import traceback
+    print("=== 모델/스케일러/라벨 인코더 로딩 실패 ===")
+    traceback.print_exc()
+    # 임시로 None 할당 (추론/학습 엔드포인트는 500을 반환하도록)
+    model, scaler, label_encoder = None, None, None
 
 # 요청 데이터 스키마 정의
 class InferenceInput(BaseModel):
@@ -159,7 +166,9 @@ async def available_ids():
 # Get /health
 @app.get("/health")
 async def health_check():
-    return {"status": "ok"}
+    # model, scaler, label_encoder 등이 None이면 warning 메시지 추가
+    status = "ok" if all([model, scaler, label_encoder]) else "degraded"
+    return {"status": status}
 
 
 @app.get("/info")

@@ -4,7 +4,7 @@
 BASE_LOG_DIR="logs"
 
 # 서비스 리스트 (컨테이너 명과 동일해야 함)
-SERVICES=("my-mlops-api" "my-mlops-db" "my-mlops-frontend" "my-mlops-model")
+SERVICES=("webserver" "scheduler" "postgres" "airflow-init")
 
 # logs 디렉토리 생성
 mkdir -p $BASE_LOG_DIR

@@ -3,18 +3,29 @@ import logging
 import os
 
 # server1 API 베이스 URL 설정
-SERVER_WORKHORSE = os.getenv('SERVER_WORKHORSE')
-SERVER1_API_BASE = f"http://13.220.161.211:8000"
+SERVER_1_IP_ADDRESS = os.getenv('SERVER_1_IP_ADDRESS')
+SERVER1_API_BASE = f"http://{SERVER_1_IP_ADDRESS}:8000"
 
 # -----------------------------
 # 파이프라인 단계별 POST 엔드포인트 추가
 # -----------------------------
 
+# API 호출 전 서버 베이스 URL 유효성 검사
+def validate_api_base_url():
+    try:
+        if not SERVER1_API_BASE:
+            raise ValueError("SERVER_WORKHORSE environment variable is not set.")
+    except Exception as e:
+        logging.error(f"Invalid API base URL: {e}")
+        raise
+
 # 데이터 준비 API 호출
 def call_run_prepare_data_api():
     try:
+        print('SERVER1_API_BASE: ', SERVER1_API_BASE)
         resp = requests.post(f"{SERVER1_API_BASE}/run/prepare-data", timeout=600)
         resp.raise_for_status()
+        logging.info(f"Prepare data API successful: {resp.json()}")
         return resp.json()
     except Exception as e:
         logging.error(f"Prepare data API failed: {e}")
@@ -26,6 +37,7 @@ def call_run_train_api(model_name="movie_predictor"):
         params = {"model_name": model_name}
         resp = requests.post(f"{SERVER1_API_BASE}/run/train", params=params, timeout=1200)
         resp.raise_for_status()
+        logging.info(f"Train API successful: {resp.json()}")
         return resp.json()
     except Exception as e:
         logging.error(f"Train API failed: {e}")
@@ -36,6 +48,7 @@ def call_run_model_inference_api():
     try:
         resp = requests.post(f"{SERVER1_API_BASE}/run/model-inference", timeout=600)
         resp.raise_for_status()
+        logging.info(f"Model inference API successful: {resp.json()}")
         return resp.json()
     except Exception as e:
         logging.error(f"Model inference API failed: {e}")
@@ -46,6 +59,7 @@ def call_health_api():
     try:
         resp = requests.get(f"{SERVER1_API_BASE}/health", timeout=10)
         resp.raise_for_status()
+        logging.info(f"Health check successful: {resp.json()}")
         return resp.json()
     except Exception as e:
         logging.error(f"Health check failed: {e}")
@@ -56,6 +70,7 @@ def call_predict_api(payload):
     try:
         resp = requests.post(f"{SERVER1_API_BASE}/predict", json=payload, timeout=30)
         resp.raise_for_status()
+        logging.info(f"Predict API successful: {resp.json()}")
         return resp.json()  # 예측 결과 반환
     except Exception as e:
         logging.error(f"Predict API failed: {e}")
@@ -66,6 +81,7 @@ def call_info_api():
     try:
         resp = requests.get(f"{SERVER1_API_BASE}/info", timeout=5)
         resp.raise_for_status()
+        logging.info(f"Info API successful: {resp.json()}")
         return resp.json()
     except Exception as e:
         logging.error(f"Info API failed: {e}")

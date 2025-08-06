@@ -19,7 +19,7 @@ services:
       dockerfile: services/model_inference/dockerfile
       args:
         EXCLUDE_FRONTEND: true
-    image: jkim1209/mlops-model:1.4.3
+    image: jkim1209/mlops-model:1.4.4
     container_name: my-mlops-model
     environment:
       DB_HOST: my-mlops-db

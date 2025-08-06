@@ -25,3 +25,13 @@ scrape_configs:                     # [필수] 스크랩 대상(Target) 목록
   - job_name: 'log-metrics'
     static_configs:
       - targets: ['promtail:9080']
+
+# alertmanager
+rule_files:
+  - 'alert-rules.yml'
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - "alertmanager:9093"

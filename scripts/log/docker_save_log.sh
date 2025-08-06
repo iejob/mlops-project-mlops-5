@@ -14,7 +14,7 @@ do
   # 각 서비스 하위 폴더 생성
   mkdir -p $BASE_LOG_DIR/$service
   # 로그 파일 저장
-  docker-compose logs --tail 1000 $service > $BASE_LOG_DIR/$service/$(date +%Y%m%d_%H%M%S).log
+  docker-compose logs --tail 1000 $service > $BASE_LOG_DIR/$service/$service_$(date +%Y%m%d_%H%M%S).log
 done
 
 echo "로그 저장 완료!"

@@ -38,7 +38,7 @@ receivers:
           *상세 정보:*
           • 🖥️ *host*: {{ .CommonLabels.host }}
           • 📋 *filename*: {{ .CommonLabels.filename }}
-        api_url: 'https://hooks.slack.com/services/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'  # Webhook URL
+        api_url: '${WEBHOOK_ERROR_URL}'
 
   - name: slack-warning
     slack_configs:
@@ -53,4 +53,4 @@ receivers:
           *상세 정보:*
           • 🖥️ *host*: {{ .CommonLabels.host }}
           • 📋 *filename*: {{ .CommonLabels.filename }}
-        api_url: 'https://hooks.slack.com/services/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'  # Webhook URL
+        api_url: '${WEBHOOK_WARN_URL}'

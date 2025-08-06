@@ -8,7 +8,7 @@ positions:
   filename: /tmp/positions.yml  # Promtail이 읽은 로그 위치 저장 파일
 
 clients:
-  - url: http://loki:3100/loki/api/v1/push  # Loki Push API 주소
+  - url: http://${SERVER_2_IP}:3100/loki/api/v1/push  # Loki Push API 주소
 
 scrape_configs:
   - job_name: app_logs

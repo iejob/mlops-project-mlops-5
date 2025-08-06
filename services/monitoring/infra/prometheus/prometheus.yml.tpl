@@ -6,21 +6,20 @@ scrape_configs:                     # [필수] 스크랩 대상(Target) 목록
 # server1
   - job_name: 'server1-node-exporter'
     static_configs:
-      - targets: ['server1_ip:9100'] # 추후 실제 서버로 변경 예정
+      - targets: ['${SERVER_1_IP}:9100'] # 추후 실제 서버로 변경 예정
 
   - job_name: 'server1-metrics'
     static_configs:
-      - targets: ['server1_ip:8000'] # 추후 실제 서버로 변경 예정
+      - targets: ['${SERVER_1_IP}:8000'] # 추후 실제 서버로 변경 예정
 
-# server3
-  - job_name: 'server3-node-exporter'
+  - job_name: 'log-metrics' # promtail metrics (로그 기반 메트릭)
+    static_configs:
+      - targets: ['${SERVER_1_IP}:9080']
+
+# server2
+  - job_name: 'server2-node-exporter'
     static_configs:
       - targets: ['node-exporter:9100'] # 추후 실제 서버로 변경 예정
-
-# promtail metrics (로그 기반 메트릭)
-  - job_name: 'log-metrics'
-    static_configs:
-      - targets: ['promtail:9080']
 
 # alertmanager
 rule_files:

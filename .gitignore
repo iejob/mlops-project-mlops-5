@@ -175,5 +175,5 @@ sketch
 # Other folders
 projects/
 
-./logs/*
-./.paths/*
+!logs/*
+./paths/*

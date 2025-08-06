@@ -30,7 +30,6 @@ x-airflow-common: &airflow-common
     - ${DATA_AIRFLOW_DIR}:/opt/airflow/data                                     # Airflow 데이터(공용)
     - ${DATA_RAW_DIR}:/opt/airflow/data/raw                                     # 원본(raw) 데이터 경로
     - ${DATA_PROCESSED_DIR}:/opt/airflow/data/processed                         # 전처리(피처) 데이터 경로
-    - ${PLUGINS_AIRFLOW_DIR}:/opt/airflow/plugins                               # Airflow 플러그인(추가 코드 등)
     - ${DATA_AIRFLOW_TEMP_DIR}:/opt/airflow/data/temp                           # 임시 데이터 경로
     - ./scripts:/opt/airflow/scripts                                            # Airflow 스크립트 경로(파이썬 코드)
   networks:

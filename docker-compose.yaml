@@ -16,9 +16,7 @@ x-airflow-common: &airflow-common
     AIRFLOW_HOME: ${AIRFLOW_HOME}                                               # Airflow 홈 디렉토리(모든 실행 기준 경로)
     AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${AIRFLOW__CORE__SQL_ALCHEMY_CONN}         # 내부 DB 연결(필수)
     AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY}                     # Fernet 암호화 키(필수)
-    AIRFLOW__CORE__EXECUTOR: ${AIRFLOW__CORE__EXECUTOR}                         # Executor 타입(Celery, Local 등)
-    AIRFLOW__CELERY__BROKER_URL: ${AIRFLOW__CELERY__BROKER_URL}                 # Celery 브로커 URL(예: redis)
-    AIRFLOW__CELERY__RESULT_BACKEND: ${AIRFLOW__CELERY__RESULT_BACKEND}         # Celery 결과 저장 Backend
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor                                      # 실행기(Executor) 설정(LocalExecutor)
     AIRFLOW__CORE__LOGGING_LEVEL: INFO                                          # 로그 레벨(INFO 고정)
     AIRFLOW__WEBSERVER__WEB_SERVER_PORT: ${AIRFLOW__WEBSERVER__WEB_SERVER_PORT} # Webserver 포트(8080)
     AIRFLOW__WEBSERVER__WEB_SERVER_HOST: ${AIRFLOW__WEBSERVER__WEB_SERVER_HOST} # Webserver 호스트(모든 IP에서 접근 가능)
@@ -32,7 +30,6 @@ x-airflow-common: &airflow-common
     - ${DATA_AIRFLOW_DIR}:/opt/airflow/data                                     # Airflow 데이터(공용)
     - ${DATA_RAW_DIR}:/opt/airflow/data/raw                                     # 원본(raw) 데이터 경로
     - ${DATA_PROCESSED_DIR}:/opt/airflow/data/processed                         # 전처리(피처) 데이터 경로
-    - ${PLUGINS_AIRFLOW_DIR}:/opt/airflow/plugins                               # Airflow 플러그인(추가 코드 등)
     - ${DATA_AIRFLOW_TEMP_DIR}:/opt/airflow/data/temp                           # 임시 데이터 경로
     - ./scripts:/opt/airflow/scripts                                            # Airflow 스크립트 경로(파이썬 코드)
   networks:
@@ -41,8 +38,6 @@ x-airflow-common: &airflow-common
   depends_on:                     # 의존 서비스 준비될 때까지 대기
     postgres:
       condition: service_healthy  # postgres 서비스 health check 통과 후 시작
-    redis:
-      condition: service_healthy  # redis 서비스 health check 통과 후 시작
 
 # ==============================
 # 서비스(컨테이너) 정의
@@ -132,22 +127,6 @@ services:
       - mlops_network
     depends_on:
       - postgres                                        # PostgreSQL 준비 완료 후 시작
-  
-  # --------------------------------
-  # Redis(Celery 브로커)
-  # --------------------------------
-  redis:
-    image: redis:6.2-alpine                             # Redis 공식 경량 이미지
-    networks:
-      - mlops_network                                # 동일 네트워크(통신)
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]                # Redis 상태 체크
-      interval: 5s                                      # 체크 주기
-      timeout: 5s                                       # 타임아웃
-      retries: 5                                        # 최대 재시도
-    restart: on-failure                                 # 장애 시 재시작
-    depends_on:
-      - model_inference
 
   # --------------------------------
   # Airflow Webserver(관리 UI)
@@ -180,8 +159,6 @@ services:
         condition: service_healthy
       model_inference:              # 모델 학습 서비스 준비 완료 후 실행
         condition: service_healthy
-      redis:                        # Redis 준비 완료 후 실행
-        condition: service_healthy
 
 
   # --------------------------------
@@ -196,35 +173,6 @@ services:
     restart: on-failure                       # 장애 시 재시작
     depends_on:
       - model_inference
-
-  # --------------------------------
-  # Airflow Worker(Celery)
-  # --------------------------------
-  worker:
-    <<: *airflow-common                       # 공통 설정 상속(anchor)
-    command: celery worker                    # 워커 프로세스(태스크 분산 실행)
-    user: "1000:0"
-    restart: on-failure                       # 장애 시 재시작
-    depends_on:
-      - model_inference
-
-  # --------------------------------
-  # Flower(Celery 작업 모니터링 UI)
-  # --------------------------------
-  flower:
-    image: mher/flower:1.2.0                  # Flower 공식 이미지(버전 1.2.0)
-    user: "1000:0"
-    environment:
-      CELERY_BROKER_URL: ${AIRFLOW__CELERY__BROKER_URL}    # 브로커 주소
-      CELERY_RESULT_BACKEND: ${AIRFLOW__CELERY__RESULT_BACKEND} # 결과 저장소 주소
-    ports:
-      - "${FLOWER_PORT:-5555}:5555"           # 호스트:컨테이너 포트(5555 기본값)
-    networks:
-      - mlops_network                       # 동일 네트워크(통신)
-    depends_on:
-      - redis                                 # Redis 준비 완료 후 시작
-      - worker                                # 워커 준비 완료 후 시작
-    restart: on-failure                       # 장애 시 재시작
 
 # ==============================
 # Docker 볼륨 및 네트워크 정의

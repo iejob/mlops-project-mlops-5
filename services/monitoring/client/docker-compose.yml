@@ -1,17 +1,4 @@
 services:
-  monitoring-client:
-    env_file:
-      - ../../../.paths/paths.env
-    image: monitoring-client:v0.1.0
-    build:
-      context: ${PROJECT_ROOT}/${SERVICES_MONITORING_CLIENT}/monitoring-client
-      dockerfile: Dockerfile
-    container_name: monitoring-client
-    ports:
-      - "8000:8000"
-    # 로컬 테스트
-    networks:
-      - monitoring-network
 
   node-exporter:
     image: prom/node-exporter:v1.8.1

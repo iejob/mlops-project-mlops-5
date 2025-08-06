@@ -17,10 +17,6 @@ scrape_configs:                     # [필수] 스크랩 대상(Target) 목록
     static_configs:
       - targets: ['node-exporter:9100'] # 추후 실제 서버로 변경 예정
 
-  - job_name: 'server3-metrics'
-    static_configs:
-      - targets: ['monitoring-client:8000'] # 추후 실제 서버로 변경 예정
-
 # promtail metrics (로그 기반 메트릭)
   - job_name: 'log-metrics'
     static_configs:

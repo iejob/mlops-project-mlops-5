@@ -1,12 +1,14 @@
 import os
 import sys
 
+# 현재 파일의 상위 디렉토리를 파이썬 모듈 경로에 추가 (상위폴더 import 용)
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 )
 
 import numpy as np
 import uvicorn
+import traceback
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -15,13 +17,19 @@ from dotenv import load_dotenv
 from typing import List
 from sqlalchemy import text
 
+# 모델 추론 및 후처리 관련 함수들 import
 from scripts.inference.inference import (
     load_checkpoint, init_model, inference, recommend_to_df
 )
 from scripts.postprocess.inference_to_db import write_db, read_db, get_movie_metadata_by_ids, get_engine
 
-# FastAPI 앱 정의 및 CORS 설정
+# 데이터 파이프라인, 학습, 추론 함수 import
+from scripts.main import run_popular_movie_pipeline, run_train, run_inference
+
+# FastAPI 앱 생성
 app = FastAPI()
+
+# CORS(Cross-Origin Resource Sharing) 설정: 모든 origin 허용
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -30,14 +38,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 환경변수 로드
+# .env 파일(환경변수) 로드
 load_dotenv()
 
-# 모델 불러오기 (서버 시작 시 1회)
-checkpoint = load_checkpoint()
-model, scaler, label_encoder = init_model(checkpoint)
+# 서버 실행 시 최초 1회 모델/스케일러/라벨 인코더 로드
+try:
+    checkpoint = load_checkpoint()
+    model, scaler, label_encoder = init_model(checkpoint)
+except Exception as e:
+    print("=== 모델/스케일러/라벨 인코더 로딩 실패 ===")
+    traceback.print_exc()
+    # 오류 발생 시 None 할당(아래 엔드포인트에서 오류 반환)
+    model, scaler, label_encoder = None, None, None
 
-# 요청 데이터 스키마 정의
+# POST /predict 요청에 사용할 입력 데이터 타입 정의 (Pydantic)
 class InferenceInput(BaseModel):
     user_id: int
     content_id: int
@@ -45,11 +59,38 @@ class InferenceInput(BaseModel):
     rating: float
     popularity: float
 
-# POST /predict
+# 데이터 수집 및 전처리 파이프라인 실행 엔드포인트
+@app.post("/run/prepare-data")
+def run_prepare_data():
+    try:
+        run_popular_movie_pipeline()  # main.py의 함수 호출
+        return {"result": "prepare-data finished"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# 모델 학습 파이프라인 실행 엔드포인트
+@app.post("/run/train")
+def run_training(model_name: str = "movie_predictor"):
+    try:
+        run_train(model_name)  # main.py의 함수 호출
+        return {"result": "train finished"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# 모델 추론(배치 인퍼런스) 파이프라인 실행 엔드포인트
+@app.post("/run/model-inference")
+def run_batch_inference():
+    try:
+        run_inference()  # main.py의 함수 호출
+        return {"result": "model-inference finished"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# 단일 입력값을 받아 추론 후 추천 결과 반환하는 엔드포인트
 @app.post("/predict")
 async def predict(input_data: InferenceInput):
     try:
-        # 1. 추천 수행
+        # 1. 입력 데이터를 numpy array로 변환
         data = np.array([
             input_data.user_id,
             input_data.content_id,
@@ -57,13 +98,14 @@ async def predict(input_data: InferenceInput):
             input_data.rating,
             input_data.popularity
         ])
+        # 2. 추천(모델 추론) 수행
         result = inference(model, scaler, label_encoder, data)
 
-        # 2. 추천 결과 DB 저장
+        # 3. 추천 결과를 DataFrame 형태로 변환 후 DB에 저장
         df_to_save = recommend_to_df(result)
         write_db(df_to_save, os.getenv("DB_NAME"), "recommend")
 
-        # 3. 메타데이터 포함한 결과 리턴
+        # 4. 추천 결과의 content_id에 대해 메타데이터 조회
         metadata = get_movie_metadata_by_ids(os.getenv("DB_NAME"), result)
         recommendations = [
             {
@@ -75,6 +117,7 @@ async def predict(input_data: InferenceInput):
             for cid in result
         ]
 
+        # 5. 사용자 ID와 추천 결과 반환
         return {
             "user_id": input_data.user_id,
             "recommendations": recommendations
@@ -83,13 +126,12 @@ async def predict(input_data: InferenceInput):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-# GET /latest-recommendations
+# 최근 추천 결과를 조회하는 엔드포인트 (최신 k개)
 @app.get("/latest-recommendations")
 async def latest_recommendations(k: int = 10):
     try:
         content_ids = read_db(os.getenv("DB_NAME"), "recommend", k=k)
-        unique_ids = list(dict.fromkeys(content_ids))
+        unique_ids = list(dict.fromkeys(content_ids))  # 중복 제거
         if not unique_ids:
             return {"recent_recommendations": []}
 
@@ -110,8 +152,7 @@ async def latest_recommendations(k: int = 10):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-# Get /available-content-ids
+# 사용 가능한 content_id 리스트를 반환하는 엔드포인트
 @app.get("/available-content-ids")
 async def available_ids():
     return {
@@ -119,7 +160,7 @@ async def available_ids():
         "available_content_ids": label_encoder.classes_.tolist()
     }
 
-# Get /available-contents
+# 사용 가능한 영화 목록(제목, 포스터 등) 반환 엔드포인트
 @app.get("/available-contents")
 async def available_contents():
     try:
@@ -144,13 +185,18 @@ async def available_contents():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-# Get /health
+# 서비스 헬스 체크 엔드포인트
 @app.get("/health")
 async def health_check():
-    return {"status": "ok"}
+    # model, scaler, label_encoder가 None이면 degraded, 아니면 ok
+    status = "ok" if all([model, scaler, label_encoder]) else "degraded"
+    return {"status": status}
 
+# 서비스 정보 반환 엔드포인트 (버전 확인용)
+@app.get("/info")
+async def get_info():
+    return {"service": "my-mlops-api", "version": "1.3.3"}
 
-# 서버 직접 실행 시
+# 이 파일이 메인으로 실행될 때 uvicorn으로 FastAPI 실행
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

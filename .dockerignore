@@ -152,14 +152,3 @@ __pycache__/  # Python cache files
 *.cover       # Coverage reports
 nosetests.xml # Test results
 *.log         # Log files
-
-# Other folders
-projects/
-
-
-# 전체 디렉토리 경로 환경 변수 설정 .env 파일
-.paths/*
-
-# User Add
-# !./mlops-project/logs/*
-!./mlops-project/services/*

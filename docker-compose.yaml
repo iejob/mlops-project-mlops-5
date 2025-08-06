@@ -1,0 +1,122 @@
+version: '3.8' # 도커 컴포즈 파일 버전(3.8 권장)
+
+# ==============================
+# Airflow 서비스 공통 anchor(템플릿)
+# ==============================
+x-airflow-common: &airflow-common
+  # build: . # 기존의 'build: .' 명령어는 Dockerfile이 있는 디렉토리를 빌드 컨텍스트로 사용하므로 경로 오류가 발생합니다.
+  build:
+    context: .                                                                  # 빌드 컨텍스트를 프로젝트 루트 디렉토리(.)로 설정
+    dockerfile: ${DOCKER_AIRFLOW}                                               # Dockerfile의 경로를 명시
+  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.8.2}                            # Airflow 공식 이미지, 환경변수로 버전 지정 가능
+  user: "1000:0"
+  environment:
+    AIRFLOW_UID: ${AIRFLOW_UID}                                                 # 컨테이너 내 실행 사용자 UID(기본값 50000)
+    AIRFLOW_GID: ${AIRFLOW_GID}                                                 # 컨테이너 내 실행 사용자 GID(기본값 0)
+    AIRFLOW_HOME: ${AIRFLOW_HOME}                                               # Airflow 홈 디렉토리(모든 실행 기준 경로)
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${AIRFLOW__CORE__SQL_ALCHEMY_CONN}         # 내부 DB 연결(필수)
+    AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY}                     # Fernet 암호화 키(필수)
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor                                      # 실행기(Executor) 설정(LocalExecutor)
+    AIRFLOW__CORE__LOGGING_LEVEL: INFO                                          # 로그 레벨(INFO 고정)
+    AIRFLOW__WEBSERVER__WEB_SERVER_PORT: ${AIRFLOW__WEBSERVER__WEB_SERVER_PORT} # Webserver 포트(8080)
+    AIRFLOW__WEBSERVER__WEB_SERVER_HOST: ${AIRFLOW__WEBSERVER__WEB_SERVER_HOST} # Webserver 호스트(모든 IP에서 접근 가능)
+    PYTHONPATH: /opt/airflow:/opt/airflow/scripts                               # Airflow 스크립트 경로 추가 
+  env_file:
+    - ${ENV_PATH}                                                                      # 민감정보, 환경변수 파일(${ENV_PATH})
+    - ./.paths/paths${ENV_PATH}                                                        # 프로젝트별 경로 관리 환경변수 파일
+  volumes:
+    - ${DAGS_DIR}:/opt/airflow/dags                                             # DAG 파이썬 코드 저장 경로
+    - ${LOGS_AIRFLOW_DIR}:/opt/airflow/logs                                     # Airflow 각종 로그 저장 경로
+    - ${DATA_AIRFLOW_DIR}:/opt/airflow/data                                     # Airflow 데이터(공용)
+    - ${DATA_RAW_DIR}:/opt/airflow/data/raw                                     # 원본(raw) 데이터 경로
+    - ${DATA_PROCESSED_DIR}:/opt/airflow/data/processed                         # 전처리(피처) 데이터 경로
+    - ${PLUGINS_AIRFLOW_DIR}:/opt/airflow/plugins                               # Airflow 플러그인(추가 코드 등)
+    - ${DATA_AIRFLOW_TEMP_DIR}:/opt/airflow/data/temp                           # 임시 데이터 경로
+    - ./scripts:/opt/airflow/scripts                                            # Airflow 스크립트 경로(파이썬 코드)
+  networks:
+    - mlops_network             # Airflow 전용 도커 네트워크(브리지)
+  restart: on-failure             # 컨테이너 장애 시 재시작
+  depends_on:                     # 의존 서비스 준비될 때까지 대기
+    postgres:
+      condition: service_healthy  # postgres 서비스 health check 통과 후 시작
+
+# ==============================
+# 서비스(컨테이너) 정의
+# ==============================
+services:
+  # --------------------------------
+  # PostgreSQL(Airflow 내부 DB)
+  # --------------------------------
+  postgres:
+    image: postgres:13                          # PostgreSQL 공식 이미지(버전 13)
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}           # DB 계정명
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}   # DB 비밀번호
+      POSTGRES_DB: ${POSTGRES_DB}               # DB 이름
+    ports:
+      - ${DB_PORT}:${DB_PORT}                   # 호스트:컨테이너 포트(5432)
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # 데이터 파일을 로컬 볼륨에 영구 저장
+    networks:
+      - mlops_network                           # 동일 네트워크(통신)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"] # DB 준비상태 체크
+      interval: 5s                              # 체크 주기
+      timeout: 5s                               # 타임아웃
+      retries: 5                                # 최대 재시도
+    restart: on-failure                         # 장애 시 재시작
+
+  # --------------------------------
+  # Airflow Webserver(관리 UI)
+  # --------------------------------
+  webserver:
+    <<: *airflow-common                         # 공통 설정 상속(anchor)
+    command: >                                  # webserver 실행(메인 UI)
+      webserver --port 8080 --host 0.0.0.0
+    user: "1000:0"
+    ports:
+      - "8080:8080"                             # 호스트:컨테이너 포트(8080)
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:8080/health || exit 1"] # Webserver 헬스체크
+      interval: 10s                             # 체크 주기
+      timeout: 10s                              # 타임아웃
+      retries: 5                                # 최대 재시도
+    restart: on-failure                         # 장애 시 재시작
+    depends_on:
+      postgres:
+        condition: service_healthy              # postgres 서비스 health check 통과 후 시작
+
+  # --------------------------------
+  # Airflow DB/권한 초기화(1회)
+  # --------------------------------
+  airflow-init:
+    <<: *airflow-common
+    command: bash -c "airflow db init && airflow users create --username admin --password admin --firstname admin --lastname admin --role Admin --email admin@example.com"
+    user: "1000:0"
+    depends_on:
+      postgres:
+        condition: service_healthy              # postgres 서비스 health check 통과 후 시작
+
+  # --------------------------------
+  # Airflow Scheduler(DAG 실행 트리거)
+  # --------------------------------
+  scheduler:
+    <<: *airflow-common                       # 공통 설정 상속(anchor)
+    command: scheduler                        # 스케줄러 프로세스(DAG 자동 실행)
+    user: "1000:0"
+    healthcheck:
+       test: ["CMD-SHELL", "airflow jobs check --job-type SchedulerJob --hostname airflow-scheduler"]
+    restart: on-failure                       # 장애 시 재시작
+    depends_on:
+      postgres:
+        condition: service_healthy              # postgres 서비스 health check 통과 후 시작
+
+# ==============================
+# Docker 볼륨 및 네트워크 정의
+# ==============================
+volumes:
+  postgres_data:      # PostgreSQL 데이터 파일 영구 저장용 도커 볼륨
+
+networks:
+  mlops_network:    # Airflow, DB, Redis, Flower 등 모든 서비스가 연결되는 네트워크
+    driver: bridge    # 브리지 네트워크(컨테이너 통신 전용)

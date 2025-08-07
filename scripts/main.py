@@ -33,14 +33,14 @@ from scripts.postprocess.inference_to_local import save_inference_to_local
 from scripts.postprocess.inference_to_s3 import upload_inference_result_to_s3
 
 # 환경변수 로드
-env_path = os.path.join(project_path(), '.env')
-paths_env_path = os.path.join(project_path(), '.paths', 'paths.env')
+env_path = os.getenv("ENV_PATH")
+paths_env_path = os.getenv("PATH_ENV_PATH")
 load_dotenv(dotenv_path=env_path)
 load_dotenv(dotenv_path=paths_env_path)
 
 # 데이터 및 mlflow 경로설정
-os.environ["DATA_RAW_DIR"] = os.path.join(project_path(), os.getenv("DATA_RAW_DIR", "data/raw"))
-mlflow.set_tracking_uri(f"file:{os.path.join(project_path(), 'logs', 'mlflow')}")
+os.environ["DATA_RAW_DIR"] = os.getenv("DATA_RAW_DIR")
+mlflow.set_tracking_uri(f"file:{os.getenv('LOGS_MLFLOW_DIR')}")
 
 
 def run_popular_movie_pipeline(logger):

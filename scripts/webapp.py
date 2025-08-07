@@ -30,7 +30,7 @@ from scripts.main import run_popular_movie_pipeline, run_train, run_inference
 import importlib.util
 from datetime import datetime
 
-LOGGER_PATH = os.getenv("LOGGER_PATH", "scripts/utils/logger.py")
+LOGGER_PATH = os.getenv("LOGGER_PATH")
 spec = importlib.util.spec_from_file_location("custom_logger", LOGGER_PATH)
 logger_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(logger_module)

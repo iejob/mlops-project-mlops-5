@@ -1,0 +1,1001 @@
+Attaching to my-mlops-model
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | 1.2759382430641044
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | 1.4253058195057677
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | 0.4952681388012618
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | 1.3354274829880248
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | 0.484251968503937
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:20 | Training:  11%|#         | 7/64 [00:00<00:00, 65.18it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | Training:  22%|##1       | 14/64 [00:00<00:00, 63.25it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | Training:  59%|#####9    | 38/64 [00:00<00:00, 139.12it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | Training:  83%|########2 | 53/64 [00:00<00:00, 108.76it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | Epoch 244/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | 1.2567710005507438
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | 1.426148158183875
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | 0.4921135646687697
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | 1.334880762026728
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | 0.4881889763779528
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | Training:  11%|#         | 7/64 [00:00<00:00, 66.06it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:21 | Training:  22%|##1       | 14/64 [00:00<00:00, 66.07it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Training:  33%|###2      | 21/64 [00:00<00:00, 65.22it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Training:  44%|####3     | 28/64 [00:00<00:00, 65.05it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Training:  55%|#####4    | 35/64 [00:00<00:00, 65.85it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Training:  66%|######5   | 42/64 [00:00<00:00, 66.34it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Training:  77%|#######6  | 49/64 [00:00<00:00, 64.25it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Training:  98%|#########8| 63/64 [00:00<00:00, 85.90it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Epoch 245/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | 1.3273492796861655
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | 1.421352475387959
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | 0.49842271293375395
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | 1.3322692741033186
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | 0.484251968503937
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:22 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Training:  11%|#         | 7/64 [00:00<00:00, 64.33it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Training:  22%|##1       | 14/64 [00:00<00:00, 64.61it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Training:  34%|###4      | 22/64 [00:00<00:00, 66.66it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Training:  45%|####5     | 29/64 [00:00<00:00, 66.81it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Training:  56%|#####6    | 36/64 [00:00<00:00, 67.07it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Training:  67%|######7   | 43/64 [00:00<00:00, 64.57it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Training:  84%|########4 | 54/64 [00:00<00:00, 77.61it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Training:  97%|#########6| 62/64 [00:00<00:00, 77.44it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | Epoch 246/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | 1.2370832940238505
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | 1.420743826935345
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | 0.5047318611987381
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | 1.3305254869056786
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | 0.48031496062992124
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:23 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:24 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:24 | Training:  11%|#         | 7/64 [00:00<00:00, 64.19it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:24 | Training:  22%|##1       | 14/64 [00:00<00:00, 65.27it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:24 | Training:  33%|###2      | 21/64 [00:00<00:00, 65.53it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:24 | Training:  44%|####3     | 28/64 [00:00<00:00, 54.15it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:24 | Training:  55%|#####4    | 35/64 [00:00<00:00, 58.78it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:24 | Training:  67%|######7   | 43/64 [00:00<00:00, 62.91it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:24 | Training:  78%|#######8  | 50/64 [00:00<00:00, 61.16it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Training:  97%|#########6| 62/64 [00:00<00:00, 75.69it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Epoch 247/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | 1.2537788793420168
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | 1.419527165484463
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | 0.501577287066246
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | 1.3283781284460603
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | 0.4881889763779528
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Training:  12%|#2        | 8/64 [00:00<00:00, 69.00it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Training:  23%|##3       | 15/64 [00:00<00:00, 68.81it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Training:  34%|###4      | 22/64 [00:00<00:00, 63.48it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Training:  48%|####8     | 31/64 [00:00<00:00, 60.33it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:25 | Training:  83%|########2 | 53/64 [00:00<00:00, 107.60it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Epoch 248/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | 1.257518119849696
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | 1.4189288354567042
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | 0.4952681388012618
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | 1.3295498944584445
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | 0.48031496062992124
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Training:   9%|9         | 6/64 [00:00<00:01, 57.20it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Training:  20%|##        | 13/64 [00:00<00:00, 63.13it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Training:  31%|###1      | 20/64 [00:00<00:00, 62.04it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Training:  42%|####2     | 27/64 [00:00<00:00, 62.00it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Training:  53%|#####3    | 34/64 [00:00<00:00, 62.38it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:26 | Training:  64%|######4   | 41/64 [00:00<00:00, 62.62it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Training:  75%|#######5  | 48/64 [00:00<00:00, 54.00it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Training:  88%|########7 | 56/64 [00:00<00:00, 58.44it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Training:  98%|#########8| 63/64 [00:01<00:00, 61.03it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Epoch 249/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | 1.254304973793713
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | 1.4177619008194724
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | 0.501577287066246
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | 1.3304958575449208
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | 0.4921259842519685
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Training:  11%|#         | 7/64 [00:00<00:00, 69.58it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Training:  22%|##1       | 14/64 [00:00<00:00, 63.16it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:27 | Training:  67%|######7   | 43/64 [00:00<00:00, 159.84it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Training:  94%|#########3| 60/64 [00:00<00:00, 134.02it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Epoch 250/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | 1.2337822679490331
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | 1.4173780980645514
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | 0.5047318611987381
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | 1.3298684515603805
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | 0.4881889763779528
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Training:   9%|9         | 6/64 [00:00<00:01, 57.80it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Training:  20%|##        | 13/64 [00:00<00:00, 63.76it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Training:  31%|###1      | 20/64 [00:00<00:00, 65.26it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Training:  42%|####2     | 27/64 [00:00<00:00, 64.71it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:28 | Training:  66%|######5   | 42/64 [00:00<00:00, 89.93it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Training:  80%|#######9  | 51/64 [00:00<00:00, 79.28it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Training:  94%|#########3| 60/64 [00:00<00:00, 73.67it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Epoch 251/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | 1.264607125862589
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | 1.4161771315915737
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | 0.49842271293375395
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | 1.3275375127083966
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | 0.484251968503937
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Training:  11%|#         | 7/64 [00:00<00:00, 60.78it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Training:  22%|##1       | 14/64 [00:00<00:00, 64.43it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Training:  36%|###5      | 23/64 [00:00<00:00, 71.52it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:29 | Training:  48%|####8     | 31/64 [00:00<00:00, 69.80it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Training:  78%|#######8  | 50/64 [00:00<00:00, 107.87it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Training:  95%|#########5| 61/64 [00:00<00:00, 91.34it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Epoch 252/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | 1.2309858088556052
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | 1.4162047358946352
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | 0.5078864353312302
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | 1.3276901356031419
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | 0.4881889763779528
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Training:  11%|#         | 7/64 [00:00<00:00, 65.21it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Training:  22%|##1       | 14/64 [00:00<00:00, 62.26it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Training:  36%|###5      | 23/64 [00:00<00:00, 73.51it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:30 | Training:  70%|#######   | 45/64 [00:00<00:00, 123.62it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | Training:  91%|######### | 58/64 [00:00<00:00, 97.52it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | Epoch 253/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | 1.26712605806554
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | 1.4142062530308133
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | 0.5110410094637224
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | 1.325257328887028
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | 0.484251968503937
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | Training:  20%|##        | 13/64 [00:00<00:00, 104.28it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | Training:  53%|#####3    | 34/64 [00:00<00:00, 160.06it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:31 | Training:  80%|#######9  | 51/64 [00:00<00:00, 161.78it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | Epoch 254/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | 1.2242827810108745
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | 1.412849930691865
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | 0.5110410094637224
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | 1.323734485602484
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | 0.484251968503937
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | Training:  12%|#2        | 8/64 [00:00<00:00, 61.96it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | Training:  23%|##3       | 15/64 [00:00<00:01, 47.12it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | Training:  31%|###1      | 20/64 [00:00<00:00, 45.74it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | Training:  42%|####2     | 27/64 [00:00<00:00, 51.39it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:32 | Training:  52%|#####1    | 33/64 [00:00<00:00, 48.14it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | Training:  64%|######4   | 41/64 [00:00<00:00, 56.61it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | Training:  75%|#######5  | 48/64 [00:00<00:00, 57.90it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | Training:  86%|########5 | 55/64 [00:00<00:00, 60.65it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | Training:  97%|#########6| 62/64 [00:01<00:00, 59.73it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | Epoch 255/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | 1.246467773392133
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | 1.4115963160744776
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | 0.5047318611987381
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | 1.3238127411589355
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | 0.4881889763779528
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:33 | Training:   6%|6         | 4/64 [00:00<00:01, 31.33it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:34 | Training:  12%|#2        | 8/64 [00:00<00:01, 34.11it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:34 | Training:  20%|##        | 13/64 [00:00<00:01, 39.84it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:34 | Training:  28%|##8       | 18/64 [00:00<00:01, 37.07it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:34 | Training:  34%|###4      | 22/64 [00:00<00:01, 37.76it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:34 | Training:  41%|####      | 26/64 [00:00<00:01, 35.61it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:34 | Training:  58%|#####7    | 37/64 [00:00<00:00, 56.03it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:34 | Training:  67%|######7   | 43/64 [00:00<00:00, 54.94it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:34 | Training:  88%|########7 | 56/64 [00:01<00:00, 74.36it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | Training: 100%|##########| 64/64 [00:01<00:00, 62.07it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | Epoch 256/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | 1.1814391199027052
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | 1.4116991219728843
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | 0.5110410094637224
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | 1.3227649068018703
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | 0.484251968503937
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | Training:   0%|          | 0/64 [00:00<?, ?it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | Training:  11%|#         | 7/64 [00:00<00:01, 54.91it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | Training:  20%|##        | 13/64 [00:00<00:01, 45.14it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | Training:  28%|##8       | 18/64 [00:00<00:00, 46.76it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:35 | Training:  41%|####      | 26/64 [00:00<00:00, 57.03it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | Training:  62%|######2   | 40/64 [00:00<00:00, 83.88it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | Training:  77%|#######6  | 49/64 [00:00<00:00, 81.25it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | Training:  91%|######### | 58/64 [00:00<00:00, 54.66it/s]
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | f
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | Epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | epoch
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | +
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | 1
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | /
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | {
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | num_epochs
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | }
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | "
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | Epoch 257/500
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | '
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | ic
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | |
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | train_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | 1.2120184452787404
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | val_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | 1.4116837329894678
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | val_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | 0.5078864353312302
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | test_loss
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | 1.3208993544722194
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | )
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | test_acc
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | :
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | np
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | .
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | float64
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | (
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | 0.4921259842519685
+[36mmy-mlops-model       |[0m 2025-08-07 11:34:36 | )

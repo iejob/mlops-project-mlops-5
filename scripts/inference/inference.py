@@ -98,16 +98,12 @@ def inference(model, scaler, label_encoder, data, logger, batch_size=1):
     dataloader = SimpleDataLoader(
         dataset.features, dataset.labels, batch_size=batch_size, shuffle=False
     )
-<<<<<<< Updated upstream
-    _, predictions, accuracy = evaluate(model, dataloader)
-    # print("Predictions:", predictions)
-=======
-    
+
     #_, predictions, accuracy = evaluate(model, dataloader)
     loss, predictions, accuracy = evaluate(model, dataloader)
     logger.write(f"Inference complete. Loss: {loss:.4f}, Accuracy: {accuracy:.4f}") # <-- logger.write 사용
     # print(loss, predictions, accuracy)
->>>>>>> Stashed changes
+
 
     return [dataset.decode_content_id(idx) for idx in predictions]
 

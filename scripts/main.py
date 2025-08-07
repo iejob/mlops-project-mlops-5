@@ -80,13 +80,9 @@ def get_next_run_name(experiment_name, base_name="movie-predictor", pad=3):
     return auto_increment_run_suffix(latest_run_name, pad=pad)
 
 
-<<<<<<< Updated upstream
-def run_train(model_name, batch_size=32, dim=256, num_epochs=1000):
-=======
-def run_train(model_name, batch_size=16, dim=256, num_epochs=500, logger=None):
+def run_train(model_name, batch_size=32, dim=256, num_epochs=1000, logger=None):
     _logger = logger if logger else sys.stdout
 
->>>>>>> Stashed changes
     init_seed()
     ModelTypes.validation(model_name)
     model_class = ModelTypes[model_name.upper()].value
@@ -144,18 +140,11 @@ def run_train(model_name, batch_size=16, dim=256, num_epochs=500, logger=None):
         ic(decoded_predictions)
 
 
-<<<<<<< Updated upstream
-def run_inference(data=None, batch_size=32):
-    checkpoint = load_checkpoint()
-    model, scaler, label_encoder = init_model(checkpoint)
-
-=======
 def run_inference(data=None, batch_size=16, logger=None):
     _logger = logger if logger else sys.stdout 
     checkpoint = load_checkpoint(_logger)
     model, scaler, label_encoder = init_model(checkpoint, _logger)
  
->>>>>>> Stashed changes
     data = np.array(data or [])
     recommend = inference(model, scaler, label_encoder, data, _logger, batch_size)
     #print("\nInference Result:", recommend)
@@ -168,15 +157,10 @@ def run_inference(data=None, batch_size=16, logger=None):
 def run_all_data_pipeline(model_name, batch_size=16, dim=256, num_epochs=500, logger=None): 
     _logger = logger if logger else sys.stdout  
 
-<<<<<<< Updated upstream
-def run_all_data_pipeline(model_name, batch_size=32, dim=256, num_epochs=1000):
-    run_popular_movie_pipeline()
-=======
     _logger.write("Running popular movie pipeline...")
     run_popular_movie_pipeline(_logger)  
     
     _logger.write("Running train pipeline...")
->>>>>>> Stashed changes
     run_train(model_name, batch_size, dim, num_epochs)
     
     _logger.write("Running inference pipeline...")

@@ -7,6 +7,9 @@ from datetime import datetime
 from botocore.exceptions import ClientError
 from scripts.utils.utils import project_path
 
+# 환경변수 로드
+env_path = os.getenv("ENV_PATH")
+paths_env_path = os.getenv("PATH_ENV_PATH")
 load_dotenv(dotenv_path=env_path)
 load_dotenv(dotenv_path=paths_env_path)
 

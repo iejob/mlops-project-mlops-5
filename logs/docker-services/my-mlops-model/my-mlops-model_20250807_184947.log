@@ -1,0 +1,9 @@
+Attaching to my-mlops-model
+[36mmy-mlops-model       |[0m PostgreSQL engine created for postgres on my-mlops-db
+[36mmy-mlops-model       |[0m Traceback (most recent call last):
+[36mmy-mlops-model       |[0m   File "/mlops-project/scripts/main.py", line 33, in <module>
+[36mmy-mlops-model       |[0m     from scripts.postprocess.inference_to_s3 import upload_inference_result_to_s3
+[36mmy-mlops-model       |[0m   File "/mlops-project/scripts/postprocess/inference_to_s3.py", line 10, in <module>
+[36mmy-mlops-model       |[0m     load_dotenv(dotenv_path=env_path)
+[36mmy-mlops-model       |[0m                             ^^^^^^^^
+[36mmy-mlops-model       |[0m NameError: name 'env_path' is not defined

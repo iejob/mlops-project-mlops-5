@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 저장할 폴더명
-BASE_LOG_DIR="logs"
+BASE_LOG_DIR="logs/docker-services"
 
 # 서비스 리스트 (컨테이너 명과 동일해야 함)
 SERVICES=("my-mlops-api" "my-mlops-db" "my-mlops-frontend" "my-mlops-model")

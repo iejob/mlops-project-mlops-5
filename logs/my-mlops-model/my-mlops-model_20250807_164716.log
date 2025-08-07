@@ -1,9 +1,0 @@
-Attaching to my-mlops-model
-[36mmy-mlops-model       |[0m python-dotenv could not parse statement starting at line 75
-[36mmy-mlops-model       |[0m Traceback (most recent call last):
-[36mmy-mlops-model       |[0m   File "/mlops-project/scripts/main.py", line 21, in <module>
-[36mmy-mlops-model       |[0m     from scripts.data_prepare.s3_exporter import export_and_upload_data_to_s3
-[36mmy-mlops-model       |[0m   File "/mlops-project/scripts/data_prepare/s3_exporter.py", line 75
-[36mmy-mlops-model       |[0m     engine.dispose()
-[36mmy-mlops-model       |[0m     ^
-[36mmy-mlops-model       |[0m IndentationError: expected an indented block after 'if' statement on line 74

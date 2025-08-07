@@ -12,14 +12,14 @@ from scripts.airflow.pipeline_tasks import (
     run_pipeline_task  # FastAPI 엔드포인트를 호출하는 범용 함수
 )
 
-# Airflow UI의 Variable 또는 환경 변수에 'SERVER_1_IP_ADDRESS'를 설정
-SERVER_1_IP_ADDRESS = os.getenv('SERVER_1_IP_ADDRESS')
-if not SERVER_1_IP_ADDRESS:
+# Airflow UI의 Variable 또는 환경 변수에 'SERVER_1_IP'를 설정
+SERVER_1_IP = os.getenv('SERVER_1_IP')
+if not SERVER_1_IP:
     # 환경 변수가 설정되지 않았을 경우 DAG이 로드되지 않도록 예외 발생
-    raise ValueError("Airflow 환경 변수에 'SERVER_1_IP_ADDRESS'가 설정되지 않았습니다.")
+    raise ValueError("Airflow 환경 변수에 'SERVER_1_IP'가 설정되지 않았습니다.")
 
 # FastAPI 서버의 기본 URL 정의
-SERVER1_API_BASE = f"http://{SERVER_1_IP_ADDRESS}:8000"
+SERVER1_API_BASE = f"http://{SERVER_1_IP}:8000"
 
 # 기본 DAG 설정
 default_args = {

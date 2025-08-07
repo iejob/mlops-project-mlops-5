@@ -1,0 +1,21 @@
+groups:
+  - name: monitoring-alerts
+    rules:
+      # error: 1개라도 발생하면 즉시 알림
+      - alert: ImmediateError
+        expr: increase(promtail_custom_log_errors[1m]) > 0
+        for: 0s
+        labels:
+          severity: critical
+        annotations:
+          summary: "에러 발생"
+          description: "에러가 발생했습니다."
+      # warning: 5분간 5개 이상 누적 시 알림
+      - alert: HighWarningRate
+        expr: increase(promtail_custom_log_warnings[5m]) > 5
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "경고 발생"
+          description: "경고가 5분간 5회 이상 발생했습니다."

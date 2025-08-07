@@ -19,9 +19,9 @@ services:
     networks:
       - my-mlops-network                        # 동일 네트워크(통신)
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"] # DB 준비상태 체크
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}", "postgres"] # DB 준비상태 체크
       interval: 5s                              # 체크 주기
-      timeout: 5s                               # 타임아웃
+      timeout: 3s                               # 타임아웃
       retries: 5                                # 최대 재시도
     restart: on-failure                         # 장애 시 재시작
 
@@ -34,7 +34,7 @@ services:
       dockerfile: ${DOCKER_MODEL_INFERENCE}               # Dockerfile 경로
       args:
         EXCLUDE_FRONTEND: "true"
-    image: jkim1209/mlops-model:1.4.3                     # 이미지 이름 및 태그
+    image: jkim1209/mlops-model:1.4.4                     # 이미지 이름 및 태그
     container_name: my-mlops-model                        # 컨테이너 이름
     environment:
       DB_HOST: ${DB_HOST}
@@ -67,7 +67,9 @@ services:
     build:
       context: .
       dockerfile: ${DOCKER_API}
-    image: jkim1209/mlops-api:1.3.3
+      args:
+        EXCLUDE_FRONTEND: "true"
+    image: jkim1209/mlops-api:1.3.4
     container_name: my-mlops-api
     command: uvicorn scripts.webapp:app --host 0.0.0.0 --port 8000
     ports:
@@ -101,12 +103,10 @@ services:
     build:
       context: .
       dockerfile: ${DOCKER_REACT}
-    image: jkim1209/mlops-frontend:1.1.1
+    image: jkim1209/mlops-frontend:1.2.0
     container_name: my-mlops-frontend
     ports:
       - "3000:3000"
-    environment:
-      - REACT_APP_API_ENDPOINT=http://my-mlops-api:8000
     depends_on:
       - my-mlops-api
     networks:
@@ -122,8 +122,8 @@ services:
 # Docker 볼륨 및 네트워크 정의
 # ==============================
 volumes:
-  db_data:      # PostgreSQL 데이터 파일 영구 저장용 도커 볼륨
+  db_data:              # PostgreSQL 데이터 파일 영구 저장용 도커 볼륨
 
 networks:
-  my-mlops-network:    # Airflow, DB, Redis, Flower 등 모든 서비스가 연결되는 네트워크
-    driver: bridge    # 브리지 네트워크(컨테이너 통신 전용)
+  my-mlops-network:     # Airflow, DB, Redis, Flower 등 모든 서비스가 연결되는 네트워크
+    driver: bridge      # 브리지 네트워크(컨테이너 통신 전용)

@@ -156,7 +156,6 @@ nosetests.xml # Test results
 
 ### react ###
 .DS_*
-*.log
 logs
 **/*.backup.*
 **/*.back.*
@@ -170,10 +169,14 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/react
-
 # Other folders
 projects/
 
-!logs/*
-./paths/*
+# logs 폴더를 무시하지 않게 하려면
+!logs/
+!logs/**
+
+
+./paths/*.env
+
+env.js

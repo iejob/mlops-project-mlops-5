@@ -1,0 +1,473 @@
+Attaching to my-mlops-api
+[36mmy-mlops-api         |[0m Traceback (most recent call last):
+[36mmy-mlops-api         |[0m   File "/usr/local/bin/uvicorn", line 8, in <module>
+[36mmy-mlops-api         |[0m     sys.exit(main())
+[36mmy-mlops-api         |[0m              ^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+[36mmy-mlops-api         |[0m     return self.main(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1363, in main
+[36mmy-mlops-api         |[0m     rv = self.invoke(ctx)
+[36mmy-mlops-api         |[0m          ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1226, in invoke
+[36mmy-mlops-api         |[0m     return ctx.invoke(self.callback, **ctx.params)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 794, in invoke
+[36mmy-mlops-api         |[0m     return callback(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 412, in main
+[36mmy-mlops-api         |[0m     run(
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 579, in run
+[36mmy-mlops-api         |[0m     server.run()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+[36mmy-mlops-api         |[0m     return asyncio.run(self.serve(sockets=sockets))
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+[36mmy-mlops-api         |[0m     return runner.run(main)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+[36mmy-mlops-api         |[0m     return self._loop.run_until_complete(task)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+[36mmy-mlops-api         |[0m     return future.result()
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+[36mmy-mlops-api         |[0m     await self._serve(sockets)
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+[36mmy-mlops-api         |[0m     config.load()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+[36mmy-mlops-api         |[0m     self.loaded_app = import_from_string(self.app)
+[36mmy-mlops-api         |[0m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[36mmy-mlops-api         |[0m     module = importlib.import_module(module_str)
+[36mmy-mlops-api         |[0m              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[36mmy-mlops-api         |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/webapp.py", line 21, in <module>
+[36mmy-mlops-api         |[0m     from scripts.inference.inference import (
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/inference/inference.py", line 23, in <module>
+[36mmy-mlops-api         |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-api         |[0m     <<<<<<< Updated upstream
+[36mmy-mlops-api         |[0m     ^
+[36mmy-mlops-api         |[0m IndentationError: expected an indented block after class definition on line 6
+[36mmy-mlops-api         |[0m Traceback (most recent call last):
+[36mmy-mlops-api         |[0m   File "/usr/local/bin/uvicorn", line 8, in <module>
+[36mmy-mlops-api         |[0m     sys.exit(main())
+[36mmy-mlops-api         |[0m              ^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+[36mmy-mlops-api         |[0m     return self.main(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1363, in main
+[36mmy-mlops-api         |[0m     rv = self.invoke(ctx)
+[36mmy-mlops-api         |[0m          ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1226, in invoke
+[36mmy-mlops-api         |[0m     return ctx.invoke(self.callback, **ctx.params)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 794, in invoke
+[36mmy-mlops-api         |[0m     return callback(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 412, in main
+[36mmy-mlops-api         |[0m     run(
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 579, in run
+[36mmy-mlops-api         |[0m     server.run()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+[36mmy-mlops-api         |[0m     return asyncio.run(self.serve(sockets=sockets))
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+[36mmy-mlops-api         |[0m     return runner.run(main)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+[36mmy-mlops-api         |[0m     return self._loop.run_until_complete(task)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+[36mmy-mlops-api         |[0m     return future.result()
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+[36mmy-mlops-api         |[0m     await self._serve(sockets)
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+[36mmy-mlops-api         |[0m     config.load()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+[36mmy-mlops-api         |[0m     self.loaded_app = import_from_string(self.app)
+[36mmy-mlops-api         |[0m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[36mmy-mlops-api         |[0m     module = importlib.import_module(module_str)
+[36mmy-mlops-api         |[0m              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[36mmy-mlops-api         |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/webapp.py", line 21, in <module>
+[36mmy-mlops-api         |[0m     from scripts.inference.inference import (
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/inference/inference.py", line 23, in <module>
+[36mmy-mlops-api         |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-api         |[0m     <<<<<<< Updated upstream
+[36mmy-mlops-api         |[0m     ^
+[36mmy-mlops-api         |[0m IndentationError: expected an indented block after class definition on line 6
+[36mmy-mlops-api         |[0m Traceback (most recent call last):
+[36mmy-mlops-api         |[0m   File "/usr/local/bin/uvicorn", line 8, in <module>
+[36mmy-mlops-api         |[0m     sys.exit(main())
+[36mmy-mlops-api         |[0m              ^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+[36mmy-mlops-api         |[0m     return self.main(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1363, in main
+[36mmy-mlops-api         |[0m     rv = self.invoke(ctx)
+[36mmy-mlops-api         |[0m          ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1226, in invoke
+[36mmy-mlops-api         |[0m     return ctx.invoke(self.callback, **ctx.params)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 794, in invoke
+[36mmy-mlops-api         |[0m     return callback(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 412, in main
+[36mmy-mlops-api         |[0m     run(
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 579, in run
+[36mmy-mlops-api         |[0m     server.run()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+[36mmy-mlops-api         |[0m     return asyncio.run(self.serve(sockets=sockets))
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+[36mmy-mlops-api         |[0m     return runner.run(main)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+[36mmy-mlops-api         |[0m     return self._loop.run_until_complete(task)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+[36mmy-mlops-api         |[0m     return future.result()
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+[36mmy-mlops-api         |[0m     await self._serve(sockets)
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+[36mmy-mlops-api         |[0m     config.load()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+[36mmy-mlops-api         |[0m     self.loaded_app = import_from_string(self.app)
+[36mmy-mlops-api         |[0m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[36mmy-mlops-api         |[0m     module = importlib.import_module(module_str)
+[36mmy-mlops-api         |[0m              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[36mmy-mlops-api         |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/webapp.py", line 21, in <module>
+[36mmy-mlops-api         |[0m     from scripts.inference.inference import (
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/inference/inference.py", line 23, in <module>
+[36mmy-mlops-api         |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-api         |[0m     <<<<<<< Updated upstream
+[36mmy-mlops-api         |[0m     ^
+[36mmy-mlops-api         |[0m IndentationError: expected an indented block after class definition on line 6
+[36mmy-mlops-api         |[0m Traceback (most recent call last):
+[36mmy-mlops-api         |[0m   File "/usr/local/bin/uvicorn", line 8, in <module>
+[36mmy-mlops-api         |[0m     sys.exit(main())
+[36mmy-mlops-api         |[0m              ^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+[36mmy-mlops-api         |[0m     return self.main(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1363, in main
+[36mmy-mlops-api         |[0m     rv = self.invoke(ctx)
+[36mmy-mlops-api         |[0m          ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1226, in invoke
+[36mmy-mlops-api         |[0m     return ctx.invoke(self.callback, **ctx.params)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 794, in invoke
+[36mmy-mlops-api         |[0m     return callback(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 412, in main
+[36mmy-mlops-api         |[0m     run(
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 579, in run
+[36mmy-mlops-api         |[0m     server.run()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+[36mmy-mlops-api         |[0m     return asyncio.run(self.serve(sockets=sockets))
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+[36mmy-mlops-api         |[0m     return runner.run(main)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+[36mmy-mlops-api         |[0m     return self._loop.run_until_complete(task)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+[36mmy-mlops-api         |[0m     return future.result()
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+[36mmy-mlops-api         |[0m     await self._serve(sockets)
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+[36mmy-mlops-api         |[0m     config.load()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+[36mmy-mlops-api         |[0m     self.loaded_app = import_from_string(self.app)
+[36mmy-mlops-api         |[0m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[36mmy-mlops-api         |[0m     module = importlib.import_module(module_str)
+[36mmy-mlops-api         |[0m              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[36mmy-mlops-api         |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/webapp.py", line 21, in <module>
+[36mmy-mlops-api         |[0m     from scripts.inference.inference import (
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/inference/inference.py", line 23, in <module>
+[36mmy-mlops-api         |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-api         |[0m     <<<<<<< Updated upstream
+[36mmy-mlops-api         |[0m     ^
+[36mmy-mlops-api         |[0m IndentationError: expected an indented block after class definition on line 6
+[36mmy-mlops-api         |[0m Traceback (most recent call last):
+[36mmy-mlops-api         |[0m   File "/usr/local/bin/uvicorn", line 8, in <module>
+[36mmy-mlops-api         |[0m     sys.exit(main())
+[36mmy-mlops-api         |[0m              ^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+[36mmy-mlops-api         |[0m     return self.main(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1363, in main
+[36mmy-mlops-api         |[0m     rv = self.invoke(ctx)
+[36mmy-mlops-api         |[0m          ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1226, in invoke
+[36mmy-mlops-api         |[0m     return ctx.invoke(self.callback, **ctx.params)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 794, in invoke
+[36mmy-mlops-api         |[0m     return callback(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 412, in main
+[36mmy-mlops-api         |[0m     run(
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 579, in run
+[36mmy-mlops-api         |[0m     server.run()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+[36mmy-mlops-api         |[0m     return asyncio.run(self.serve(sockets=sockets))
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+[36mmy-mlops-api         |[0m     return runner.run(main)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+[36mmy-mlops-api         |[0m     return self._loop.run_until_complete(task)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+[36mmy-mlops-api         |[0m     return future.result()
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+[36mmy-mlops-api         |[0m     await self._serve(sockets)
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+[36mmy-mlops-api         |[0m     config.load()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+[36mmy-mlops-api         |[0m     self.loaded_app = import_from_string(self.app)
+[36mmy-mlops-api         |[0m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[36mmy-mlops-api         |[0m     module = importlib.import_module(module_str)
+[36mmy-mlops-api         |[0m              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[36mmy-mlops-api         |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/webapp.py", line 21, in <module>
+[36mmy-mlops-api         |[0m     from scripts.inference.inference import (
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/inference/inference.py", line 23, in <module>
+[36mmy-mlops-api         |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-api         |[0m     <<<<<<< Updated upstream
+[36mmy-mlops-api         |[0m     ^
+[36mmy-mlops-api         |[0m IndentationError: expected an indented block after class definition on line 6
+[36mmy-mlops-api         |[0m Traceback (most recent call last):
+[36mmy-mlops-api         |[0m   File "/usr/local/bin/uvicorn", line 8, in <module>
+[36mmy-mlops-api         |[0m     sys.exit(main())
+[36mmy-mlops-api         |[0m              ^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+[36mmy-mlops-api         |[0m     return self.main(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1363, in main
+[36mmy-mlops-api         |[0m     rv = self.invoke(ctx)
+[36mmy-mlops-api         |[0m          ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1226, in invoke
+[36mmy-mlops-api         |[0m     return ctx.invoke(self.callback, **ctx.params)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 794, in invoke
+[36mmy-mlops-api         |[0m     return callback(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 412, in main
+[36mmy-mlops-api         |[0m     run(
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 579, in run
+[36mmy-mlops-api         |[0m     server.run()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+[36mmy-mlops-api         |[0m     return asyncio.run(self.serve(sockets=sockets))
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+[36mmy-mlops-api         |[0m     return runner.run(main)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+[36mmy-mlops-api         |[0m     return self._loop.run_until_complete(task)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+[36mmy-mlops-api         |[0m     return future.result()
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+[36mmy-mlops-api         |[0m     await self._serve(sockets)
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+[36mmy-mlops-api         |[0m     config.load()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+[36mmy-mlops-api         |[0m     self.loaded_app = import_from_string(self.app)
+[36mmy-mlops-api         |[0m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[36mmy-mlops-api         |[0m     module = importlib.import_module(module_str)
+[36mmy-mlops-api         |[0m              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[36mmy-mlops-api         |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/webapp.py", line 21, in <module>
+[36mmy-mlops-api         |[0m     from scripts.inference.inference import (
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/inference/inference.py", line 23, in <module>
+[36mmy-mlops-api         |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-api         |[0m     <<<<<<< Updated upstream
+[36mmy-mlops-api         |[0m     ^
+[36mmy-mlops-api         |[0m IndentationError: expected an indented block after class definition on line 6
+[36mmy-mlops-api         |[0m Traceback (most recent call last):
+[36mmy-mlops-api         |[0m   File "/usr/local/bin/uvicorn", line 8, in <module>
+[36mmy-mlops-api         |[0m     sys.exit(main())
+[36mmy-mlops-api         |[0m              ^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+[36mmy-mlops-api         |[0m     return self.main(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1363, in main
+[36mmy-mlops-api         |[0m     rv = self.invoke(ctx)
+[36mmy-mlops-api         |[0m          ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1226, in invoke
+[36mmy-mlops-api         |[0m     return ctx.invoke(self.callback, **ctx.params)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 794, in invoke
+[36mmy-mlops-api         |[0m     return callback(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 412, in main
+[36mmy-mlops-api         |[0m     run(
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 579, in run
+[36mmy-mlops-api         |[0m     server.run()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+[36mmy-mlops-api         |[0m     return asyncio.run(self.serve(sockets=sockets))
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+[36mmy-mlops-api         |[0m     return runner.run(main)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+[36mmy-mlops-api         |[0m     return self._loop.run_until_complete(task)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+[36mmy-mlops-api         |[0m     return future.result()
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+[36mmy-mlops-api         |[0m     await self._serve(sockets)
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+[36mmy-mlops-api         |[0m     config.load()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+[36mmy-mlops-api         |[0m     self.loaded_app = import_from_string(self.app)
+[36mmy-mlops-api         |[0m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[36mmy-mlops-api         |[0m     module = importlib.import_module(module_str)
+[36mmy-mlops-api         |[0m              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[36mmy-mlops-api         |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/webapp.py", line 21, in <module>
+[36mmy-mlops-api         |[0m     from scripts.inference.inference import (
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/inference/inference.py", line 23, in <module>
+[36mmy-mlops-api         |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-api         |[0m     <<<<<<< Updated upstream
+[36mmy-mlops-api         |[0m     ^
+[36mmy-mlops-api         |[0m IndentationError: expected an indented block after class definition on line 6
+[36mmy-mlops-api         |[0m Traceback (most recent call last):
+[36mmy-mlops-api         |[0m   File "/usr/local/bin/uvicorn", line 8, in <module>
+[36mmy-mlops-api         |[0m     sys.exit(main())
+[36mmy-mlops-api         |[0m              ^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+[36mmy-mlops-api         |[0m     return self.main(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1363, in main
+[36mmy-mlops-api         |[0m     rv = self.invoke(ctx)
+[36mmy-mlops-api         |[0m          ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1226, in invoke
+[36mmy-mlops-api         |[0m     return ctx.invoke(self.callback, **ctx.params)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 794, in invoke
+[36mmy-mlops-api         |[0m     return callback(*args, **kwargs)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 412, in main
+[36mmy-mlops-api         |[0m     run(
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 579, in run
+[36mmy-mlops-api         |[0m     server.run()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+[36mmy-mlops-api         |[0m     return asyncio.run(self.serve(sockets=sockets))
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+[36mmy-mlops-api         |[0m     return runner.run(main)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+[36mmy-mlops-api         |[0m     return self._loop.run_until_complete(task)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+[36mmy-mlops-api         |[0m     return future.result()
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+[36mmy-mlops-api         |[0m     await self._serve(sockets)
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+[36mmy-mlops-api         |[0m     config.load()
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+[36mmy-mlops-api         |[0m     self.loaded_app = import_from_string(self.app)
+[36mmy-mlops-api         |[0m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[36mmy-mlops-api         |[0m     module = importlib.import_module(module_str)
+[36mmy-mlops-api         |[0m              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[36mmy-mlops-api         |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[36mmy-mlops-api         |[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[36mmy-mlops-api         |[0m   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/webapp.py", line 21, in <module>
+[36mmy-mlops-api         |[0m     from scripts.inference.inference import (
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/inference/inference.py", line 23, in <module>
+[36mmy-mlops-api         |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-api         |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-api         |[0m     <<<<<<< Updated upstream
+[36mmy-mlops-api         |[0m     ^
+[36mmy-mlops-api         |[0m IndentationError: expected an indented block after class definition on line 6

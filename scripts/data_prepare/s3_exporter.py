@@ -72,4 +72,4 @@ def export_and_upload_data_to_s3(logger):
         logger.write(f"An error occurred during export or upload: {e}")
     finally:
         if engine:
-        engine.dispose()
+            engine.dispose()

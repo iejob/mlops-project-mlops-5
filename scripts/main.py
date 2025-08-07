@@ -161,10 +161,10 @@ def run_all_data_pipeline(model_name, batch_size=16, dim=256, num_epochs=500, lo
     run_popular_movie_pipeline(_logger)  
     
     _logger.write("Running train pipeline...")
-    run_train(model_name, batch_size, dim, num_epochs)
+    run_train(model_name, batch_size, dim, num_epochs, _logger)
     
     _logger.write("Running inference pipeline...")
-    run_inference(batch_size=batch_size)
+    run_inference(batch_size=batch_size, logger=_logger)
 
 
 if __name__ == '__main__':

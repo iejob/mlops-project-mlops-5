@@ -96,7 +96,7 @@ def inference(model, scaler, label_encoder, data, logger, batch_size=1):
         return []
 
     dataloader = SimpleDataLoader(
-        dataset.features, dataset.labels, batch_size=batch_size, shuffle=False
+        dataset.features, dataset.labels, logger=logger, batch_size=batch_size, shuffle=False
     )
 
     #_, predictions, accuracy = evaluate(model, dataloader)

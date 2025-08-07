@@ -30,11 +30,26 @@ from scripts.main import run_popular_movie_pipeline, run_train, run_inference
 import importlib.util
 from datetime import datetime
 
-LOGGER_PATH = os.getenv("LOGGER_PATH")
-spec = importlib.util.spec_from_file_location("custom_logger", LOGGER_PATH)
-logger_module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(logger_module)
-Logger = logger_module.Logger
+try:
+    LOGGER_PATH = os.getenv("LOGGER_PATH")
+    if not LOGGER_PATH:
+        raise ValueError("LOGGER_PATH 환경변수가 설정되어 있지 않습니다.")
+
+    if not os.path.isfile(LOGGER_PATH):
+        raise FileNotFoundError(f"Logger 파일이 존재하지 않습니다: {LOGGER_PATH}")
+
+    spec = importlib.util.spec_from_file_location("custom_logger", LOGGER_PATH)
+    logger_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(logger_module)
+
+    if not hasattr(logger_module, "Logger"):
+        raise AttributeError(f"Logger 클래스가 {LOGGER_PATH}에 존재하지 않습니다.")
+
+    Logger = logger_module.Logger
+
+except Exception as e:
+    print(f"[Logger import ERROR] {e}")
+    Logger = None  # 또는 예외를 다시 raise, 혹은 fallback 로거 사용 등
 
 def project_path():
     return os.path.dirname(os.path.abspath(__file__))

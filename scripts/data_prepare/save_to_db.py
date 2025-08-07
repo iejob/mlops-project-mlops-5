@@ -9,7 +9,7 @@ from datetime import datetime
 from io import StringIO
 from datetime import datetime
 from scripts.utils.utils import project_path
-
+from scripts.utils.logger import Logger
 
 # --- 환경 변수 파일 경로 설정 ---
 env_path = os.path.join(project_path(), '.env')
@@ -26,13 +26,13 @@ DB_USER = os.getenv("DB_USER", "postgres")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "root")
 
 
-def save_csv_to_db_main_function(csv_path,logger):
-    #로그 파일 경로 설정
-    log_dir = os.path.join(project_path(), os.getenv("LOGS_SCRIPTS_DIR", "logs/scripts"))
-    log_filename = datetime.now().strftime('db_ingestion_%Y%m%d_%H%M%S.log')
-    log_file_path = os.path.join(log_dir, log_filename)
-    
-    logger = Logger(log_file_path, print_also = True) #콘솔에 출력 하도록
+def save_csv_to_db_main_function(csv_path,logger=None):
+    # 로거 없을 경우 생성해서 사용
+    if logger is None:
+        log_dir = os.path.join(project_path(), os.getenv("LOGS_SCRIPTS_DIR"))
+        log_filename = datetime.now().strftime('db_ingestion_%Y%m%d_%H%M%S.log')
+        log_file_path = os.path.join(log_dir, log_filename)
+        logger = Logger(log_file_path, print_also=True)
 
     conn = None
     cur = None

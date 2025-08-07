@@ -26,6 +26,25 @@ from scripts.postprocess.inference_to_db import write_db, read_db, get_movie_met
 # 데이터 파이프라인, 학습, 추론 함수 import
 from scripts.main import run_popular_movie_pipeline, run_train, run_inference
 
+# === logger.py 환경변수 기반 import 및 인스턴스 생성 ===
+import importlib.util
+from datetime import datetime
+
+LOGGER_PATH = os.getenv("LOGGER_PATH", "scripts/utils/logger.py")
+spec = importlib.util.spec_from_file_location("custom_logger", LOGGER_PATH)
+logger_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(logger_module)
+Logger = logger_module.Logger
+
+def project_path():
+    return os.path.dirname(os.path.abspath(__file__))
+
+log_dir = os.path.join(project_path(), os.getenv("LOGS_SCRIPTS_DIR", "logs/scripts"))
+os.makedirs(log_dir, exist_ok=True)
+log_filename = datetime.now().strftime('webapp_pipeline_%Y%m%d_%H%M%S.log')
+log_file_path = os.path.join(log_dir, log_filename)
+_logger = Logger(log_file_path, print_also=True)
+
 # FastAPI 앱 생성
 app = FastAPI()
 
@@ -43,8 +62,8 @@ load_dotenv()
 
 # 서버 실행 시 최초 1회 모델/스케일러/라벨 인코더 로드
 try:
-    checkpoint = load_checkpoint()
-    model, scaler, label_encoder = init_model(checkpoint)
+    checkpoint = load_checkpoint(_logger)
+    model, scaler, label_encoder = init_model(checkpoint, _logger)
 except Exception as e:
     print("=== 모델/스케일러/라벨 인코더 로딩 실패 ===")
     traceback.print_exc()
@@ -69,28 +88,33 @@ async def read_root():
 @app.post("/run/prepare-data")
 def run_prepare_data():
     try:
-        run_popular_movie_pipeline()
+        run_popular_movie_pipeline(logger=_logger)
         return {"result": "prepare-data finished"}
     except Exception as e:
+        _logger.write(f"run_prepare_data ERROR: {e}", print_error=True)
         raise HTTPException(status_code=500, detail=str(e))
 
 # 모델 학습 파이프라인 실행 엔드포인트
 @app.post("/run/train")
 def run_training(model_name: str = "movie_predictor"):
     try:
-        run_train(model_name)
+        run_train(model_name, logger=_logger)
         return {"result": "train finished"}
     except Exception as e:
+        _logger.write(f"run_training ERROR: {e}", print_error=True)
         raise HTTPException(status_code=500, detail=str(e))
+
 
 # 모델 추론(배치 인퍼런스) 파이프라인 실행 엔드포인트
 @app.post("/run/model-inference")
 def run_batch_inference():
     try:
-        run_inference()
+        run_inference(logger=_logger)
         return {"result": "model-inference finished"}
     except Exception as e:
+        _logger.write(f"run_batch_inference ERROR: {e}", print_error=True)
         raise HTTPException(status_code=500, detail=str(e))
+
 
 # 단일 입력값을 받아 추론 후 추천 결과 반환하는 엔드포인트
 @app.post("/predict")
@@ -105,14 +129,14 @@ async def predict(input_data: InferenceInput):
             input_data.popularity
         ])
         # 2. 추천(모델 추론) 수행
-        result = inference(model, scaler, label_encoder, data)
+        result = inference(model, scaler, label_encoder, data, _logger)
 
         # 3. 추천 결과를 DataFrame 형태로 변환 후 DB에 저장
         df_to_save = recommend_to_df(result)
         write_db(df_to_save, os.getenv("DB_NAME"), "recommend")
 
         # 4. 추천 결과의 content_id에 대해 메타데이터 조회
-        metadata = get_movie_metadata_by_ids(os.getenv("DB_NAME"), result)
+        metadata = get_movie_metadata_by_ids(os.getenv("DB_NAME"), result, _logger)
         recommendations = [
             {
                 "content_id": int(cid),

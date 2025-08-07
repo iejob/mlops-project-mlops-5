@@ -1,0 +1,9 @@
+Attaching to my-mlops-model
+[36mmy-mlops-model       |[0m PostgreSQL engine created for postgres on my-mlops-db
+[36mmy-mlops-model       |[0m Traceback (most recent call last):
+[36mmy-mlops-model       |[0m   File "/mlops-project/scripts/main.py", line 23, in <module>
+[36mmy-mlops-model       |[0m     from scripts.dataset.data_loader import SimpleDataLoader
+[36mmy-mlops-model       |[0m   File "/mlops-project/scripts/dataset/data_loader.py", line 7
+[36mmy-mlops-model       |[0m     def __init__(self, features, labels, logger, batch_size=16, shuffle=True):
+[36mmy-mlops-model       |[0m     ^
+[36mmy-mlops-model       |[0m IndentationError: expected an indented block after class definition on line 6

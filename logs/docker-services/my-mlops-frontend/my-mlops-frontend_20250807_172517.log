@@ -1,0 +1,42 @@
+Attaching to my-mlops-frontend
+[36mmy-mlops-frontend    |[0m  INFO  Accepting connections at http://localhost:3000
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:03 AM 39.122.1.78 GET /
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:03 AM 39.122.1.78 Returned 304 in 29 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:03 AM 39.122.1.78 GET /static/css/main.737cc5db.css
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:03 AM 39.122.1.78 GET /static/js/main.c601dad4.js
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:03 AM 39.122.1.78 Returned 304 in 6 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:03 AM 39.122.1.78 Returned 304 in 5 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:03 AM 39.122.1.78 GET /favicon.ico
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:03 AM 39.122.1.78 Returned 304 in 7 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:04 AM 39.122.1.78 GET /
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:04 AM 39.122.1.78 Returned 304 in 3 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:04 AM 39.122.1.78 GET /static/js/main.c601dad4.js
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:04 AM 39.122.1.78 Returned 304 in 1 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:04 AM 39.122.1.78 GET /static/css/main.737cc5db.css
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:04 AM 39.122.1.78 Returned 304 in 1 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 GET /favicon.ico
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 Returned 304 in 1 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 GET /
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 Returned 304 in 2 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 GET /static/css/main.737cc5db.css
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 GET /static/js/main.c601dad4.js
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 Returned 304 in 2 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 Returned 304 in 2 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 GET /favicon.ico
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:05 AM 39.122.1.78 Returned 304 in 2 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:06 AM 39.122.1.78 GET /
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:06 AM 39.122.1.78 Returned 304 in 2 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:06 AM 39.122.1.78 GET /static/js/main.c601dad4.js
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:06 AM 39.122.1.78 Returned 304 in 2 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:06 AM 39.122.1.78 GET /static/css/main.737cc5db.css
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:06 AM 39.122.1.78 Returned 304 in 1 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:06 AM 39.122.1.78 GET /favicon.ico
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:06 AM 39.122.1.78 Returned 304 in 1 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:07 AM 39.122.1.78 GET /
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:07 AM 39.122.1.78 Returned 304 in 1 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:07 AM 39.122.1.78 GET /static/js/main.c601dad4.js
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:07 AM 39.122.1.78 Returned 304 in 1 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:07 AM 39.122.1.78 GET /static/css/main.737cc5db.css
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:07 AM 39.122.1.78 Returned 304 in 1 ms
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:07 AM 39.122.1.78 GET /favicon.ico
+[36mmy-mlops-frontend    |[0m  HTTP  8/7/2025 8:25:07 AM 39.122.1.78 Returned 304 in 2 ms

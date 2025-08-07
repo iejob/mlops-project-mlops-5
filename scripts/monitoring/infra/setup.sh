@@ -9,6 +9,12 @@ export HOME_DIR=/home/ubuntu
 CURRENT_DIR=$(dirname "$0")
 PROJECT_ROOT=$(realpath "$CURRENT_DIR/../../..")
 
+# 기존 경로 계산 코드 아래에 추가
+ENV_FILE="$PROJECT_ROOT/.env"
+if [ -f "$ENV_FILE" ]; then
+  source "$ENV_FILE"
+fi
+
 # env 파일 로드
 source "$PROJECT_ROOT/.paths/paths.env"
 

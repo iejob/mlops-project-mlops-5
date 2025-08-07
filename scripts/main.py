@@ -169,7 +169,7 @@ def run_all_data_pipeline(model_name, batch_size=16, dim=256, num_epochs=500, lo
 
 if __name__ == '__main__':
     # main.py 에서 실행되는 파일의 로그는 scripts/logs 폴더에 저장
-    log_dir = os.path.join(project_path(), os.getenv("LOGS_SCRIPTS_DIR", "logs/scripts"))
+    log_dir = os.path.join(project_path(), os.getenv("LOGS_SCRIPTS_DIR", "logs/scripts/main"))
     log_filename = datetime.now().strftime('main_pipeline_%Y%m%d_%H%M%S.log')
     log_file_path = os.path.join(log_dir, log_filename)
 

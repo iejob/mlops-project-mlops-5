@@ -39,7 +39,7 @@ Logger = logger_module.Logger
 def project_path():
     return os.path.dirname(os.path.abspath(__file__))
 
-log_dir = os.path.join(project_path(), os.getenv("LOGS_SCRIPTS_DIR", "logs/scripts"))
+log_dir = os.path.join(project_path(), os.getenv("LOGS_SCRIPTS_DIR", "logs/scripts/webapp"))
 os.makedirs(log_dir, exist_ok=True)
 log_filename = datetime.now().strftime('webapp_pipeline_%Y%m%d_%H%M%S.log')
 log_file_path = os.path.join(log_dir, log_filename)

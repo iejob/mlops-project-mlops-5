@@ -1,0 +1,37 @@
+Attaching to my-mlops-api
+[36mmy-mlops-api         |[0m INFO:     Started server process [1]
+[36mmy-mlops-api         |[0m INFO:     Waiting for application startup.
+[36mmy-mlops-api         |[0m INFO:     Application startup complete.
+[36mmy-mlops-api         |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[36mmy-mlops-api         |[0m PostgreSQL engine created for postgres on my-mlops-db
+[36mmy-mlops-api         |[0m 2025-08-07 11:07:25 | Latest model found: /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-07 11:07:25 | Model validation success for /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-07 11:07:25 | Successfully loaded checkpoint from /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-07 11:07:25 | Model initialized from checkpoint.
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:39630 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53093 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:34726 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:44338 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53131 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53131 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52684 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52202 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52184 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:55592 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:35168 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:47582 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52034 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:35492 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:59562 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:44796 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:46196 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52280 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:57776 - "GET /docs HTTP/1.1" 200 OK

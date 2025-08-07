@@ -135,7 +135,7 @@ def run_batch_inference():
 @app.post("/predict")
 async def predict(input_data: InferenceInput):
     try:
-        # 1. 입력 데이터를 numpy array로 변환
+        # 1. 추천 수행
         data = np.array([
             input_data.user_id,
             input_data.content_id,
@@ -143,15 +143,14 @@ async def predict(input_data: InferenceInput):
             input_data.rating,
             input_data.popularity
         ])
-        # 2. 추천(모델 추론) 수행
-        result = inference(model, scaler, label_encoder, data, _logger)
+        result = inference(model, scaler, label_encoder, data)
 
-        # 3. 추천 결과를 DataFrame 형태로 변환 후 DB에 저장
+        # 2. 추천 결과 DB 저장
         df_to_save = recommend_to_df(result)
         write_db(df_to_save, os.getenv("DB_NAME"), "recommend")
 
-        # 4. 추천 결과의 content_id에 대해 메타데이터 조회
-        metadata = get_movie_metadata_by_ids(os.getenv("DB_NAME"), result, _logger)
+        # 3. 메타데이터 포함한 결과 리턴
+        metadata = get_movie_metadata_by_ids(os.getenv("DB_NAME"), result)
         recommendations = [
             {
                 "content_id": int(cid),
@@ -162,7 +161,6 @@ async def predict(input_data: InferenceInput):
             for cid in result
         ]
 
-        # 5. 사용자 ID와 추천 결과 반환
         return {
             "user_id": input_data.user_id,
             "recommendations": recommendations
@@ -176,7 +174,7 @@ async def predict(input_data: InferenceInput):
 async def latest_recommendations(k: int = 10):
     try:
         content_ids = read_db(os.getenv("DB_NAME"), "recommend", k=k)
-        unique_ids = list(dict.fromkeys(content_ids))  # 중복 제거
+        unique_ids = list(dict.fromkeys(content_ids))
         if not unique_ids:
             return {"recent_recommendations": []}
 

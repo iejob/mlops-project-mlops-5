@@ -1,0 +1,118 @@
+Attaching to my-mlops-api
+[36mmy-mlops-api         |[0m INFO:     Started server process [1]
+[36mmy-mlops-api         |[0m INFO:     Waiting for application startup.
+[36mmy-mlops-api         |[0m INFO:     Application startup complete.
+[36mmy-mlops-api         |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[36mmy-mlops-api         |[0m PostgreSQL engine created for postgres on my-mlops-db
+[36mmy-mlops-api         |[0m 2025-08-07 10:19:10 | Latest model found: /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-07 10:19:10 | Model validation success for /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-07 10:19:10 | Successfully loaded checkpoint from /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-07 10:19:10 | Model initialized from checkpoint.
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:57486 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:37898 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:57090 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:55264 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:42538 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:43192 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:51688 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:51036 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:53380 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:37950 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:40696 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:44990 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:41054 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:41476 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:48504 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:37974 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:46400 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:51218 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:51218 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:51218 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:51218 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:54338 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:55350 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:41214 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:64427 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:33702 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:64427 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:47418 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:37328 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:42668 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:58634 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:49886 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:48072 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:40598 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:38212 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:59296 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:54072 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:34406 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:51620 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:48060 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:42070 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:41062 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:33540 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:51136 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:44848 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:60444 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:60602 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:51884 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:37644 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:44044 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:57686 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:47378 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:34076 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:43068 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:46708 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:43208 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:60474 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:55884 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:60458 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:55136 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:57556 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:57508 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:39660 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:35918 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:49524 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52736 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:34748 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:48078 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:53656 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:50446 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:33314 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:53952 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:51018 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:59484 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:40100 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:33542 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:35584 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:35286 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:42908 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:35644 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:60910 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:50844 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:48430 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:49958 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:41912 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:38538 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52696 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:59470 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:50628 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:53928 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:37866 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:40002 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:34708 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:51684 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52488 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:45588 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:34536 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:42802 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:56442 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:39148 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:35508 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:49550 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:37146 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:33092 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:54310 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:36060 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:52382 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:39888 - "GET /docs HTTP/1.1" 200 OK

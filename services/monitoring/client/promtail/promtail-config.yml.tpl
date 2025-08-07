@@ -18,7 +18,7 @@ scrape_configs:
         labels:
           job: app_logs
           host: server_1
-          __path__: /app/logs/*/*.log
+          __path__: /app/logs/**/*.log
     relabel_configs:
       - source_labels: [__path__]
         regex: '/app/logs/(.*)'

@@ -57,7 +57,8 @@ def run_pipeline_task(api_base_url: str, endpoint: str, expected_result: str, pa
     print(f"🚀 API 호출 시작: {url}, 페이로드: {payload or '없음'}")
     
     # 엔드포인트에 따라 타임아웃을 다르게 설정. 'run/train'은 모델 학습으로 인해 시간이 오래 걸릴 수 있음.
-    timeout = 3600 if endpoint == "run/train" else 1800
+    # 타임아웃을 30분으로 설정하고, 나머지는 5분으로 설정
+    timeout = 3600 if endpoint == "run/train" else 300
 
     try:
         if payload:

@@ -12,3 +12,9 @@ COPY requirements.txt .
 USER airflow
 RUN pip install --no-cache-dir -r requirements.txt \
  && pip check
+
+# ✅ NEW: entrypoint.sh 스크립트 복사
+# COPY scripts/airflow/entrypoint.sh /entrypoint.sh
+
+# ✅ NEW: 컨테이너 시작 시 entrypoint.sh를 실행하도록 설정
+# ENTRYPOINT ["/entrypoint.sh"]

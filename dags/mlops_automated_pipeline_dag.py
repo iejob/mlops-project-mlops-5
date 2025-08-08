@@ -25,8 +25,8 @@ SERVER1_API_BASE = f"http://{SERVER_1_IP}:8000"
 default_args = {
     'owner': 'mlops-3xplusy-team',                              # DAG 소유자 지정
     'depends_on_past': False,                                   # 이전 DAG 실행 성공 여부에 의존하지 않음
-    'retries': 2,                                               # 태스크 실패 시 2번 재시도
-    'retry_delay': timedelta(minutes=5),                        # 5분 간격으로 재시도
+    'retries': 5,                                               # 태스크 실패 시 5번 재시도
+    'retry_delay': timedelta(minutes=2),                        # 2분 간격으로 재시도
 }
 
 # DAG 정의
@@ -34,7 +34,7 @@ with DAG(
     dag_id="mlops_automated_pipeline_dag",                      # DAG의 고유 ID
     default_args=default_args,                                  # 기본 인자 설정 
     start_date=pendulum.datetime(2025, 1, 1, tz="Asia/Seoul"),  # DAG 실행 시작일
-    schedule_interval='*/5 * * * *',                            # 5분마다 DAG 실행
+    schedule_interval='*/20 * * * *',                            # 3분마다 DAG 실행
     catchup=False,                                              # 이전 실행되지 않은 DAG을 소급하여 실행하지 않음
     tags=["mlops", "fastapi", "automated-pipeline"],            # DAG 분류를 위한 태그
     doc_md="""

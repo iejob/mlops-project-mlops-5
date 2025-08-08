@@ -1,0 +1,814 @@
+Attaching to my-mlops-api
+[36mmy-mlops-api         |[0m INFO:     Started server process [1]
+[36mmy-mlops-api         |[0m INFO:     Waiting for application startup.
+[36mmy-mlops-api         |[0m INFO:     Application startup complete.
+[36mmy-mlops-api         |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[36mmy-mlops-api         |[0m PostgreSQL engine created for postgres on my-mlops-db
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:00 | Latest model found: /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:00 | Model validation success for /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:00 | Successfully loaded checkpoint from /mlops-project/scripts/utils/../../models/movie_predictor/E500_T250805181336.pkl
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:00 | Model initialized from checkpoint.
+[36mmy-mlops-api         |[0m INFO:     15.165.79.177:44292 - "GET /health HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m --- TMDB 인기 영화 크롤링 시작 ---
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:01 | Fetching popular movies page 1...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:03 | Fetching popular movies page 2...
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:59102 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:04 | Fetching popular movies page 3...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:05 | Fetching popular movies page 4...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:06 | Fetching popular movies page 5...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:07 | Fetching popular movies page 6...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:09 | Fetching popular movies page 7...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:10 | Fetching popular movies page 8...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:11 | Fetching popular movies page 9...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:12 | Fetching popular movies page 10...
+[36mmy-mlops-api         |[0m Movies saved to ./data/raw/popular_movies_raw.json
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | 총 200개의 영화 데이터를 크롤링하여 저장했습니다.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | --- 영화 데이터 전처리 및 시청 로그 생성 시작 ---
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | Preprocessing 200 movies for feature augmentation...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | Generating watch logs for 300 users from 32103 augmented features...
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:58470 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | Successfully generated 2899 watch log entries.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | Successfully saved raw data to ./data/raw/watch_log.csv
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | --- 시청 로그 데이터를 DB에 저장 시작 ---
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | './data/raw/watch_log.csv' 파일에서 2899개의 레코드를 읽었습니다.
+[36mmy-mlops-api         |[0m PostgreSQL 데이터베이스에 연결되었습니다.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | 테이블 'watch_logs' 확인 또는 생성 완료.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | 총 2899개의 시청 로그 데이터가 'watch_logs' 테이블에 성공적으로 저장되었습니다.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | --- 시청 로그 데이터를 DB에 저장 종료 ---
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:14 | Starting data export from watch_logs...
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:15 | Successfully read 5798 rows from watch_logs.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:15 | Data saved locally to /tmp/watch_logs_backup.parquet
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:15 | Successfully uploaded /tmp/watch_logs_backup.parquet to s3://my-mlops-raw-data-backup-3xplusy/raw_data/2025/08/08/watch_logs_20250808021015.parquet
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:15 | Removed local temporary file: /tmp/watch_logs_backup.parquet
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:15 | --- 모든 파이프라인 실행 완료 ---
+[36mmy-mlops-api         |[0m INFO:     15.165.79.177:44306 - "POST /run/prepare-data HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m 2025/08/08 02:10:16 INFO mlflow.tracking.fluent: Experiment with name 'movie-predictor' does not exist. Creating a new experiment.
+[36mmy-mlops-api         |[0m 2025/08/08 02:10:17 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[36mmy-mlops-api         |[0m The git executable must be specified in one of the following ways:
+[36mmy-mlops-api         |[0m     - be included in your $PATH
+[36mmy-mlops-api         |[0m     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[36mmy-mlops-api         |[0m     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m All git commands will error until this is rectified.
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m This initial message can be silenced or aggravated in the future by setting the
+[36mmy-mlops-api         |[0m $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[36mmy-mlops-api         |[0m     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[36mmy-mlops-api         |[0m     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[36mmy-mlops-api         |[0m     - error|e|exception|raise|r|2: for a raised exception
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Example:
+[36mmy-mlops-api         |[0m     export GIT_PYTHON_REFRESH=quiet
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:16 | SimpleDataLoader initialized with 1023 samples, batch_size=32, shuffle=True.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:16 | SimpleDataLoader initialized with 320 samples, batch_size=32, shuffle=False.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:16 | SimpleDataLoader initialized with 256 samples, batch_size=32, shuffle=False.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:17 | SimpleDataLoader initialized with 1023 samples, batch_size=32, shuffle=True.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:17 | SimpleDataLoader initialized with 320 samples, batch_size=32, shuffle=False.
+[36mmy-mlops-api         |[0m 2025-08-08 02:10:17 | SimpleDataLoader initialized with 256 samples, batch_size=32, shuffle=False.
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  53%|█████▎    | 17/32 [00:00<00:00, 162.85it/s]                                                          Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  12%|█▎        | 4/32 [00:00<00:00, 38.76it/s]Training:  25%|██▌       | 8/32 [00:00<00:00, 28.18it/s]Training:  34%|███▍      | 11/32 [00:00<00:00, 27.53it/s]Training:  44%|████▍     | 14/32 [00:00<00:00, 25.30it/s]Training:  53%|█████▎    | 17/32 [00:00<00:00, 24.87it/s]Training:  62%|██████▎   | 20/32 [00:00<00:00, 21.88it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 1/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(4.796773783989469)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(4.580551014175411)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.009375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(4.445317509031146)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.01171875)
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:00<00:00, 23.74it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][ATraining:  88%|████████▊ | 28/32 [00:01<00:00, 29.75it/s]
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:01, 22.37it/s][A
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 22.37it/s][ATraining: 100%|██████████| 32/32 [00:01<00:00, 20.14it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 16.48it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 1/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(4.796773783989469)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(4.580551014175411)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.009375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(4.445317509031146)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.01171875)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  41%|████      | 13/32 [00:00<00:00, 22.14it/s][ATraining:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:00<00:00, 25.71it/s][ATraining:  12%|█▎        | 4/32 [00:00<00:00, 37.58it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:00<00:00, 26.63it/s][ATraining:  25%|██▌       | 8/32 [00:00<00:00, 30.47it/s]
+[36mmy-mlops-api         |[0m Training:  75%|███████▌  | 24/32 [00:00<00:00, 29.30it/s][A
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 28/32 [00:01<00:00, 25.06it/s][ATraining:  38%|███▊      | 12/32 [00:00<00:00, 23.29it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:01<00:00, 23.23it/s][A
+[36mmy-mlops-api         |[0m                                                          [ATraining:  47%|████▋     | 15/32 [00:00<00:00, 18.28it/s]Training:  56%|█████▋    | 18/32 [00:00<00:00, 18.84it/s]Training:  66%|██████▌   | 21/32 [00:01<00:00, 16.51it/s]Training:  72%|███████▏  | 23/32 [00:01<00:00, 12.57it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 2/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(4.442796684602971)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(4.257174829371924)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.021875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(4.118726570129101)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.05078125)
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:01<00:00, 13.34it/s]Training:  97%|█████████▋| 31/32 [00:01<00:00, 17.19it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][A
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:02, 11.47it/s][A                                                         
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:02,  9.11it/s][A
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:02,  8.79it/s][A
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:02, 10.88it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 2/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(4.455801365540459)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(4.256199306514495)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.01875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(4.117820576400406)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.05078125)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:01<00:04,  4.78it/s][ATraining:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  34%|███▍      | 11/32 [00:01<00:05,  4.00it/s][ATraining:   3%|▎         | 1/32 [00:01<00:35,  1.14s/it]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:02<00:07,  2.70it/s][ATraining:  12%|█▎        | 4/32 [00:01<00:06,  4.07it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:03<00:03,  4.79it/s][ATraining:  22%|██▏       | 7/32 [00:01<00:03,  6.32it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:03<00:03,  4.99it/s][A
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:42864 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:  56%|█████▋    | 18/32 [00:03<00:02,  5.47it/s][ATraining:  28%|██▊       | 9/32 [00:01<00:03,  6.66it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:03<00:01,  6.90it/s][ATraining:  38%|███▊      | 12/32 [00:01<00:02,  9.13it/s]Training:  44%|████▍     | 14/32 [00:02<00:01, 10.00it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:03<00:00,  9.35it/s][ATraining:  50%|█████     | 16/32 [00:02<00:01, 11.04it/s]
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:03<00:00, 10.20it/s][ATraining:  56%|█████▋    | 18/32 [00:02<00:01, 11.12it/s]
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:03<00:00, 10.98it/s][A
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:04<00:00, 13.85it/s][A
+[36mmy-mlops-api         |[0m                                                          [ATraining:  69%|██████▉   | 22/32 [00:02<00:00, 13.92it/s]Training:  75%|███████▌  | 24/32 [00:03<00:00,  9.50it/s]Training:  81%|████████▏ | 26/32 [00:03<00:00,  9.61it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 3/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(4.122717806791738)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.99072348771677)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.046875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.8521794820224655)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.08203125)
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:03<00:00, 12.16it/s]                                                         Training:   0%|          | 0/32 [00:00<?, ?it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 3/1000'
+[36mmy-mlops-api         |[0m Training:   3%|▎         | 1/32 [00:00<00:07,  4.27it/s]ic| train_loss: np.float64(4.079649568780827)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.9889676396171643)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.04375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.84997834491057)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.078125)
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:07,  4.15it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][ATraining:  12%|█▎        | 4/32 [00:00<00:05,  4.93it/s]Training:  19%|█▉        | 6/32 [00:00<00:03,  7.41it/s]
+[36mmy-mlops-api         |[0m Training:   3%|▎         | 1/32 [00:00<00:13,  2.28it/s][ATraining:  28%|██▊       | 9/32 [00:01<00:02, 10.51it/s]
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 13.40it/s][ATraining:  38%|███▊      | 12/32 [00:01<00:01, 13.66it/s]
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 17.64it/s][ATraining:  47%|████▋     | 15/32 [00:01<00:01, 13.60it/s]
+[36mmy-mlops-api         |[0m Training:  41%|████      | 13/32 [00:00<00:01, 16.08it/s][ATraining:  56%|█████▋    | 18/32 [00:01<00:00, 16.09it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:01<00:00, 18.10it/s][A
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:01<00:00, 25.58it/s][ATraining:  62%|██████▎   | 20/32 [00:01<00:00, 12.68it/s]
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:01<00:00, 36.04it/s][A
+[36mmy-mlops-api         |[0m                                                          [ATraining:  72%|███████▏  | 23/32 [00:01<00:00, 15.14it/s]Training:  78%|███████▊  | 25/32 [00:02<00:00, 15.01it/s]Training:  84%|████████▍ | 27/32 [00:02<00:00,  9.58it/s]Training:  91%|█████████ | 29/32 [00:02<00:00,  9.26it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 4/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.8658798114666775)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.773700856396283)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.084375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.6365778569797733)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.109375)
+[36mmy-mlops-api         |[0m                                                          Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  12%|█▎        | 4/32 [00:00<00:00, 34.36it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 4/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.864961812732079)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.7728934385801507)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.0875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.6358579424733897)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.1171875)
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 20.03it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][ATraining:  34%|███▍      | 11/32 [00:00<00:00, 21.30it/s]
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:01, 22.90it/s][ATraining:  50%|█████     | 16/32 [00:00<00:00, 27.80it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:00, 34.82it/s][ATraining:  69%|██████▉   | 22/32 [00:00<00:00, 35.06it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:00, 33.61it/s][A
+[36mmy-mlops-api         |[0m Training:  56%|█████▋    | 18/32 [00:00<00:00, 40.66it/s][ATraining:  81%|████████▏ | 26/32 [00:00<00:00, 30.21it/s]Training:  94%|█████████▍| 30/32 [00:01<00:00, 29.63it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:00<00:00, 33.52it/s][A
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:00<00:00, 29.81it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 5/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.6208481406633997)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.606788456044783)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.10625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.469102750999661)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.12109375)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:01<00:00, 25.48it/s][ATraining:  16%|█▌        | 5/32 [00:00<00:00, 44.94it/s]
+[36mmy-mlops-api         |[0m                                                          [ATraining:  31%|███▏      | 10/32 [00:00<00:00, 28.45it/s]Training:  47%|████▋     | 15/32 [00:00<00:00, 32.88it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 5/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.6244936462511728)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.6007684171259933)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.10625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.466228495438072)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.12109375)
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:00<00:00, 36.03it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][ATraining:  75%|███████▌  | 24/32 [00:00<00:00, 34.71it/s]
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:01, 23.27it/s][ATraining:  88%|████████▊ | 28/32 [00:00<00:00, 32.55it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 19.90it/s][A
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 21.80it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 6/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.451982249462133)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.473082827294848)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.1125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.3351419574450927)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.13671875)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 16.31it/s][ATraining:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:00, 17.73it/s][ATraining:   6%|▋         | 2/32 [00:00<00:01, 18.61it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:00<00:00, 16.85it/s][A
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:00, 17.26it/s][ATraining:  12%|█▎        | 4/32 [00:00<00:02, 10.49it/s]Training:  31%|███▏      | 10/32 [00:00<00:00, 24.78it/s]
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:01<00:00, 17.04it/s][ATraining:  44%|████▍     | 14/32 [00:00<00:00, 29.06it/s]
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:01<00:00, 21.62it/s][A
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:01<00:00, 25.16it/s][A
+[36mmy-mlops-api         |[0m                                                          [ATraining:  56%|█████▋    | 18/32 [00:00<00:00, 26.30it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 6/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.4384401640493647)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.4672618509196007)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.109375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.332809421899663)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.1328125)
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:01<00:00, 21.22it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][A
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:01, 28.99it/s][A
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 23.34it/s][ATraining:  78%|███████▊  | 25/32 [00:01<00:00, 14.86it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 17.29it/s][ATraining:  91%|█████████ | 29/32 [00:01<00:00, 16.30it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  34%|███▍      | 11/32 [00:00<00:01, 15.38it/s][A
+[36mmy-mlops-api         |[0m Training:  44%|████▍     | 14/32 [00:00<00:01, 17.85it/s][A
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:00<00:00, 29.20it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 7/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.3127522980894772)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.3623543500041633)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.223795685098604)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.1484375)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:01<00:00, 43.49it/s][ATraining:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m                                                          [ATraining:   6%|▋         | 2/32 [00:00<00:02, 11.88it/s]Training:  12%|█▎        | 4/32 [00:00<00:02, 10.93it/s]Training:  19%|█▉        | 6/32 [00:00<00:01, 13.79it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 7/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.313112768160586)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.3566955569849517)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.2218150725257844)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.1484375)
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:43274 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:02, 11.74it/s]Training:  31%|███▏      | 10/32 [00:00<00:01, 11.58it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][ATraining:  38%|███▊      | 12/32 [00:01<00:02,  9.68it/s]
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:00, 52.16it/s][ATraining:  53%|█████▎    | 17/32 [00:01<00:00, 16.49it/s]Training:  66%|██████▌   | 21/32 [00:01<00:00, 20.93it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:00, 30.21it/s][ATraining:  75%|███████▌  | 24/32 [00:01<00:00, 20.32it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 21.62it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:00<00:00, 18.47it/s][ATraining:  94%|█████████▍| 30/32 [00:01<00:00, 20.25it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:00<00:00, 17.00it/s][A
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 21.08it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 8/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.232395114192357)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.2682322202675826)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.134375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.131631118658183)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.16796875)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:01<00:00, 23.12it/s][ATraining:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:01<00:00, 20.91it/s][ATraining:   6%|▋         | 2/32 [00:00<00:01, 19.11it/s]
+[36mmy-mlops-api         |[0m                                                          [ATraining:  12%|█▎        | 4/32 [00:00<00:02, 13.11it/s]Training:  19%|█▉        | 6/32 [00:00<00:01, 13.67it/s]Training:  28%|██▊       | 9/32 [00:00<00:01, 17.62it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 8/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.217966961316146)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.2643371759481083)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.1375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.131231910757782)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.17578125)
+[36mmy-mlops-api         |[0m Training:  34%|███▍      | 11/32 [00:00<00:01, 14.53it/s]Training:  41%|████      | 13/32 [00:00<00:01, 15.77it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][ATraining:  50%|█████     | 16/32 [00:00<00:00, 19.05it/s]
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:00, 29.64it/s][ATraining:  59%|█████▉    | 19/32 [00:01<00:00, 18.76it/s]Training:  69%|██████▉   | 22/32 [00:01<00:00, 20.91it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 22.57it/s][ATraining:  78%|███████▊  | 25/32 [00:01<00:00, 22.88it/s]
+[36mmy-mlops-api         |[0m Training:  34%|███▍      | 11/32 [00:00<00:00, 24.44it/s][ATraining:  91%|█████████ | 29/32 [00:01<00:00, 27.27it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:00<00:00, 34.06it/s][A                                                         
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:00<00:00, 32.62it/s][A
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:00<00:00, 39.67it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 9/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.1044384187764686)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.185819725435048)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.153125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.0522835688713106)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.1796875)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m                                                          [ATraining:   0%|          | 0/32 [00:00<?, ?it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 9/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.1312547831325745)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.1834270408690815)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.15)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(3.053775434792944)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.1796875)
+[36mmy-mlops-api         |[0m Training:   3%|▎         | 1/32 [00:00<00:03,  9.76it/s]Training:  16%|█▌        | 5/32 [00:00<00:01, 24.46it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][ATraining:  31%|███▏      | 10/32 [00:00<00:00, 34.11it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:00, 77.29it/s][ATraining:  44%|████▍     | 14/32 [00:00<00:00, 33.92it/s]Training:  59%|█████▉    | 19/32 [00:00<00:00, 37.00it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:00<00:00, 45.86it/s][ATraining:  75%|███████▌  | 24/32 [00:00<00:00, 38.79it/s]Training:  91%|█████████ | 29/32 [00:00<00:00, 37.39it/s]
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:00<00:00, 33.35it/s][A                                                         
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:00<00:00, 34.12it/s][A
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:00<00:00, 36.61it/s][Aic
+[36mmy-mlops-api         |[0m |                                                          f"[AEpoch {epoch + 1}/{num_epochs}": 'Epoch 10/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.023718697078164)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.1147025457919413)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.159375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.9839596179998704)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.19921875)
+[36mmy-mlops-api         |[0m ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 10/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(3.0255279172339584)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.112554036728078)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.15625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.9867499905961195)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.18359375)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][A
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 19.65it/s][ATraining:   9%|▉         | 3/32 [00:00<00:02, 14.41it/s]Training:  16%|█▌        | 5/32 [00:00<00:02, 13.06it/s]
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:01, 16.46it/s][A
+[36mmy-mlops-api         |[0m Training:  22%|██▏       | 7/32 [00:00<00:01, 16.42it/s][ATraining:  22%|██▏       | 7/32 [00:00<00:02, 11.68it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 16.33it/s][ATraining:  28%|██▊       | 9/32 [00:00<00:01, 13.25it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 18.12it/s][ATraining:  41%|████      | 13/32 [00:00<00:01, 18.54it/s]
+[36mmy-mlops-api         |[0m Training:  44%|████▍     | 14/32 [00:00<00:01, 16.20it/s][ATraining:  62%|██████▎   | 20/32 [00:00<00:00, 28.80it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:01<00:01, 14.21it/s][ATraining:  75%|███████▌  | 24/32 [00:01<00:00, 21.97it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:00, 17.00it/s][ATraining:  88%|████████▊ | 28/32 [00:01<00:00, 23.71it/s]
+[36mmy-mlops-api         |[0m Training:  75%|███████▌  | 24/32 [00:01<00:00, 21.97it/s][A                                                         
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:01<00:00, 20.72it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 11/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.959386984267329)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.0514359248633225)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.153125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.9230949425771207)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.19921875)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m                                                          [ATraining:   0%|          | 0/32 [00:00<?, ?it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 11/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.9470619183231093)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(3.049917423091887)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.153125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.926314542883139)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.19921875)
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:00, 31.88it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][ATraining:  25%|██▌       | 8/32 [00:00<00:00, 35.01it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:00, 30.78it/s][ATraining:  38%|███▊      | 12/32 [00:00<00:00, 34.38it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 19.37it/s][ATraining:  50%|█████     | 16/32 [00:00<00:00, 23.36it/s]
+[36mmy-mlops-api         |[0m Training:  34%|███▍      | 11/32 [00:00<00:01, 16.65it/s][ATraining:  59%|█████▉    | 19/32 [00:00<00:00, 22.43it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:00, 20.72it/s][ATraining:  69%|██████▉   | 22/32 [00:00<00:00, 23.08it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:00<00:00, 25.31it/s][ATraining:  81%|████████▏ | 26/32 [00:00<00:00, 26.46it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:00<00:00, 27.28it/s][ATraining:  97%|█████████▋| 31/32 [00:01<00:00, 26.53it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:01<00:00, 17.72it/s][A
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:01<00:00, 16.99it/s][Aic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 12/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.8935091234098596)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.994535833284501)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.165625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.8690474471495833)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.203125)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m                                                          [ATraining:   0%|          | 0/32 [00:00<?, ?it/s]Training:   3%|▎         | 1/32 [00:00<00:03,  8.59it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 12/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.8778608036435154)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.9911472294773382)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.16875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.8710967083573418)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.20703125)
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:02, 12.89it/s]Training:  16%|█▌        | 5/32 [00:00<00:01, 14.92it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s][A
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:02, 14.10it/s][ATraining:  22%|██▏       | 7/32 [00:00<00:02, 10.70it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:01, 16.56it/s][A
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 17.75it/s][ATraining:  28%|██▊       | 9/32 [00:00<00:02, 11.46it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 20.78it/s][ATraining:  47%|████▋     | 15/32 [00:00<00:00, 22.78it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:00<00:00, 36.90it/s][ATraining:  62%|██████▎   | 20/32 [00:00<00:00, 28.57it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:00<00:00, 36.41it/s][ATraining:  75%|███████▌  | 24/32 [00:01<00:00, 29.47it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60313 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:00<00:00, 38.97it/s][ATraining:  88%|████████▊ | 28/32 [00:01<00:00, 25.29it/s]
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:00<00:00, 31.90it/s][ATraining:  97%|█████████▋| 31/32 [00:01<00:00, 23.38it/s]
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:41246 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m                                                          [A                                                         ic| f"Epoch {epoch + 1}/ic{num_epochs}|":  'fEpoch 13/1000'"
+[36mmy-mlops-api         |[0m Epoch {epoch + 1}/{num_epochs}": 'Epoch 13/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.8218048805734677)
+[36mmy-mlops-api         |[0m     val_loss: np.float64ic|(2.9441469911904097)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.18125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.823024718057862)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.203125)
+[36mmy-mlops-api         |[0m  train_loss: np.float64(2.8059323771207905)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.942073548175555)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.178125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.8251346735539355)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.21484375)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 17.12it/s]Training:   9%|▉         | 3/32 [00:00<00:01, 24.99it/s]
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:01, 23.80it/s]Training:  25%|██▌       | 8/32 [00:00<00:00, 37.55it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60313 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:00, 30.19it/s]Training:  38%|███▊      | 12/32 [00:00<00:00, 26.77it/s]
+[36mmy-mlops-api         |[0m Training:  41%|████      | 13/32 [00:00<00:00, 24.08it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:00<00:00, 24.61it/s]Training:  47%|████▋     | 15/32 [00:00<00:00, 20.03it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:00<00:00, 36.39it/s]Training:  56%|█████▋    | 18/32 [00:00<00:00, 19.66it/s]Training:  69%|██████▉   | 22/32 [00:00<00:00, 22.40it/s]
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:00<00:00, 29.48it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 28.31it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:01<00:00, 30.32it/s]
+[36mmy-mlops-api         |[0m                                                                                                                   ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 14/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.7565452525282357)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.8958080389540233)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.184375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.7825999867519307)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.2109375)
+[36mmy-mlops-api         |[0m ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 14/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.7718442656565023)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.897547373299094)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.19375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.779951118387676)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.19921875)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:   6%|▋         | 2/32 [00:00<00:01, 18.11it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 17.15it/s]Training:  12%|█▎        | 4/32 [00:00<00:01, 18.37it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:01, 15.68it/s]Training:  19%|█▉        | 6/32 [00:00<00:01, 13.49it/s]
+[36mmy-mlops-api         |[0m Training:  22%|██▏       | 7/32 [00:00<00:01, 15.94it/s]Training:  28%|██▊       | 9/32 [00:00<00:01, 16.43it/s]Training:  38%|███▊      | 12/32 [00:00<00:01, 18.51it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 12.61it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 14.96it/s]Training:  44%|████▍     | 14/32 [00:00<00:01, 14.83it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:01, 16.37it/s]Training:  50%|█████     | 16/32 [00:01<00:01, 14.15it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:00, 16.88it/s]Training:  56%|█████▋    | 18/32 [00:01<00:01, 12.46it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:01<00:00, 15.51it/s]Training:  69%|██████▉   | 22/32 [00:01<00:00, 16.63it/s]
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:01<00:00, 16.10it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 23.56it/s]
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:01<00:00, 19.50it/s]Training:  97%|█████████▋| 31/32 [00:01<00:00, 26.59it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:01<00:00, 25.50it/s]
+[36mmy-mlops-api         |[0m                                                          ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 15/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.709712722552954)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.853440751088109)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.20625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.742827546834874)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.22265625)
+[36mmy-mlops-api         |[0m ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 15/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.7211171801347196)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.8565490524689046)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.209375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.7408787408239728)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.21875)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60317 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60319 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:   3%|▎         | 1/32 [00:00<00:03,  9.14it/s]Training:   9%|▉         | 3/32 [00:00<00:01, 19.53it/s]
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:02, 12.35it/s]Training:  16%|█▌        | 5/32 [00:00<00:01, 14.98it/s]Training:  25%|██▌       | 8/32 [00:00<00:01, 18.85it/s]Training:  34%|███▍      | 11/32 [00:00<00:01, 20.31it/s]
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:03,  7.87it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 12.56it/s]
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 13.26it/s]Training:  44%|████▍     | 14/32 [00:00<00:01, 12.99it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 14.49it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:01<00:00, 17.21it/s]Training:  50%|█████     | 16/32 [00:01<00:01, 12.54it/s]Training:  56%|█████▋    | 18/32 [00:01<00:01, 13.60it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:01, 14.69it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:00, 15.14it/s]Training:  62%|██████▎   | 20/32 [00:01<00:01, 11.81it/s]
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:01<00:00, 16.07it/s]Training:  72%|███████▏  | 23/32 [00:01<00:00, 14.62it/s]
+[36mmy-mlops-api         |[0m Training:  75%|███████▌  | 24/32 [00:01<00:00, 13.65it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 10.80it/s]
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:01<00:00, 13.23it/s]Training:  84%|████████▍ | 27/32 [00:02<00:00, 11.81it/s]
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 28/32 [00:02<00:00, 12.23it/s]Training:  91%|█████████ | 29/32 [00:02<00:00, 12.97it/s]
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:02<00:00, 12.53it/s]Training:  97%|█████████▋| 31/32 [00:02<00:00, 12.83it/s]                                                         
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 32/32 [00:02<00:00, 11.73it/s]
+[36mmy-mlops-api         |[0m                                                          ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 16/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.6620031919031564)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.8155569263934175)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.20625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.7054183253738975)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.23046875)
+[36mmy-mlops-api         |[0m ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 16/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.6393136519886213)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.818256650135628)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.2125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.704858011209929)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.21875)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:   9%|▉         | 3/32 [00:00<00:01, 22.93it/s]
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:00, 37.23it/s]Training:  19%|█▉        | 6/32 [00:00<00:01, 15.59it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:00, 23.66it/s]Training:  28%|██▊       | 9/32 [00:00<00:01, 17.89it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:00, 23.50it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:00, 22.80it/s]Training:  34%|███▍      | 11/32 [00:00<00:01, 13.44it/s]
+[36mmy-mlops-api         |[0m Training:  56%|█████▋    | 18/32 [00:00<00:00, 20.04it/s]Training:  44%|████▍     | 14/32 [00:00<00:01, 16.16it/s]Training:  50%|█████     | 16/32 [00:01<00:01, 13.05it/s]
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:01<00:00, 15.40it/s]Training:  56%|█████▋    | 18/32 [00:01<00:01, 11.93it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 14.25it/s]
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 14.10it/s]Training:  62%|██████▎   | 20/32 [00:01<00:01, 11.46it/s]Training:  69%|██████▉   | 22/32 [00:01<00:00, 12.07it/s]
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:01<00:00, 13.13it/s]
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:01<00:00, 13.21it/s]Training:  75%|███████▌  | 24/32 [00:01<00:00, 12.20it/s]Training:  81%|████████▏ | 26/32 [00:01<00:00, 12.89it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:01<00:00, 12.23it/s]
+[36mmy-mlops-api         |[0m                                                          Training:  91%|█████████ | 29/32 [00:02<00:00, 14.78it/s]Training: 100%|██████████| 32/32 [00:02<00:00, 15.89it/s]                                                         ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 17/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.6089704996848817)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.7841327847257897)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.21875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.671524573650084)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.23046875)
+[36mmy-mlops-api         |[0m ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 17/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.6340560970642564)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.7799812903701304)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.225)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.67230229317168)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.23046875)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:   6%|▋         | 2/32 [00:00<00:02, 13.85it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 16.48it/s]Training:  12%|█▎        | 4/32 [00:00<00:01, 16.35it/s]
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:01, 22.93it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:00, 27.67it/s]Training:  19%|█▉        | 6/32 [00:00<00:02, 10.90it/s]
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:60008 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:00, 24.27it/s]Training:  25%|██▌       | 8/32 [00:00<00:02,  9.95it/s]Training:  31%|███▏      | 10/32 [00:00<00:02, 10.12it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:01, 12.25it/s]Training:  38%|███▊      | 12/32 [00:01<00:01, 11.11it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:01, 13.32it/s]Training:  47%|████▋     | 15/32 [00:01<00:01, 13.82it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:00, 14.01it/s]Training:  53%|█████▎    | 17/32 [00:01<00:01, 14.71it/s]
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:01<00:00, 16.75it/s]Training:  59%|█████▉    | 19/32 [00:01<00:00, 15.15it/s]Training:  69%|██████▉   | 22/32 [00:01<00:00, 18.53it/s]
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 16.27it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 18.78it/s]
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:01<00:00, 14.64it/s]
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:01<00:00, 15.63it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 13.99it/s]
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 32/32 [00:01<00:00, 15.57it/s]
+[36mmy-mlops-api         |[0m                                                          Training:  91%|█████████ | 29/32 [00:02<00:00, 14.35it/s]Training:  97%|█████████▋| 31/32 [00:02<00:00, 14.90it/s]                                                         ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 18/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.5713993652030367)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.747306538776382)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.225)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.6413522727937475)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.234375)
+[36mmy-mlops-api         |[0m ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 18/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.563118479440089)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.749413259623912)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.234375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.6412234362997564)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.23828125)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  12%|█▎        | 4/32 [00:00<00:00, 32.26it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 15.85it/s]Training:  25%|██▌       | 8/32 [00:00<00:01, 19.16it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:02, 11.51it/s]Training:  34%|███▍      | 11/32 [00:00<00:01, 17.66it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 13.67it/s]Training:  44%|████▍     | 14/32 [00:00<00:01, 16.21it/s]
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 14.91it/s]Training:  53%|█████▎    | 17/32 [00:00<00:00, 15.97it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 13.52it/s]Training:  66%|██████▌   | 21/32 [00:01<00:00, 18.79it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:01<00:00, 17.85it/s]Training:  72%|███████▏  | 23/32 [00:01<00:00, 17.97it/s]
+[36mmy-mlops-api         |[0m Training:  56%|█████▋    | 18/32 [00:01<00:00, 16.15it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 17.68it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:01<00:00, 16.36it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 19.30it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 14.45it/s]Training:  91%|█████████ | 29/32 [00:01<00:00, 15.52it/s]Training:  97%|█████████▋| 31/32 [00:01<00:00, 16.36it/s]
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:01<00:00, 14.79it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 28/32 [00:01<00:00, 13.62it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:01<00:00, 16.33it/s]
+[36mmy-mlops-api         |[0m                                                          ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 19/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.5140166656602645)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.7167581952011566)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.234375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.6121756888822807)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.23046875)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 19/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.530935434739459)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.7193268206354455)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.24375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.6130714375323953)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.2421875)
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:01, 26.45it/s]Training:  19%|█▉        | 6/32 [00:00<00:00, 26.38it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:00, 30.77it/s]Training:  28%|██▊       | 9/32 [00:00<00:01, 17.04it/s]Training:  38%|███▊      | 12/32 [00:00<00:01, 17.15it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 13.37it/s]Training:  44%|████▍     | 14/32 [00:00<00:01, 14.68it/s]Training:  50%|█████     | 16/32 [00:00<00:01, 15.00it/s]
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 13.82it/s]
+[36mmy-mlops-api         |[0m Training:  41%|████      | 13/32 [00:00<00:01, 15.89it/s]Training:  59%|█████▉    | 19/32 [00:01<00:00, 13.80it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:01, 14.81it/s]Training:  66%|██████▌   | 21/32 [00:01<00:00, 14.50it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:01, 14.45it/s]Training:  72%|███████▏  | 23/32 [00:01<00:00, 12.72it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 13.94it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:01, 11.60it/s]
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:01<00:00, 12.47it/s]Training:  88%|████████▊ | 28/32 [00:01<00:00, 15.26it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 13.95it/s]Training:  94%|█████████▍| 30/32 [00:02<00:00, 12.17it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 11.46it/s]
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 28/32 [00:01<00:00, 14.44it/s]
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:02<00:00, 15.55it/s]
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 32/32 [00:02<00:00, 12.85it/s]
+[36mmy-mlops-api         |[0m                                                          ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 20/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.485495335919286)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.6885116732909813)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.24375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.5847966427803386)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.234375)
+[36mmy-mlops-api         |[0m ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 20/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.479152736216527)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.690347057242061)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.25)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.585312624066747)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.23828125)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:   9%|▉         | 3/32 [00:00<00:01, 19.27it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  16%|█▌        | 5/32 [00:00<00:01, 14.82it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 18.57it/s]Training:  22%|██▏       | 7/32 [00:00<00:01, 15.15it/s]Training:  28%|██▊       | 9/32 [00:00<00:01, 15.17it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:02, 12.42it/s]
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 14.38it/s]Training:  34%|███▍      | 11/32 [00:00<00:01, 14.54it/s]Training:  41%|████      | 13/32 [00:00<00:01, 14.28it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 12.50it/s]Training:  47%|████▋     | 15/32 [00:01<00:01, 14.72it/s]
+[36mmy-mlops-api         |[0m INFO:     39.122.1.78:53280 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 13.44it/s]Training:  53%|█████▎    | 17/32 [00:01<00:00, 15.54it/s]
+[36mmy-mlops-api         |[0m Training:  41%|████      | 13/32 [00:00<00:01, 16.74it/s]Training:  59%|█████▉    | 19/32 [00:01<00:00, 15.76it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:01<00:01, 13.81it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:00, 15.17it/s]Training:  66%|██████▌   | 21/32 [00:01<00:00, 13.01it/s]Training:  72%|███████▏  | 23/32 [00:01<00:00, 14.13it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:01, 12.03it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 13.40it/s]
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:01<00:00, 12.62it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 14.22it/s]
+[36mmy-mlops-api         |[0m Training:  75%|███████▌  | 24/32 [00:01<00:00, 15.73it/s]Training:  91%|█████████ | 29/32 [00:01<00:00, 14.45it/s]
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:01<00:00, 14.88it/s]Training:  97%|█████████▋| 31/32 [00:02<00:00, 14.93it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:01<00:00, 16.26it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:02<00:00, 15.57it/s]
+[36mmy-mlops-api         |[0m                                                          ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 21/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.473557038365983)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.6613774623307287)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.25)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.5598349693593048)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.234375)
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 21/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.4620137115411223)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.664154809990133)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.2625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.560302803695222)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.23828125)
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:59886 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:01, 18.39it/s]Training:  16%|█▌        | 5/32 [00:00<00:01, 15.61it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  25%|██▌       | 8/32 [00:00<00:01, 18.29it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:02, 13.67it/s]Training:  31%|███▏      | 10/32 [00:00<00:01, 16.15it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:02, 11.67it/s]Training:  38%|███▊      | 12/32 [00:00<00:01, 12.82it/s]
+[36mmy-mlops-api         |[0m Training:  22%|██▏       | 7/32 [00:00<00:01, 14.82it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 12.64it/s]Training:  44%|████▍     | 14/32 [00:01<00:01, 11.57it/s]Training:  50%|█████     | 16/32 [00:01<00:01, 12.17it/s]
+[36mmy-mlops-api         |[0m Training:  34%|███▍      | 11/32 [00:00<00:01, 11.34it/s]Training:  56%|█████▋    | 18/32 [00:01<00:01, 12.47it/s]
+[36mmy-mlops-api         |[0m Training:  41%|████      | 13/32 [00:01<00:01, 12.69it/s]Training:  66%|██████▌   | 21/32 [00:01<00:00, 15.55it/s]
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:01<00:01, 14.05it/s]Training:  72%|███████▏  | 23/32 [00:01<00:00, 16.01it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:01, 14.57it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 15.09it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:00, 13.95it/s]
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:01<00:00, 13.61it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 11.61it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 13.11it/s]Training:  91%|█████████ | 29/32 [00:02<00:00, 13.17it/s]Training:  97%|█████████▋| 31/32 [00:02<00:00, 12.68it/s]
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 11.99it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 28/32 [00:02<00:00, 14.54it/s]
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:02<00:00, 14.66it/s]
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 32/32 [00:02<00:00, 15.68it/s]
+[36mmy-mlops-api         |[0m                                                          ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 22/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.4451595880328068)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.6356338262958476)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.259375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.5363808431789123)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.2421875)
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 22/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.4513786199116505)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.6382578973998188)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.26875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.537837456004264)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.2421875)
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60331 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  16%|█▌        | 5/32 [00:00<00:00, 32.97it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 17.19it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60331 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:01, 15.02it/s]Training:  28%|██▊       | 9/32 [00:00<00:01, 20.76it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 15.08it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 13.94it/s]Training:  38%|███▊      | 12/32 [00:00<00:01, 12.41it/s]
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 12.88it/s]Training:  47%|████▋     | 15/32 [00:00<00:01, 15.39it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60331 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 12.44it/s]Training:  56%|█████▋    | 18/32 [00:01<00:00, 14.55it/s]
+[36mmy-mlops-api         |[0m Training:  44%|████▍     | 14/32 [00:01<00:02,  8.25it/s]Training:  62%|██████▎   | 20/32 [00:01<00:01, 11.44it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:01, 10.60it/s]Training:  69%|██████▉   | 22/32 [00:01<00:00, 12.20it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 14.97it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:01, 11.04it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 14.94it/s]Training:  91%|█████████ | 29/32 [00:01<00:00, 15.82it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:01<00:01, 10.56it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 11.90it/s]Training: 100%|██████████| 32/32 [00:02<00:00, 17.61it/s]                                                         
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60331 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:02<00:00, 14.56it/s]
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:02<00:00, 17.12it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 23/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.4165844346265346)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.612746278327589)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.253125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.5146514112119003)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.2421875)
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:60318 - "GET /latest-recommendations HTTP/1.1" 500 Internal Server Error
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:02<00:00, 11.18it/s]
+[36mmy-mlops-api         |[0m                                                          Training:   6%|▋         | 2/32 [00:00<00:02, 12.44it/s]Training:  12%|█▎        | 4/32 [00:00<00:01, 14.05it/s]Training:  28%|██▊       | 9/32 [00:00<00:00, 25.98it/s]Training:  38%|███▊      | 12/32 [00:00<00:00, 24.61it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 23/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.4309574332764123)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.6145738989413854)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.2625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.5172524091437984)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25)
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:00, 23.04it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  56%|█████▋    | 18/32 [00:00<00:00, 22.53it/s]Training:  66%|██████▌   | 21/32 [00:00<00:00, 21.08it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:02, 10.20it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:02, 10.23it/s]Training:  75%|███████▌  | 24/32 [00:01<00:00, 17.49it/s]
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:02, 12.50it/s]Training:  81%|████████▏ | 26/32 [00:01<00:00, 17.37it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 14.50it/s]Training:  91%|█████████ | 29/32 [00:01<00:00, 19.33it/s]
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 15.54it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  41%|████      | 13/32 [00:00<00:01, 15.35it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 24/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.37057030567042)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.5896988092064395)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.265625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.4928734352700412)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:01<00:00, 17.26it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:01<00:00, 20.64it/s]Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 20.21it/s]Training:   6%|▋         | 2/32 [00:00<00:02, 11.31it/s]Training:  16%|█▌        | 5/32 [00:00<00:01, 19.07it/s]
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:01<00:00, 17.13it/s]Training:  25%|██▌       | 8/32 [00:00<00:01, 19.37it/s]
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:01<00:00, 17.48it/s]Training:  34%|███▍      | 11/32 [00:00<00:01, 18.41it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:01<00:00, 16.28it/s]Training:  41%|████      | 13/32 [00:00<00:01, 18.37it/s]
+[36mmy-mlops-api         |[0m                                                          Training:  50%|█████     | 16/32 [00:00<00:00, 19.28it/s]Training:  56%|█████▋    | 18/32 [00:00<00:00, 19.22it/s]Training:  62%|██████▎   | 20/32 [00:01<00:00, 18.53it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 24/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.413648781492348)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.591151902575423)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.2625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.497560220779071)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25)
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 19.52it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 19.34it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  88%|████████▊ | 28/32 [00:01<00:00, 18.17it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:02, 13.98it/s]Training:  94%|█████████▍| 30/32 [00:01<00:00, 16.99it/s]
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:01, 20.79it/s]Training: 100%|██████████| 32/32 [00:01<00:00, 14.03it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 19.06it/s]
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 18.87it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 13.14it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 25/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.3619492032554086)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.566489534897101)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.271875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.471788118839828)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:01, 16.70it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:01<00:00, 22.64it/s]Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:   6%|▋         | 2/32 [00:00<00:02, 13.70it/s]
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:56290 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 21.53it/s]Training:  12%|█▎        | 4/32 [00:00<00:01, 15.85it/s]
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:01<00:00, 17.51it/s]Training:  19%|█▉        | 6/32 [00:00<00:01, 14.81it/s]Training:  28%|██▊       | 9/32 [00:00<00:01, 18.95it/s]
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 28/32 [00:01<00:00, 15.50it/s]
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 32/32 [00:01<00:00, 19.35it/s]
+[36mmy-mlops-api         |[0m                                                          Training:  34%|███▍      | 11/32 [00:00<00:01, 13.34it/s]Training:  41%|████      | 13/32 [00:00<00:01, 14.12it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 25/1000'
+[36mmy-mlops-api         |[0m icTraining:  47%|████▋     | 15/32 [00:01<00:01, 13.54it/s]| train_loss: np.float64(2.360074921789897)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.5692413252152706)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.26875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.4767296223252955)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25390625)
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:00, 17.25it/s]Training:  69%|██████▉   | 22/32 [00:01<00:00, 19.97it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:02, 10.72it/s]Training:  78%|███████▊  | 25/32 [00:01<00:00, 16.69it/s]
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 23.12it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 14.87it/s]Training:  91%|█████████ | 29/32 [00:01<00:00, 15.61it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 17.53it/s]Training:  97%|█████████▋| 31/32 [00:01<00:00, 15.77it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 17.87it/s]
+[36mmy-mlops-api         |[0m Training:  44%|████▍     | 14/32 [00:00<00:01, 17.61it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:00<00:00, 17.80it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:01<00:00, 22.21it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 26/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.3443719821009577)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.5457663228262497)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.28125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.453434559312774)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25390625)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 16.81it/s]Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:   6%|▋         | 2/32 [00:00<00:01, 17.63it/s]
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 12.96it/s]Training:  12%|█▎        | 4/32 [00:00<00:01, 17.95it/s]Training:  19%|█▉        | 6/32 [00:00<00:01, 17.07it/s]
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:01<00:00, 12.10it/s]
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:01<00:00, 13.51it/s]Training:  25%|██▌       | 8/32 [00:00<00:01, 14.79it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:02<00:00, 13.50it/s]
+[36mmy-mlops-api         |[0m                                                          Training:  31%|███▏      | 10/32 [00:00<00:01, 12.25it/s]Training:  38%|███▊      | 12/32 [00:00<00:01, 10.84it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 26/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.3324635723456635)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.5481303747812296)
+[36mmy-mlops-api         |[0m     val_acc:Training:  44%|████▍     | 14/32 [00:01<00:01, 10.37it/s] np.float64(0.275)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.458113442670583)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25390625)
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:01, 14.08it/s]Training:  62%|██████▎   | 20/32 [00:01<00:00, 17.37it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:  72%|███████▏  | 23/32 [00:01<00:00, 16.99it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:02, 14.35it/s]Training:  81%|████████▏ | 26/32 [00:01<00:00, 19.80it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:02, 12.95it/s]Training:  91%|█████████ | 29/32 [00:01<00:00, 20.64it/s]
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 13.35it/s]Training: 100%|██████████| 32/32 [00:01<00:00, 20.05it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 13.24it/s]
+[36mmy-mlops-api         |[0m Training:  31%|███▏      | 10/32 [00:00<00:01, 13.81it/s]
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 14.95it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 27/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.316133414770023)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.525462739937032)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.28125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.435876101314334)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.265625)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  47%|████▋     | 15/32 [00:00<00:00, 17.22it/s]
+[36mmy-mlops-api         |[0m Training:  53%|█████▎    | 17/32 [00:01<00:00, 17.49it/s]Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:01<00:00, 17.91it/s]Training:   6%|▋         | 2/32 [00:00<00:02, 12.54it/s]
+[36mmy-mlops-api         |[0m Training:  66%|██████▌   | 21/32 [00:01<00:00, 14.58it/s]Training:  12%|█▎        | 4/32 [00:00<00:02, 12.43it/s]
+[36mmy-mlops-api         |[0m Training:  72%|███████▏  | 23/32 [00:01<00:00, 11.84it/s]Training:  19%|█▉        | 6/32 [00:00<00:02, 12.63it/s]Training:  25%|██▌       | 8/32 [00:00<00:01, 12.33it/s]
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 11.41it/s]Training:  31%|███▏      | 10/32 [00:00<00:01, 13.81it/s]
+[36mmy-mlops-api         |[0m Training:  84%|████████▍ | 27/32 [00:02<00:00, 11.49it/s]Training:  38%|███▊      | 12/32 [00:00<00:01, 14.49it/s]
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:02<00:00, 11.42it/s]Training:  44%|████▍     | 14/32 [00:01<00:01, 12.62it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:02<00:00, 12.73it/s]Training:  50%|█████     | 16/32 [00:01<00:01, 14.04it/s]
+[36mmy-mlops-api         |[0m                                                          Training:  56%|█████▋    | 18/32 [00:01<00:00, 15.15it/s]Training:  62%|██████▎   | 20/32 [00:01<00:00, 14.63it/s]Training:  69%|██████▉   | 22/32 [00:01<00:00, 13.48it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 27/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.286125499697946)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.5296936582622105)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.28125)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.4406472279572107)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.2578125)
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 17.24it/s]Training:  91%|█████████ | 29/32 [00:01<00:00, 21.97it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]Training: 100%|██████████| 32/32 [00:01<00:00, 21.60it/s]                                                         
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 19.22it/s]
+[36mmy-mlops-api         |[0m Training:  12%|█▎        | 4/32 [00:00<00:01, 15.97it/s]
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 16.10it/s]
+[36mmy-mlops-api         |[0m Training:  28%|██▊       | 9/32 [00:00<00:01, 19.21it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 28/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.3043853116504858)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.5064787745816792)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.284375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.4185653518891264)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.26171875)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  34%|███▍      | 11/32 [00:00<00:01, 17.94it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:00<00:00, 26.89it/s]Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  59%|█████▉    | 19/32 [00:00<00:00, 25.72it/s]Training:   9%|▉         | 3/32 [00:00<00:01, 19.48it/s]
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:00<00:00, 25.08it/s]Training:  19%|█▉        | 6/32 [00:00<00:01, 17.98it/s]Training:  25%|██▌       | 8/32 [00:00<00:01, 15.33it/s]
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 17.50it/s]Training:  31%|███▏      | 10/32 [00:00<00:01, 12.98it/s]
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 28/32 [00:01<00:00, 15.17it/s]Training:  41%|████      | 13/32 [00:00<00:01, 14.88it/s]
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 31/32 [00:01<00:00, 15.97it/s]Training:  47%|████▋     | 15/32 [00:00<00:01, 16.00it/s]
+[36mmy-mlops-api         |[0m                                                          Training:  53%|█████▎    | 17/32 [00:01<00:00, 15.11it/s]Training:  59%|█████▉    | 19/32 [00:01<00:00, 15.50it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 28/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.2835853326395235)Training:  66%|██████▌   | 21/32 [00:01<00:00, 14.23it/s]
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.510405917197403)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.284375)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.423539890246071)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25390625)
+[36mmy-mlops-api         |[0m Training:  75%|███████▌  | 24/32 [00:01<00:00, 17.49it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 20.35it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   6%|▋         | 2/32 [00:00<00:01, 18.15it/s]Training:  94%|█████████▍| 30/32 [00:01<00:00, 18.10it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  16%|█▌        | 5/32 [00:00<00:01, 22.21it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 22.54it/s]
+[36mmy-mlops-api         |[0m Training:  34%|███▍      | 11/32 [00:00<00:00, 22.75it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 29/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.2891060471648403)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.489152868342445)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.296875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.4024274206390346)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.25390625)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:35946 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:  44%|████▍     | 14/32 [00:00<00:01, 16.00it/s]
+[36mmy-mlops-api         |[0m Training:  50%|█████     | 16/32 [00:00<00:01, 14.06it/s]Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:01<00:00, 17.56it/s]
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:01<00:00, 17.30it/s]Training:   9%|▉         | 3/32 [00:00<00:01, 14.67it/s]
+[36mmy-mlops-api         |[0m Training:  78%|███████▊  | 25/32 [00:01<00:00, 19.47it/s]Training:  16%|█▌        | 5/32 [00:00<00:02, 11.70it/s]
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 28/32 [00:01<00:00, 18.49it/s]Training:  28%|██▊       | 9/32 [00:00<00:01, 19.68it/s]
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 30/32 [00:01<00:00, 17.29it/s]Training:  38%|███▊      | 12/32 [00:00<00:00, 20.21it/s]Training:  47%|████▋     | 15/32 [00:00<00:00, 21.61it/s]
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 32/32 [00:01<00:00, 15.04it/s]
+[36mmy-mlops-api         |[0m                                                          Training:  56%|█████▋    | 18/32 [00:01<00:00, 17.58it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 29/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.2707087432360997)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.493614205909714)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.2875)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.4073060195036535)Training:  66%|██████▌   | 21/32 [00:01<00:00, 19.60it/s]
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.26171875)
+[36mmy-mlops-api         |[0m Training:  75%|███████▌  | 24/32 [00:01<00:00, 18.83it/s]
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/32 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/32 [00:00<00:01, 22.55it/s]Training:  84%|████████▍ | 27/32 [00:01<00:00, 14.82it/s]
+[36mmy-mlops-api         |[0m Training:  19%|█▉        | 6/32 [00:00<00:01, 14.36it/s]Training:  91%|█████████ | 29/32 [00:01<00:00, 13.45it/s]
+[36mmy-mlops-api         |[0m Training:  25%|██▌       | 8/32 [00:00<00:01, 12.09it/s]Training:  97%|█████████▋| 31/32 [00:01<00:00, 12.75it/s]                                                         
+[36mmy-mlops-api         |[0m Training:  38%|███▊      | 12/32 [00:00<00:01, 16.72it/s]
+[36mmy-mlops-api         |[0m Training:  44%|████▍     | 14/32 [00:00<00:01, 16.45it/s]
+[36mmy-mlops-api         |[0m Training:  56%|█████▋    | 18/32 [00:01<00:00, 17.61it/s]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 30/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.2431695642663803)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.4722308200769114)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.290625)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.3874649620478583)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.265625)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  62%|██████▎   | 20/32 [00:01<00:00, 16.76it/s]
+[36mmy-mlops-api         |[0m Training:  69%|██████▉   | 22/32 [00:01<00:00, 15.14it/s]
+[36mmy-mlops-api         |[0m Training:  81%|████████▏ | 26/32 [00:01<00:00, 19.91it/s]Training:   0%|          | 0/32 [00:00<?, ?it/s]Training:   3%|▎         | 1/32 [00:00<00:04,  6.95it/s]
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 29/32 [00:01<00:00, 16.50it/s]Training:   6%|▋         | 2/32 [00:00<00:03,  7.68it/s]Training:  12%|█▎        | 4/32 [00:00<00:04,  6.98it/s]Training:  16%|█▌        | 5/32 [00:00<00:03,  6.81it/s]

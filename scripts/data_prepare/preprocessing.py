@@ -36,8 +36,13 @@ class TMDBPreProcessor:
         vote_average_val = movie.get("vote_average", 0.0)
         adult = movie.get("adult", False)
         video = movie.get("video", False)
-        if movie_id is None:
-            print(f"Warning: Skipping augmentation for movie with no ID: {movie}")
+        # if movie_id is None:
+        #     print(f"Warning: Skipping augmentation for movie with no ID: {movie}")
+        #     return []
+        
+        # 김장원 파트
+        if movie_id is None or not title or not poster_path or not overview:
+            print(f"Skipping movie {movie_id} due to missing metadata.")
             return []
         count = int(pow(2, max(1, rating)))
         data = {

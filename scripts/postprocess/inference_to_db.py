@@ -67,8 +67,9 @@ def get_movie_metadata_by_ids(db_name, content_ids):
         SELECT DISTINCT content_id, title, poster_path, overview
         FROM watch_logs
         WHERE content_id = ANY(:content_ids)
-        AND poster_path IS NOT NULL
-        AND title IS NOT NULL
+        AND poster_path IS NOT NULL AND poster_path != ''
+        AND title IS NOT NULL AND title != ''
+        AND overview IS NOT NULL AND overview != ''
     """)
 
     content_ids = [int(cid) for cid in content_ids]

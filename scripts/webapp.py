@@ -143,7 +143,7 @@ async def predict(input_data: InferenceInput):
             input_data.rating,
             input_data.popularity
         ])
-        result = inference(model, scaler, label_encoder, data)
+        result = inference(model, scaler, label_encoder, data, _logger)
 
         # 2. 추천 결과 DB 저장
         df_to_save = recommend_to_df(result)

@@ -1,0 +1,1001 @@
+Attaching to my-mlops-api
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/33 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  85%|████████▍ | 28/33 [00:41<00:05,  1.12s/it]Training:  58%|█████▊    | 19/33 [00:23<00:12,  1.08it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  33%|███▎      | 11/33 [00:14<00:25,  1.17s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  61%|██████    | 20/33 [00:22<00:11,  1.10it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  36%|███▋      | 12/33 [00:17<00:30,  1.45s/it]
+[36mmy-mlops-api         |[0m Training:  12%|█▏        | 4/33 [00:03<00:26,  1.11it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  27%|██▋       | 9/33 [00:11<00:41,  1.73s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  39%|███▉      | 13/33 [00:18<00:28,  1.42s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  61%|██████    | 20/33 [00:27<00:20,  1.54s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  85%|████████▍ | 28/33 [00:42<00:12,  2.50s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  33%|███▎      | 11/33 [00:16<00:48,  2.22s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m INFO:     121.165.137.12:63856 - "GET /latest-recommendations HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:  30%|███       | 10/33 [00:12<00:32,  1.41s/it]
+[36mmy-mlops-api         |[0m Training:  15%|█▌        | 5/33 [00:04<00:26,  1.08it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   3%|▎         | 1/33 [00:01<00:54,  1.69s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  82%|████████▏ | 27/33 [00:36<00:08,  1.45s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  36%|███▋      | 12/33 [00:19<00:48,  2.33s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  39%|███▉      | 13/33 [00:19<00:29,  1.49s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  36%|███▋      | 12/33 [00:15<00:27,  1.33s/it]Training:  61%|██████    | 20/33 [00:25<00:16,  1.24s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  42%|████▏     | 14/33 [00:19<00:27,  1.45s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 29/33 [00:43<00:05,  1.48s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  85%|████████▍ | 28/33 [00:37<00:06,  1.24s/it]
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:39626 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:  18%|█▊        | 6/33 [00:05<00:27,  1.01s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  36%|███▋      | 12/33 [00:18<00:42,  2.04s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  64%|██████▎   | 21/33 [00:24<00:16,  1.36s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  33%|███▎      | 11/33 [00:13<00:31,  1.43s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  64%|██████▎   | 21/33 [00:29<00:19,  1.64s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  45%|████▌     | 15/33 [00:20<00:21,  1.20s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  67%|██████▋   | 22/33 [00:29<00:13,  1.19s/it]Training:  64%|██████▎   | 21/33 [00:25<00:13,  1.11s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   6%|▌         | 2/33 [00:03<00:49,  1.60s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 29/33 [00:45<00:09,  2.43s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 29/33 [00:38<00:04,  1.11s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 30/33 [00:38<00:02,  1.21it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  39%|███▉      | 13/33 [00:17<00:28,  1.43s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  48%|████▊     | 16/33 [00:21<00:18,  1.09s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  70%|██████▉   | 23/33 [00:30<00:10,  1.07s/it]
+[36mmy-mlops-api         |[0m Training:  21%|██        | 7/33 [00:07<00:28,  1.11s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 30/33 [00:45<00:04,  1.53s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  39%|███▉      | 13/33 [00:21<00:45,  2.29s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  73%|███████▎  | 24/33 [00:30<00:07,  1.18it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/33 [00:04<00:37,  1.26s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 30/33 [00:46<00:06,  2.02s/it]Training:  67%|██████▋   | 22/33 [00:27<00:13,  1.20s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  42%|████▏     | 14/33 [00:22<00:36,  1.90s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  67%|██████▋   | 22/33 [00:26<00:17,  1.56s/it]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 14/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.801920725743489)
+[36mmy-mlops-api         |[0m     val_loss
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m : np.float64(2.981448397693067)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.20426829268292682)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.846735488887913)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.24045801526717558)
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 31/33 [00:47<00:03,  1.62s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  52%|█████▏    | 17/33 [00:22<00:19,  1.22s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  39%|███▉      | 13/33 [00:20<00:43,  2.17s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 31/33 [00:46<00:02,  1.43s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  36%|███▋      | 12/33 [00:16<00:36,  1.73s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  76%|███████▌  | 25/33 [00:32<00:07,  1.05it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  12%|█▏        | 4/33 [00:05<00:36,  1.27s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/33 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  45%|████▌     | 15/33 [00:22<00:27,  1.54s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  42%|████▏     | 14/33 [00:23<00:38,  2.03s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   3%|▎         | 1/33 [00:00<00:08,  3.59it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  55%|█████▍    | 18/33 [00:23<00:15,  1.02s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  70%|██████▉   | 23/33 [00:27<00:14,  1.40s/it]
+[36mmy-mlops-api         |[0m Training:  24%|██▍       | 8/33 [00:09<00:35,  1.42s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  42%|████▏     | 14/33 [00:21<00:34,  1.80s/it]Training:  70%|██████▉   | 23/33 [00:29<00:14,  1.41s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 32/33 [00:47<00:01,  1.35s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  58%|█████▊    | 19/33 [00:23<00:13,  1.04it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  79%|███████▉  | 26/33 [00:33<00:07,  1.07s/it]Training:  73%|███████▎  | 24/33 [00:29<00:09,  1.10s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  42%|████▏     | 14/33 [00:20<00:35,  1.89s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 31/33 [00:41<00:03,  1.53s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  48%|████▊     | 16/33 [00:24<00:25,  1.51s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  82%|████████▏ | 27/33 [00:33<00:05,  1.13it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 32/33 [00:49<00:01,  1.75s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  73%|███████▎  | 24/33 [00:29<00:12,  1.37s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  39%|███▉      | 13/33 [00:18<00:36,  1.84s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   6%|▌         | 2/33 [00:01<00:32,  1.06s/it]
+[36mmy-mlops-api         |[0m Training:  27%|██▋       | 9/33 [00:10<00:33,  1.41s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  15%|█▌        | 5/33 [00:07<00:43,  1.56s/it]Training:  76%|███████▌  | 25/33 [00:30<00:08,  1.05s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 33/33 [00:49<00:00,  1.41s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m                                                          
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 32/33 [00:43<00:01,  1.44s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  18%|█▊        | 6/33 [00:08<00:32,  1.22s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  45%|████▌     | 15/33 [00:23<00:32,  1.83s/it]ic| f"Epoch {epoch + 1}/{num_epochs}": 'Epoch 15/1000'
+[36mmy-mlops-api         |[0m ic| train_loss: np.float64(2.7321936953901194)
+[36mmy-mlops-api         |[0m     val_loss: np.float64(2.9149378166753785)
+[36mmy-mlops-api         |[0m     val_acc: np.float64(0.21646341463414634)
+[36mmy-mlops-api         |[0m     test_loss: np.float64(2.8010381630522554)
+[36mmy-mlops-api         |[0m     test_acc: np.float64(0.2633587786259542)
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  61%|██████    | 20/33 [00:25<00:15,  1.22s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 33/33 [00:43<00:00,  1.18s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m                                                          
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/33 [00:03<00:32,  1.10s/it]Training:  79%|███████▉  | 26/33 [00:31<00:07,  1.02s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  85%|████████▍ | 28/33 [00:35<00:05,  1.09s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   0%|          | 0/33 [00:00<?, ?it/s]
+[36mmy-mlops-api         |[0m Training:  30%|███       | 10/33 [00:12<00:32,  1.41s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  76%|███████▌  | 25/33 [00:30<00:11,  1.47s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  45%|████▌     | 15/33 [00:22<00:36,  2.00s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  45%|████▌     | 15/33 [00:26<00:44,  2.47s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  64%|██████▎   | 21/33 [00:26<00:12,  1.05s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  48%|████▊     | 16/33 [00:26<00:30,  1.82s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  88%|████████▊ | 29/33 [00:36<00:04,  1.02s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 33/33 [00:51<00:00,  1.93s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m                                                          
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  48%|████▊     | 16/33 [00:25<00:30,  1.77s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  12%|█▏        | 4/33 [00:04<00:32,  1.14s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  21%|██        | 7/33 [00:09<00:35,  1.37s/it]Training:  82%|████████▏ | 27/33 [00:32<00:06,  1.11s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  48%|████▊     | 16/33 [00:23<00:29,  1.71s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  42%|████▏     | 14/33 [00:20<00:39,  2.10s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  52%|█████▏    | 17/33 [00:27<00:32,  2.04s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  79%|███████▉  | 26/33 [00:32<00:10,  1.44s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  52%|█████▏    | 17/33 [00:24<00:20,  1.30s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  52%|█████▏    | 17/33 [00:28<00:25,  1.62s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  15%|█▌        | 5/33 [00:05<00:28,  1.02s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  55%|█████▍    | 18/33 [00:27<00:23,  1.55s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  24%|██▍       | 8/33 [00:10<00:30,  1.22s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  45%|████▌     | 15/33 [00:21<00:30,  1.69s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   3%|▎         | 1/33 [00:02<01:07,  2.10s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  82%|████████▏ | 27/33 [00:32<00:07,  1.24s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  91%|█████████ | 30/33 [00:37<00:03,  1.16s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  18%|█▊        | 6/33 [00:05<00:23,  1.13it/s]
+[36mmy-mlops-api         |[0m Training:  33%|███▎      | 11/33 [00:14<00:37,  1.71s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  52%|█████▏    | 17/33 [00:26<00:27,  1.71s/it]Training:  85%|████████▍ | 28/33 [00:34<00:06,  1.24s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  58%|█████▊    | 19/33 [00:28<00:19,  1.37s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  27%|██▋       | 9/33 [00:11<00:27,  1.15s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  55%|█████▍    | 18/33 [00:27<00:19,  1.33s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  55%|█████▍    | 18/33 [00:25<00:20,  1.36s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  21%|██        | 7/33 [00:06<00:21,  1.23it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  55%|█████▍    | 18/33 [00:29<00:23,  1.56s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  61%|██████    | 20/33 [00:29<00:14,  1.08s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  94%|█████████▍| 31/33 [00:38<00:02,  1.11s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  48%|████▊     | 16/33 [00:22<00:26,  1.55s/it]
+[36mmy-mlops-api         |[0m Training:  36%|███▋      | 12/33 [00:15<00:31,  1.50s/it]Training:  88%|████████▊ | 29/33 [00:35<00:04,  1.20s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  64%|██████▎   | 21/33 [00:30<00:11,  1.04it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  52%|█████▏    | 17/33 [00:23<00:21,  1.32s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   6%|▌         | 2/33 [00:04<01:01,  1.98s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  85%|████████▍ | 28/33 [00:34<00:07,  1.45s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m INFO:     127.0.0.1:54564 - "GET /docs HTTP/1.1" 200 OK
+[36mmy-mlops-api         |[0m Training:  97%|█████████▋| 32/33 [00:39<00:01,  1.06s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  30%|███       | 10/33 [00:13<00:29,  1.27s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  58%|█████▊    | 19/33 [00:28<00:19,  1.38s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training: 100%|██████████| 33/33 [00:40<00:00,  1.07it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m                                                          
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  24%|██▍       | 8/33 [00:08<00:28,  1.13s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  67%|██████▋   | 22/33 [00:30<00:10,  1.04it/s]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:   9%|▉         | 3/33 [00:04<00:44,  1.49s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  67%|██████▋   | 22/33 [00:31<00:23,  2.14s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  58%|█████▊    | 19/33 [00:27<00:21,  1.55s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m Training:  58%|█████▊    | 19/33 [00:31<00:23,  1.69s/it]
+[36mmy-mlops-api         |[0m Training:  39%|███▉      | 13/33 [00:17<00:32,  1.61s/it]
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
+[36mmy-mlops-api         |[0m 
